@@ -8,8 +8,8 @@ import Link from 'next/link';
 export default function SignIn() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const callbackUrl = searchParams.get('callbackUrl') || '/';
-  const error = searchParams.get('error') || '';
+  const callbackUrl = searchParams?.get('callbackUrl') || '/';
+  const error = searchParams?.get('error') || '';
   
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
