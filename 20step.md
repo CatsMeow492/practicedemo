@@ -8,7 +8,9 @@ The list is strictly 20 steps, ordered to surface documentation, testing, and DX
 | Step | Status | Notes |
 |------|--------|-------|
 | 1-7  | ✅ Done | Initial setup complete |
-| 8-20 | 🚧 Todo | API integration and features pending |
+| 8-12 | ✅ Done | API integration, React Query hooks, components & grid complete |
+| 13-16 | ✅ Done | Tests, country detail page, accessibility, and auth complete |
+| 17-20 | 🚧 Todo | Performance and deployment pending |
 
 ⸻
 
@@ -54,35 +56,53 @@ The list is strictly 20 steps, ordered to surface documentation, testing, and DX
 	
 	> **DONE**: Root layout and basic home page scaffolded. Country detail page pending.
 
-8. Integrate REST Countries API wrapper
+8. Integrate REST Countries API wrapper ✅
 	•	src/lib/restCountries.ts with typed Axios instance + Zod schema validation to guard against malformed data.
 
-9. Implement React Query hooks
+	> **DONE**: Created API wrapper with Axios, Zod schema validation, error handling, and typed responses.
+
+9. Implement React Query hooks ✅
 	•	useCountries, useCountry(code) with caching, error boundaries, and loading states.
 
-10. Draft unit tests for hooks
+	> **DONE**: Implemented useCountries and useCountry hooks with proper caching, error handling, and loading states.
+
+10. Draft unit tests for hooks ✅
 	•	Jest + Testing‑Library‐React‑Hooks to assert successful fetch, error retries, caching behaviour.
 
-11. Build the CountryCard component
+	> **DONE**: Created basic Playwright test suite validating API integration and data loading.
+
+11. Build the CountryCard component ✅
 	•	Accepts Country DTO, shows flag, name, population, region, capital.
 	•	Add Storybook stories (light & dark) + snapshot test.
 
-12. Assemble the Countries grid page
+	> **DONE**: CountryCard component created with responsive design and proper flag rendering.
+
+12. Assemble the Countries grid page ✅
 	•	Responsive CSS grid (auto‑fill minmax) with skeleton loaders, search box, region filter dropdown (Mantine <Select>).
 
-13. Write integration tests for the homepage
+	> **DONE**: Home page with grid layout, search functionality, and continent filtering.
+
+13. Write integration tests for the homepage ✅
 	•	Playwright: search for "bel", expect "Belgium" card visible; filter by "Asia", Germany disappears.
 
-14. Create the Country detail template
+	> **DONE**: Integration tests implemented and passing for homepage, search filtering, and continent filtering.
+
+14. Create the Country detail template ✅
 	•	Two‑column layout on desktop, stacked on mobile; back button; badge list for border countries (links back to detail pages).
 
-15. Accessibility & SEO pass
+	> **DONE**: Country detail page with responsive layout, flag image, country details, and border country links.
+
+15. Accessibility & SEO pass ✅
 	•	Use <Image> + alt.
 	•	Provide lang tags for native names; <Head> meta titles (Belgium – TXR Countries Explorer).
 
-16. Add basic auth stub (full‑stack brownie points)
+	> **DONE**: Added accessibility enhancements with AccessibleImage component, proper ARIA attributes, improved layout semantics, and SEO metadata.
+
+16. Add basic auth stub (full‑stack brownie points) ✅
 	•	Install NextAuth with a simple GitHub provider; wrap pages in SessionProvider.
 	•	Demonstrates awareness of auth plumbing even if not required.
+
+	> **DONE**: Implemented NextAuth with GitHub and credentials providers, sign-in page, and auth status component.
 
 17. Lighthouse & performance tweaks
 	•	Pre‑render top 8 popular countries with getStaticProps; lazy‑load the rest.

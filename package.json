@@ -17,10 +17,12 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@auth/core": "^0.34.2",
     "@tanstack/react-query": "^5.75.7",
     "@tanstack/react-query-devtools": "^5.75.7",
     "axios": "^1.9.0",
     "next": "13.4.19",
+    "next-auth": "^4.24.11",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "zod": "^3.24.4"

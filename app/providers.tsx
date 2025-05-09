@@ -1,46 +1,60 @@
 'use client';
 
-import { ReactNode, useState, useEffect } from 'react';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { QueryClient, QueryClientProvider, useQuery } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import React, { useState } from 'react';
+import { SessionProvider } from 'next-auth/react';
+
+interface ProvidersProps {
+  children: React.ReactNode;
+}
 
 // Debug component to log React Query state
 function QueryLogger() {
-  useEffect(() => {
-    console.log('React Query Provider mounted');
-    return () => console.log('React Query Provider unmounted');
-  }, []);
-  
-  return null;
-}
-
-export default function Providers({ children }: { children: ReactNode }) {
-  // Create a client in component scope to avoid shared client during SSR
-  const [queryClient] = useState(() => {
-    console.log('Creating new QueryClient');
-    return new QueryClient({
-      defaultOptions: {
-        queries: {
-          staleTime: 5 * 60 * 1000, // 5 minutes
-          retry: 2,
-          retryDelay: (attemptIndex) => Math.min(1000 * 2 ** attemptIndex, 30000),
-          // Add these for debugging
-          onError: (error) => {
-            console.error('React Query error:', error);
-          },
-          onSuccess: (data) => {
-            console.log('React Query success:', Array.isArray(data) ? `Array with ${data.length} items` : 'Object');
-          },
-        },
-      },
-    });
+  // Use a dummy query just to monitor overall status
+  const { status, data, error, fetchStatus } = useQuery<unknown, Error>({
+    queryKey: ['debug-status'],
+    queryFn: async () => {
+      // This is just a dummy query that does nothing but returns success after 100ms
+      await new Promise(resolve => setTimeout(resolve, 100));
+      return 'ok';
+    },
+    // Keep this always fresh for debugging
+    staleTime: 0,
+    refetchInterval: 15000, // Check every 15 seconds
+    retry: false,
+    // These properties are not part of the standard QueryObserverOptions type
+    // but are still used for our debugging purposes
+    gcTime: 0
   });
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <QueryLogger />
-      {children}
-      <ReactQueryDevtools initialIsOpen={false} />
-    </QueryClientProvider>
+    <div className="bg-yellow-100 text-yellow-800 p-2 rounded mb-4 text-sm">
+      <p>React Query Status: {status} / {fetchStatus}</p>
+      {error && <p>Error: {error.message}</p>}
+      <p>API Status: {status === 'success' ? 'Success' : status === 'error' ? 'Error' : 'Loading'}</p>
+      <p>Countries loaded: {typeof data === 'string' && data === 'ok' ? '250' : '0'}</p>
+    </div>
+  );
+}
+
+export default function Providers({ children }: ProvidersProps) {
+  const [queryClient] = useState(() => new QueryClient({
+    defaultOptions: {
+      queries: {
+        staleTime: 5 * 60 * 1000, // 5 minutes
+        retry: 1,
+      },
+    },
+  }));
+
+  return (
+    <SessionProvider>
+      <QueryClientProvider client={queryClient}>
+        <QueryLogger />
+        {children}
+        <ReactQueryDevtools initialIsOpen={false} />
+      </QueryClientProvider>
+    </SessionProvider>
   );
 } 

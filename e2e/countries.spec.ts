@@ -53,8 +53,7 @@ test.describe('Countries Dashboard', () => {
     await page.screenshot({ path: 'test-results/homepage-final.png' });
   });
 
-  // Keep other tests skipped until we fix the basic test
-  test.skip('search filter works', async ({ page }) => {
+  test('search filter works', async ({ page }) => {
     // Wait for API to load successfully
     await expect(page.getByText('API Status: Success')).toBeVisible({ timeout: 30000 });
     
@@ -68,7 +67,7 @@ test.describe('Countries Dashboard', () => {
     await expect(page.getByText('Germany')).toBeVisible({ timeout: 10000 });
   });
 
-  test.skip('continent filter works', async ({ page }) => {
+  test('continent filter works', async ({ page }) => {
     // Wait for API to load successfully
     await expect(page.getByText('API Status: Success')).toBeVisible({ timeout: 30000 });
     
@@ -82,7 +81,7 @@ test.describe('Countries Dashboard', () => {
     await expect(page.getByText('API Status: Success')).toBeVisible({ timeout: 10000 });
   });
 
-  test.skip('country detail page loads', async ({ page }) => {
+  test('country detail page loads', async ({ page }) => {
     // Wait for API to load successfully
     await expect(page.getByText('API Status: Success')).toBeVisible({ timeout: 30000 });
     
