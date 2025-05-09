@@ -59,6 +59,23 @@ npm run storybook
 ## 🚀 Deployment
 The project is configured for zero-config deployment on **Vercel** out-of-the-box. Push to `main` and a preview link will be generated automatically.
 
+### CI/CD Setup
+
+The project includes a GitHub Actions workflow that:
+1. Runs linting and type checking
+2. Executes unit tests and E2E tests
+3. Deploys preview environments for PRs
+4. Deploys to production when merged to main
+
+To set up the Vercel deployment in GitHub Actions:
+
+1. Generate a Vercel token at https://vercel.com/account/tokens
+2. Get your Vercel Organization ID and Project ID from the project settings page
+3. Add the following secrets to your GitHub repository:
+   - `VERCEL_TOKEN`: Your Vercel API token
+   - `VERCEL_ORG_ID`: Your Vercel Organization ID
+   - `VERCEL_PROJECT_ID`: Your Vercel Project ID
+
 ---
 
 ## 📚 Tech Stack & Decisions

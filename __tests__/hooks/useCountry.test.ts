@@ -1,4 +1,4 @@
-import { renderHook, waitFor } from '@testing-library/react-hooks';
+import { renderHook, waitFor } from '@testing-library/react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import useCountry from '../../src/hooks/useCountry';
 import restCountriesApi from '../../src/lib/restCountries';
