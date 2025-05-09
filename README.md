@@ -12,7 +12,7 @@ A full-stack demo project showcasing a polished developer experience while deliv
 • Detail page with bordering-country shortcuts and SEO-ready `<Head>` meta tags.
 • Unit tests (Jest + Testing-Library) and E2E coverage (Playwright).
 
-> Refer to [`20-step-plan.mdc`](#) for the complete project roadmap.
+> Refer to [`20step.md`](20step.md) for the complete project roadmap.
 
 ---
 
@@ -57,8 +57,15 @@ See [adr/ADR-0001.md](adr/ADR-0001.md) for the architectural decision record det
 | 2 | Living README | ✅ Done |
 | 3 | Architecture Decision Record | ✅ Done (ADR-0001) |
 | 4 | Prettier + Husky hooks | ✅ Done |
-| 5 | Storybook setup | 🔄 In-progress |
+| 5 | Storybook setup | ✅ Done |
 | 6 | Theme token file | ✅ Tailwind config added |
 | 7 | Basic routes & layout | ✅ Root layout scaffolded |
+| 8 | REST Countries API wrapper | ✅ Done with Axios + Zod |
+| 9 | React Query hooks | ✅ Done (useCountries, useCountry) |
+| 10 | Hook unit tests | ✅ Done (Jest + RTL) |
+| 11 | CountryCard component | ✅ Done with Storybook stories |
+| 12 | Countries grid page | ✅ Done with search and filtering |
+| 13 | Playwright integration tests | 🔄 In-progress |
+| 14 | Country detail template | ✅ Done with border countries |
 
-*(See [20-step-plan.mdc](#) for full list)*
+*(See [20step.md](20step.md) for full list)*

@@ -1,5 +1,6 @@
 import './globals.css';
 import { ReactNode } from 'react';
+import Providers from './providers';
 
 export const metadata = {
   title: 'Countries Dashboard',
@@ -13,7 +14,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="bg-surface text-text" suppressHydrationWarning>
-      <body>{children}</body>
+      <body>
+        <Providers>
+          {children}
+        </Providers>
+      </body>
     </html>
   );
 } 
