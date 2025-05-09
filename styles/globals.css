@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS custom properties for semantic tokens */
+:root {
+  --color-surface: #ffffff;
+  --color-text: #111827; /* gray-900 */
+  --color-primary: #2563eb; /* blue-600 */
+}
+
+.dark {
+  --color-surface: #1f2937; /* gray-800 */
+  --color-text: #f9fafb; /* gray-50 */
+  --color-primary: #3b82f6; /* blue-500 */
+} 

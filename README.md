@@ -48,3 +48,17 @@ The project is configured for zero-config deployment on **Vercel** out-of-the-bo
 ## 📚 Tech Stack & Decisions
 
 See [adr/ADR-0001.md](adr/ADR-0001.md) for the architectural decision record detailing why each technology was chosen.
+
+## ✅ Roadmap Progress
+
+| Step | Description | Status |
+|------|-------------|--------|
+| 1 | Bootstrap repo & CI | ✅ Done |
+| 2 | Living README | ✅ Done |
+| 3 | Architecture Decision Record | ✅ Done (ADR-0001) |
+| 4 | Prettier + Husky hooks | ✅ Done |
+| 5 | Storybook setup | 🔄 In-progress |
+| 6 | Theme token file | ✅ Tailwind config added |
+| 7 | Basic routes & layout | ✅ Root layout scaffolded |
+
+*(See [20-step-plan.mdc](#) for full list)*
