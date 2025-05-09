@@ -14,6 +14,14 @@ const nextConfig = {
     // Only run type checking during development, not during builds
     ignoreBuildErrors: true,
   },
+  // Configure static generation behavior
+  staticPageGenerationTimeout: 120, // Increase timeout for static generation (in seconds)
+  experimental: {
+    // Disable static generation for country pages
+    outputFileTracingExcludes: {
+      '/country/**': true,
+    },
+  },
 };
 
 module.exports = nextConfig;
