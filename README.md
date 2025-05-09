@@ -9,8 +9,11 @@ A full-stack demo project showcasing a polished developer experience while deliv
 • Server-side rendered list of all countries powered by the public [REST Countries v3](https://restcountries.com/) API.
 • Search & region filtering with instant feedback (React Query caching).
 • Accessible dark/light theme toggle using Tailwind semantic tokens.
-• Detail page with bordering-country shortcuts and SEO-ready `<Head>` meta tags.
+• Detail page with bordering-country shortcuts and SEO-ready metadata.
 • Unit tests (Jest + Testing-Library) and E2E coverage (Playwright).
+• Authentication with NextAuth.js (GitHub and demo credentials).
+• Optimized image loading with Next.js Image and custom API route.
+• Docker containerization for local development and production.
 
 > Refer to [`20step.md`](20step.md) for the complete project roadmap.
 
@@ -31,9 +34,22 @@ npm run type-check  # tsc --noEmit
 
 # Unit tests
 npm test
+
+# E2E tests
+npm run test:e2e
 ```
 
-### Storybook (soon)
+### Using Docker
+
+```bash
+# Development mode
+docker-compose up app
+
+# Production mode
+docker-compose up app-prod
+```
+
+### Storybook
 ```bash
 npm run storybook
 ```
@@ -48,6 +64,33 @@ The project is configured for zero-config deployment on **Vercel** out-of-the-bo
 ## 📚 Tech Stack & Decisions
 
 See [adr/ADR-0001.md](adr/ADR-0001.md) for the architectural decision record detailing why each technology was chosen.
+
+## 🏗️ Architecture
+
+```
+┌─────────────────────────────────────────────────────────┐
+│                  Countries Dashboard                     │
+└───────────────────────────┬─────────────────────────────┘
+                            │
+┌───────────────────────────▼─────────────────────────────┐
+│                  Next.js App Router                      │
+├─────────────────┬─────────────────────┬─────────────────┤
+│   Server        │     Client          │     API         │
+│   Components    │     Components      │     Routes      │
+└────────┬────────┴──────────┬──────────┴────────┬────────┘
+         │                   │                   │
+┌────────▼────────┐ ┌────────▼────────┐ ┌────────▼────────┐
+│   React Query   │ │    UI           │ │    NextAuth     │
+│   Data Hooks    │ │    Components   │ │    Auth         │
+└────────┬────────┘ └────────┬────────┘ └────────┬────────┘
+         │                   │                   │
+         └───────────┬───────┴───────────┬───────┘
+                     │                   │
+           ┌─────────▼─────────┐ ┌───────▼─────────┐
+           │  REST Countries   │ │  GitHub OAuth   │
+           │  API              │ │  Provider       │
+           └───────────────────┘ └─────────────────┘
+```
 
 ## ✅ Roadmap Progress
 
@@ -65,7 +108,28 @@ See [adr/ADR-0001.md](adr/ADR-0001.md) for the architectural decision record det
 | 10 | Hook unit tests | ✅ Done (Jest + RTL) |
 | 11 | CountryCard component | ✅ Done with Storybook stories |
 | 12 | Countries grid page | ✅ Done with search and filtering |
-| 13 | Playwright integration tests | 🔄 In-progress |
+| 13 | Playwright integration tests | ✅ Done |
 | 14 | Country detail template | ✅ Done with border countries |
+| 15 | Accessibility & SEO | ✅ Done with AccessibleImage |
+| 16 | Auth stub (NextAuth) | ✅ Done with GitHub provider |
+| 17 | Lighthouse & performance | ✅ Done with server components |
+| 18 | Containerization | ✅ Done with multi-stage Dockerfile |
+| 19 | Deployment config | ✅ Done with Vercel config |
+| 20 | Final docs & release | ✅ Done |
 
-*(See [20step.md](20step.md) for full list)*
+## 🔮 Future Work
+
+Here are some potential improvements for future iterations:
+
+1. **Pagination**: Implement pagination for large result sets when filtering countries.
+2. **State Management**: Consider using Redux or Zustand for more complex state requirements.
+3. **Internationalization**: Add i18n support with next-intl or react-i18next.
+4. **Advanced Search**: Implement more advanced search features like filtering by population range.
+5. **Offline Support**: Add service worker for offline capabilities.
+6. **Analytics**: Integrate with a privacy-focused analytics solution.
+7. **CI/CD Pipeline**: Enhance the GitHub Actions workflow with automated deployments.
+8. **Persistent User Preferences**: Store theme and filter preferences in localStorage.
+
+## 📝 License
+
+MIT

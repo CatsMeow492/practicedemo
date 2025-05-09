@@ -2,27 +2,31 @@
  * CountryCard component for displaying country information
  */
 import React from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import type { Country } from '../lib/restCountries';
+import AccessibleImage from './AccessibleImage';
 
 interface CountryCardProps {
   country: Country;
 }
 
 export default function CountryCard({ country }: CountryCardProps) {
+  // Use the optimized flag image URL from our internal API route
+  const optimizedFlagUrl = `/flags?url=${encodeURIComponent(country.flags.png)}`;
+  
   return (
     <Link 
       href={`/country/${country.alpha2Code.toLowerCase()}`}
       className="block bg-surface-elevated rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
     >
       <div className="relative h-40 w-full">
-        <Image
-          src={country.flags.png}
+        <AccessibleImage
+          src={optimizedFlagUrl}
           alt={`Flag of ${country.name}`}
           fill
           className="object-cover"
           loading="lazy"
+          showLoadingIndicator={true}
         />
       </div>
       

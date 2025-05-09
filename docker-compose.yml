@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  app:
+    container_name: countries-dashboard
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: deps # Use the deps stage for development
+    command: npm run dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - NEXT_TELEMETRY_DISABLED=1
+    restart: unless-stopped
+
+  # Production build
+  app-prod:
+    container_name: countries-dashboard-prod
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3000"
+    environment:
+      - NODE_ENV=production
+      - NEXT_TELEMETRY_DISABLED=1
+    restart: unless-stopped 

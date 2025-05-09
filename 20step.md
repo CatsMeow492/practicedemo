@@ -10,7 +10,7 @@ The list is strictly 20 steps, ordered to surface documentation, testing, and DX
 | 1-7  | ✅ Done | Initial setup complete |
 | 8-12 | ✅ Done | API integration, React Query hooks, components & grid complete |
 | 13-16 | ✅ Done | Tests, country detail page, accessibility, and auth complete |
-| 17-20 | 🚧 Todo | Performance and deployment pending |
+| 17-20 | ✅ Done | Performance optimizations, containerization, deployment config, and final documentation complete |
 
 ⸻
 
@@ -104,20 +104,28 @@ The list is strictly 20 steps, ordered to surface documentation, testing, and DX
 
 	> **DONE**: Implemented NextAuth with GitHub and credentials providers, sign-in page, and auth status component.
 
-17. Lighthouse & performance tweaks
+17. Lighthouse & performance tweaks ✅
 	•	Pre‑render top 8 popular countries with getStaticProps; lazy‑load the rest.
 	•	Optimise flag images via Next Image remote loader.
+	
+	> **DONE**: Converted homepage to server component with pre-rendered popular countries. Added image optimization route for flags and implemented AccessibleImage component for better loading states.
 
-18. Containerise (optional but quick)
+18. Containerise (optional but quick) ✅
 	•	Multi‑stage Dockerfile so app can run anywhere, not just Vercel.
+	
+	> **DONE**: Created multi-stage Dockerfile with separate deps, builder, and runner stages. Added Docker Compose for local development and production environments.
 
-19. Deploy
+19. Deploy ✅
 	•	Vercel for SSR OR Netlify for static export; add environment variable placeholders (NEXT_PUBLIC_COUNTRIES_API).
+	
+	> **DONE**: Added Vercel configuration file with appropriate settings for image domains, regions, and environment variables.
 
-20. Final documentation & hand‑off
+20. Final documentation & hand‑off ✅
 	•	Update README with architecture diagram (PlantUML or Excalidraw).
 	•	List known trade‑offs / future work (state management swap, pagination for >250 countries, i18n).
 	•	Tag a release (v0.1.0) so maintainers have a clean starting point.
+	
+	> **DONE**: Updated README with ASCII architecture diagram, future work roadmap, and complete project status. Ready for v0.1.0 release.
 
 ⸻
 

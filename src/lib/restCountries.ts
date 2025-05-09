@@ -189,6 +189,31 @@ export const getCountries = async (): Promise<Country[]> => {
   }
 };
 
+/**
+ * Get a list of the most populated countries for pre-rendering
+ * This function is used for server-side rendering (SSR) and static generation
+ */
+export const getPopularCountries = async (): Promise<Country[]> => {
+  console.log('Fetching popular countries for pre-rendering');
+  try {
+    // Get all countries
+    const countries = await getCountries();
+    
+    // Sort by population (descending) and take top 8
+    const popularCountries = [...countries]
+      .sort((a, b) => b.population - a.population)
+      .slice(0, 8);
+    
+    console.log(`Pre-rendering ${popularCountries.length} popular countries`);
+    
+    return popularCountries;
+  } catch (error) {
+    console.error('Error fetching popular countries:', error);
+    // Return an empty array instead of throwing, so the page can still render
+    return [];
+  }
+};
+
 export const getCountryByName = async (name: string): Promise<Country> => {
   try {
     console.log(`getCountryByName API call for "${name}"`);
@@ -231,6 +256,7 @@ const restCountriesApi = {
   getCountries,
   getCountryByName,
   getCountriesByContinent,
+  getPopularCountries
 };
 
 export default restCountriesApi; 

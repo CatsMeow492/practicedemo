@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install",
+  "framework": "nextjs",
+  "regions": ["iad1"],
+  "images": {
+    "sizes": [640, 750, 828, 1080, 1200, 1920],
+    "domains": ["flagcdn.com", "upload.wikimedia.org", "restcountries.com"],
+    "remotePatterns": [
+      {
+        "protocol": "https",
+        "hostname": "**.wikimedia.org"
+      },
+      {
+        "protocol": "https",
+        "hostname": "**.flagcdn.com"
+      },
+      {
+        "protocol": "https",
+        "hostname": "**.restcountries.com"
+      }
+    ]
+  },
+  "env": {
+    "NEXT_PUBLIC_API_URL": "https://restcountries.com/v3.1"
+  }
+} 
