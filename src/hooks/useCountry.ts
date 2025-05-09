@@ -14,4 +14,4 @@ export default function useCountry(countryName: string) {
     cacheTime: 30 * 60 * 1000, // 30 minutes
     enabled: !!countryName, // Only run query if country name is provided
   });
-} 
+}

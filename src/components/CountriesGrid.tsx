@@ -16,16 +16,14 @@ export default function CountriesGrid({ initialCountries = [] }: CountriesGridPr
   const [debugInfo, setDebugInfo] = useState<string>('');
 
   // Use the appropriate hook based on whether a continent filter is applied
-  const { 
+  const {
     data: countries = initialCountries,
     isLoading,
     isError,
     error,
     status,
-    fetchStatus
-  } = continent 
-    ? useCountriesByContinent(continent)
-    : useCountries();
+    fetchStatus,
+  } = continent ? useCountriesByContinent(continent) : useCountries();
 
   // Add debugging effect to log any errors
   useEffect(() => {
@@ -42,9 +40,10 @@ export default function CountriesGrid({ initialCountries = [] }: CountriesGridPr
   }, [isError, error]);
 
   // Filter countries by search query
-  const filteredCountries = countries?.filter((country: Country) => 
-    country?.name?.toLowerCase?.().includes(searchQuery.toLowerCase())
-  ) || [];
+  const filteredCountries =
+    countries?.filter((country: Country) =>
+      country?.name?.toLowerCase?.().includes(searchQuery.toLowerCase()),
+    ) || [];
 
   return (
     <div className="countries-grid">
@@ -57,7 +56,7 @@ export default function CountriesGrid({ initialCountries = [] }: CountriesGridPr
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
         />
-        
+
         <select
           className="p-4 rounded-md shadow-sm border border-gray-200 dark:border-gray-700 w-full md:w-64"
           value={continent}
@@ -102,4 +101,4 @@ export default function CountriesGrid({ initialCountries = [] }: CountriesGridPr
       </div>
     </div>
   );
-} 
+}

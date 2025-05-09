@@ -9,7 +9,8 @@ export const metadata: Metadata = {
     template: '%s | Countries Dashboard',
     default: 'Countries Dashboard',
   },
-  description: 'Explore global country data with ease. Find information about countries, their flags, population, and more.',
+  description:
+    'Explore global country data with ease. Find information about countries, their flags, population, and more.',
   keywords: ['countries', 'global', 'flags', 'geography', 'population', 'dashboard'],
   authors: [{ name: 'Countries Dashboard Team' }],
   openGraph: {
@@ -22,11 +23,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: ReactNode;
-}) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className="bg-surface text-text" suppressHydrationWarning>
       <body>
@@ -37,17 +34,25 @@ export default function RootLayout({
               <AuthStatus />
             </div>
           </header>
-          <main>
-            {children}
-          </main>
+          <main>{children}</main>
           <footer className="bg-surface-elevated py-4 mt-12 text-center text-text-secondary text-sm">
             <div className="container mx-auto px-4">
               <p>© {new Date().getFullYear()} Countries Dashboard</p>
-              <p className="mt-2">Data provided by <a href="https://restcountries.com/" className="text-accent hover:underline" target="_blank" rel="noopener noreferrer">REST Countries API</a></p>
+              <p className="mt-2">
+                Data provided by{' '}
+                <a
+                  href="https://restcountries.com/"
+                  className="text-accent hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  REST Countries API
+                </a>
+              </p>
             </div>
           </footer>
         </Providers>
       </body>
     </html>
   );
-} 
+}

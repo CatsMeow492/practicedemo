@@ -6,7 +6,7 @@ import Link from 'next/link';
 export default function AuthStatus() {
   const { data: session, status } = useSession();
   const isLoading = status === 'loading';
-  
+
   if (isLoading) {
     return (
       <div className="animate-pulse flex items-center space-x-2">
@@ -14,21 +14,19 @@ export default function AuthStatus() {
       </div>
     );
   }
-  
+
   if (session) {
     return (
       <div className="flex items-center space-x-4">
         {session.user?.image && (
-          <img 
-            src={session.user.image} 
-            alt={session.user.name || 'User'} 
+          <img
+            src={session.user.image}
+            alt={session.user.name || 'User'}
             className="h-8 w-8 rounded-full"
           />
         )}
         <div className="hidden md:block">
-          <p className="text-sm font-medium">
-            {session.user?.name || 'Signed in'}
-          </p>
+          <p className="text-sm font-medium">{session.user?.name || 'Signed in'}</p>
         </div>
         <button
           onClick={() => signOut({ callbackUrl: '/' })}
@@ -39,7 +37,7 @@ export default function AuthStatus() {
       </div>
     );
   }
-  
+
   return (
     <div>
       <button
@@ -50,4 +48,4 @@ export default function AuthStatus() {
       </button>
     </div>
   );
-} 
+}

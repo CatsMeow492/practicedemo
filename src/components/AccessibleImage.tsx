@@ -1,6 +1,6 @@
 /**
  * AccessibleImage component
- * 
+ *
  * Enhances the Next.js Image component with additional accessibility features:
  * - Required alt text
  * - Optional loading state
@@ -39,15 +39,14 @@ export default function AccessibleImage({
   };
 
   return (
-    <div 
-      className={`relative overflow-hidden ${className}`}
-      role="presentation"
-    >
+    <div className={`relative overflow-hidden ${className}`} role="presentation">
       {/* Image component with enhanced accessibility */}
       <Image
         alt={alt}
         {...props}
-        className={`${imgClassName} ${loading ? 'opacity-0' : 'opacity-100'} transition-opacity duration-300`}
+        className={`${imgClassName} ${
+          loading ? 'opacity-0' : 'opacity-100'
+        } transition-opacity duration-300`}
         onLoadingComplete={handleLoadingComplete}
         onError={handleError}
         aria-hidden={false}
@@ -71,4 +70,4 @@ export default function AccessibleImage({
       )}
     </div>
   );
-} 
+}

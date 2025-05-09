@@ -25,4 +25,4 @@ export function useCountriesByContinent(continent: string) {
     cacheTime: 30 * 60 * 1000,
     enabled: !!continent, // Only run query if continent is provided
   });
-} 
+}

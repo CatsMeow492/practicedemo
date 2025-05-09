@@ -13,9 +13,9 @@ interface CountryCardProps {
 export default function CountryCard({ country }: CountryCardProps) {
   // Use the optimized flag image URL from our internal API route
   const optimizedFlagUrl = `/flags?url=${encodeURIComponent(country.flags.png)}`;
-  
+
   return (
-    <Link 
+    <Link
       href={`/country/${country.alpha2Code.toLowerCase()}`}
       className="block bg-surface-elevated rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
     >
@@ -29,29 +29,26 @@ export default function CountryCard({ country }: CountryCardProps) {
           showLoadingIndicator={true}
         />
       </div>
-      
+
       <div className="p-4">
         <h2 className="text-xl font-bold text-primary mb-2">{country.name}</h2>
-        
+
         <div className="space-y-1 text-text">
           <p>
-            <span className="font-semibold">Population:</span>{' '}
-            {country.population.toLocaleString()}
+            <span className="font-semibold">Population:</span> {country.population.toLocaleString()}
           </p>
-          
+
           <p>
-            <span className="font-semibold">Region:</span>{' '}
-            {country.region}
+            <span className="font-semibold">Region:</span> {country.region}
           </p>
-          
+
           {country.capital && (
             <p>
-              <span className="font-semibold">Capital:</span>{' '}
-              {country.capital}
+              <span className="font-semibold">Capital:</span> {country.capital}
             </p>
           )}
         </div>
       </div>
     </Link>
   );
-} 
+}

@@ -44,7 +44,7 @@ describe('useCountry', () => {
 
   it('fetches a country by name successfully', async () => {
     const countryName = 'Germany';
-    
+
     // Mock the API response
     (restCountriesApi.getCountryByName as jest.Mock).mockResolvedValueOnce(mockCountry);
 
@@ -65,7 +65,7 @@ describe('useCountry', () => {
 
   it('handles API errors', async () => {
     const countryName = 'NonExistentCountry';
-    
+
     // Mock an API error
     const error = new Error('Country not found');
     (restCountriesApi.getCountryByName as jest.Mock).mockRejectedValueOnce(error);
@@ -91,4 +91,4 @@ describe('useCountry', () => {
     expect(result.current.isFetched).toBe(false);
     expect(restCountriesApi.getCountryByName).not.toHaveBeenCalled();
   });
-}); 
+});

@@ -17,13 +17,14 @@ interface PageProps {
 // Generate dynamic metadata for SEO
 export async function generateMetadata(
   { params }: PageProps,
-  parent: ResolvingMetadata
+  parent: ResolvingMetadata,
 ): Promise<Metadata> {
   try {
     const countries = await restCountriesApi.getCountries();
-    const country = countries.find((c) => 
-      c.alpha2Code.toLowerCase() === params.code.toLowerCase() || 
-      c.alpha3Code.toLowerCase() === params.code.toLowerCase()
+    const country = countries.find(
+      (c) =>
+        c.alpha2Code.toLowerCase() === params.code.toLowerCase() ||
+        c.alpha3Code.toLowerCase() === params.code.toLowerCase(),
     );
 
     if (!country) {
@@ -73,13 +74,14 @@ export async function generateStaticParams() {
 
 export default async function CountryDetailPage({ params }: PageProps) {
   const { code } = params;
-  
+
   try {
     // Fetch country data
     const countries = await restCountriesApi.getCountries();
-    const country = countries.find((c) => 
-      c.alpha2Code.toLowerCase() === code.toLowerCase() || 
-      c.alpha3Code.toLowerCase() === code.toLowerCase()
+    const country = countries.find(
+      (c) =>
+        c.alpha2Code.toLowerCase() === code.toLowerCase() ||
+        c.alpha3Code.toLowerCase() === code.toLowerCase(),
     );
 
     if (!country) {
@@ -89,22 +91,25 @@ export default async function CountryDetailPage({ params }: PageProps) {
     // Fetch border countries
     let borderCountries: Country[] = [];
     if (country.borders && country.borders.length > 0) {
-      borderCountries = countries.filter((c) => 
-        country.borders?.includes(c.alpha3Code)
-      );
+      borderCountries = countries.filter((c) => country.borders?.includes(c.alpha3Code));
     }
 
     // Use the optimized flag image URL from our internal API route
-    const optimizedFlagUrl = `/flags?url=${encodeURIComponent(country.flags.svg || country.flags.png)}`;
+    const optimizedFlagUrl = `/flags?url=${encodeURIComponent(
+      country.flags.svg || country.flags.png,
+    )}`;
 
     return (
       <div className="container mx-auto py-8 px-4">
-        <Link 
-          href="/" 
+        <Link
+          href="/"
           className="inline-flex items-center px-6 py-3 bg-surface-elevated shadow-md rounded mb-10 hover:shadow-lg transition-shadow"
           aria-label="Return to countries list"
         >
-          <span className="mr-2" aria-hidden="true">←</span> Back
+          <span className="mr-2" aria-hidden="true">
+            ←
+          </span>{' '}
+          Back
         </Link>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -123,25 +128,41 @@ export default async function CountryDetailPage({ params }: PageProps) {
 
           {/* Country details */}
           <div>
-            <h1 className="text-3xl font-bold mb-6" lang={country.languages?.[0]?.nativeName ? country.languages[0].nativeName : undefined}>
+            <h1
+              className="text-3xl font-bold mb-6"
+              lang={
+                country.languages?.[0]?.nativeName ? country.languages[0].nativeName : undefined
+              }
+            >
               {country.name}
             </h1>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-3">
               <div>
                 {country.capital && (
-                  <p><span className="font-semibold">Capital:</span> {country.capital}</p>
+                  <p>
+                    <span className="font-semibold">Capital:</span> {country.capital}
+                  </p>
                 )}
-                <p><span className="font-semibold">Region:</span> {country.region}</p>
+                <p>
+                  <span className="font-semibold">Region:</span> {country.region}
+                </p>
                 {country.subregion && (
-                  <p><span className="font-semibold">Sub Region:</span> {country.subregion}</p>
+                  <p>
+                    <span className="font-semibold">Sub Region:</span> {country.subregion}
+                  </p>
                 )}
-                <p><span className="font-semibold">Population:</span> {country.population.toLocaleString()}</p>
+                <p>
+                  <span className="font-semibold">Population:</span>{' '}
+                  {country.population.toLocaleString()}
+                </p>
               </div>
-              
+
               <div>
                 {country.area && (
-                  <p><span className="font-semibold">Area:</span> {country.area.toLocaleString()} km²</p>
+                  <p>
+                    <span className="font-semibold">Area:</span> {country.area.toLocaleString()} km²
+                  </p>
                 )}
                 {country.currencies && country.currencies.length > 0 && (
                   <p>
@@ -155,9 +176,7 @@ export default async function CountryDetailPage({ params }: PageProps) {
                     {country.languages.map((l, i) => (
                       <React.Fragment key={l.name}>
                         {i > 0 && ', '}
-                        <span lang={l.nativeName || undefined}>
-                          {l.name}
-                        </span>
+                        <span lang={l.nativeName || undefined}>{l.name}</span>
                       </React.Fragment>
                     ))}
                   </p>
@@ -172,7 +191,7 @@ export default async function CountryDetailPage({ params }: PageProps) {
                 <ul className="flex flex-wrap gap-2" aria-label="Border countries">
                   {borderCountries.map((border) => (
                     <li key={border.alpha3Code}>
-                      <Link 
+                      <Link
                         href={`/country/${border.alpha2Code.toLowerCase()}`}
                         className="px-6 py-2 bg-surface-elevated shadow-sm rounded text-sm hover:shadow-md transition-shadow"
                         aria-label={`View details for ${border.name}`}
@@ -192,14 +211,14 @@ export default async function CountryDetailPage({ params }: PageProps) {
     console.error('Error fetching country:', error);
     return (
       <div className="container mx-auto py-8 px-4">
-        <Link 
-          href="/" 
+        <Link
+          href="/"
           className="inline-flex items-center px-6 py-3 bg-surface-elevated shadow-md rounded mb-10 hover:shadow-lg transition-shadow"
           aria-label="Return to home page"
         >
           <span className="mr-2">←</span> Back
         </Link>
-        
+
         <div className="text-center py-10 text-red-500" role="alert" aria-live="assertive">
           <p className="text-lg">Error loading country details</p>
           <p className="mt-2 text-sm">Please try again later</p>
@@ -207,4 +226,4 @@ export default async function CountryDetailPage({ params }: PageProps) {
       </div>
     );
   }
-} 
+}

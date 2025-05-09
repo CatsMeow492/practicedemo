@@ -49,4 +49,4 @@ export const WithoutCapital: Story = {
       continents: ['Antarctica'],
     },
   },
-}; 
+};

@@ -9,20 +9,21 @@ import CountriesGrid from '../src/components/CountriesGrid';
 
 export const metadata = {
   title: 'Countries Dashboard',
-  description: 'Explore global country data with ease. Find information about countries around the world.',
+  description:
+    'Explore global country data with ease. Find information about countries around the world.',
 };
 
 export default async function HomePage() {
   // Pre-render popular countries at build time
   const popularCountries = await getPopularCountries();
-  
+
   return (
     <div className="container mx-auto py-8 px-4">
       <h1 className="text-3xl font-bold text-primary mb-8">Countries Dashboard</h1>
-      
+
       <Suspense fallback={<div className="text-center py-10">Loading countries data...</div>}>
         <CountriesGrid initialCountries={popularCountries} />
       </Suspense>
     </div>
   );
-} 
+}
