@@ -19,7 +19,6 @@ export default async function HomePage() {
 
   return (
     <div className="container mx-auto py-8 px-4">
-
       <Suspense fallback={<div className="text-center py-10">Loading countries data...</div>}>
         <CountriesGrid initialCountries={popularCountries} />
       </Suspense>

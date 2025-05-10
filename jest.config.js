@@ -11,7 +11,7 @@ module.exports = {
     '<rootDir>/node_modules/',
     '<rootDir>/e2e/',
     '<rootDir>/__tests__/hooks/useCountries.test.ts',
-    '<rootDir>/__tests__/hooks/useCountry.test.ts'
+    '<rootDir>/__tests__/hooks/useCountry.test.ts',
   ],
   transform: {
     '^.+\\.(ts|tsx)$': ['ts-jest', { tsconfig: '<rootDir>/tsconfig.json' }],

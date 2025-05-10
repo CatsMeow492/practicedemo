@@ -41,7 +41,9 @@ export default function WikipediaInfo({ countryName }: WikipediaInfoProps) {
       setError(null);
       // Simple Wikipedia API URL to get the first section of a page
       // Using a more robust library or error handling would be good for production
-      const WIKIPEDIA_API_URL = `https://en.wikipedia.org/w/api.php?action=query&format=json&prop=extracts&exintro=true&explaintext=true&redirects=1&origin=*&titles=${encodeURIComponent(countryName)}`;
+      const WIKIPEDIA_API_URL = `https://en.wikipedia.org/w/api.php?action=query&format=json&prop=extracts&exintro=true&explaintext=true&redirects=1&origin=*&titles=${encodeURIComponent(
+        countryName,
+      )}`;
 
       try {
         const response = await fetch(WIKIPEDIA_API_URL);
@@ -56,12 +58,12 @@ export default function WikipediaInfo({ countryName }: WikipediaInfoProps) {
           if (pageId && pages[pageId] && pages[pageId].extract) {
             let fullSummary = pages[pageId].extract;
             if (fullSummary.toLowerCase().includes('may refer to:')) {
-                setSummary('Multiple Wikipedia entries found. More specific search needed.');
+              setSummary('Multiple Wikipedia entries found. More specific search needed.');
             } else {
-                if (fullSummary.length > MAX_SUMMARY_LENGTH) {
-                    fullSummary = fullSummary.substring(0, MAX_SUMMARY_LENGTH) + '...';
-                }
-                setSummary(fullSummary);
+              if (fullSummary.length > MAX_SUMMARY_LENGTH) {
+                fullSummary = fullSummary.substring(0, MAX_SUMMARY_LENGTH) + '...';
+              }
+              setSummary(fullSummary);
             }
           } else {
             setSummary('No summary found on Wikipedia for this country.');
@@ -85,7 +87,11 @@ export default function WikipediaInfo({ countryName }: WikipediaInfoProps) {
   }
 
   if (isLoading) {
-    return <div className="mt-6 p-4 bg-surface-elevated rounded shadow-md text-text-secondary">Loading Wikipedia summary...</div>;
+    return (
+      <div className="mt-6 p-4 bg-surface-elevated rounded shadow-md text-text-secondary">
+        Loading Wikipedia summary...
+      </div>
+    );
   }
 
   if (error) {
@@ -99,19 +105,17 @@ export default function WikipediaInfo({ countryName }: WikipediaInfoProps) {
   return (
     <div className="mt-8 p-6 bg-surface-elevated rounded-lg shadow-lg">
       <h3 className="text-xl font-semibold text-primary mb-3">From Wikipedia:</h3>
-      <p className="text-text-secondary text-sm leading-relaxed whitespace-pre-line">
-        {summary}
-      </p>
+      <p className="text-text-secondary text-sm leading-relaxed whitespace-pre-line">{summary}</p>
       <p className="mt-3 text-xs text-text-secondary">
-        <a 
-            href={`https://en.wikipedia.org/wiki/${encodeURIComponent(countryName)}`} 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="text-accent hover:underline"
+        <a
+          href={`https://en.wikipedia.org/wiki/${encodeURIComponent(countryName)}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-accent hover:underline"
         >
-            Read more on Wikipedia
+          Read more on Wikipedia
         </a>
       </p>
     </div>
   );
-} 
+}

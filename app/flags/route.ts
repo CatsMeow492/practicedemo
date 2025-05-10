@@ -33,24 +33,24 @@ export async function GET(request: NextRequest) {
     const imageResponse = await fetch(url, {
       headers: {
         'User-Agent': 'Countries Dashboard/1.0',
-        'Accept': 'image/png,image/svg+xml,image/jpeg,image/*',
+        Accept: 'image/png,image/svg+xml,image/jpeg,image/*',
       },
       next: {
-        revalidate: 86400 // Cache for 24 hours
+        revalidate: 86400, // Cache for 24 hours
       },
     });
-    
+
     if (!imageResponse.ok) {
       console.error(`Flags API: Error fetching image: ${url}, status: ${imageResponse.status}`);
       return NextResponse.json(
-        { error: `Error fetching image: ${imageResponse.status}` }, 
-        { status: imageResponse.status }
+        { error: `Error fetching image: ${imageResponse.status}` },
+        { status: imageResponse.status },
       );
     }
 
     const contentType = imageResponse.headers.get('Content-Type');
     console.log('Flags API: Image fetched successfully, content type:', contentType);
-    
+
     const imageBuffer = await imageResponse.arrayBuffer();
 
     if (imageBuffer.byteLength === 0) {
@@ -68,6 +68,9 @@ export async function GET(request: NextRequest) {
     });
   } catch (error) {
     console.error('Flags API: Error fetching flag image:', url, error);
-    return NextResponse.json({ error: 'Error fetching image', details: String(error) }, { status: 500 });
+    return NextResponse.json(
+      { error: 'Error fetching image', details: String(error) },
+      { status: 500 },
+    );
   }
 }

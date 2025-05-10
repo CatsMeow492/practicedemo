@@ -41,7 +41,9 @@ export default function AccessibleImage({
   };
 
   // When using fill, the wrapper must have position relative, and explicit dimensions
-  const wrapperClasses = `relative overflow-hidden ${props.fill ? 'w-full h-full' : ''} ${className}`;
+  const wrapperClasses = `relative overflow-hidden ${
+    props.fill ? 'w-full h-full' : ''
+  } ${className}`;
 
   return (
     <div className={wrapperClasses} role="presentation">

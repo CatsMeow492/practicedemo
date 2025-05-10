@@ -29,7 +29,9 @@ export default function PostHogExperimentDisplay() {
     if (posthog.__loaded) {
       fetchFlag();
     } else {
-      console.warn('PostHog not loaded yet when trying to fetch feature flag. Listening for onFeatureFlags.');
+      console.warn(
+        'PostHog not loaded yet when trying to fetch feature flag. Listening for onFeatureFlags.',
+      );
       posthog.onFeatureFlags(() => {
         fetchFlag();
       });
@@ -41,13 +43,12 @@ export default function PostHogExperimentDisplay() {
     };
   }, []); // Empty dependency array means this effect runs once on mount and cleans up on unmount
 
-  if (flagVariant === null || flagVariant === undefined) { // Check for undefined as well
+  if (flagVariant === null || flagVariant === undefined) {
+    // Check for undefined as well
     return <div className="text-sm text-text-secondary">Loading experiment...</div>;
   }
 
   return (
-    <div className="text-sm text-text-secondary">
-      Animation Variant: {String(flagVariant)}
-    </div>
+    <div className="text-sm text-text-secondary">Animation Variant: {String(flagVariant)}</div>
   );
-} 
+}

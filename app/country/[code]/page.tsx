@@ -9,6 +9,7 @@ import AccessibleImage from '../../../src/components/AccessibleImage';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import WikipediaInfo from '../../../src/components/WikipediaInfo';
+import CountryQA from '../../../src/components/CountryQA';
 
 // Define the props for generateMetadata
 interface PageProps {
@@ -16,9 +17,7 @@ interface PageProps {
 }
 
 // Generate dynamic metadata for SEO
-export async function generateMetadata(
-  { params }: PageProps,
-): Promise<Metadata> {
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   try {
     const countries = await restCountriesApi.getCountries();
     const country = countries.find(
@@ -206,7 +205,7 @@ export default async function CountryDetailPage({ params }: PageProps) {
 
             {/* Wikipedia Info - Client Component */}
             <WikipediaInfo countryName={country.name} />
-
+            <CountryQA countryName={country.name} />
           </div>
         </div>
       </div>

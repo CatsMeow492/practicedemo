@@ -189,7 +189,10 @@ export const getCountries = async (): Promise<Country[]> => {
             try {
               return transformCountry(CountrySchema.parse(country));
             } catch {
-              console.warn('Skipped invalid country:', (country as { name?: { common?: string } })?.name?.common || 'unknown');
+              console.warn(
+                'Skipped invalid country:',
+                (country as { name?: { common?: string } })?.name?.common || 'unknown',
+              );
               return null;
             }
           })

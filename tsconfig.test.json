@@ -1,9 +1,6 @@
 {
   "extends": "./tsconfig.json",
-  "include": [
-    "app/**/*.tsx",
-    "app/**/*.ts"
-  ],
+  "include": ["app/**/*.tsx", "app/**/*.ts"],
   "exclude": [
     "node_modules",
     "__tests__/**/*",
@@ -12,4 +9,4 @@
     "src/hooks/useCountries.ts",
     "src/hooks/useCountry.ts"
   ]
-} 
+}

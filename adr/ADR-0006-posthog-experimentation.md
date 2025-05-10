@@ -1,4 +1,4 @@
-# ADR-0006: PostHog A/B Experimentation Setup for Enhanced Flag Animation
+# ADR-0006: PostHog A/B Experimentation Setup for Enhanced Features
 
 Date: 2025-05-10
 
@@ -8,48 +8,64 @@ Proposed
 
 ## Context
 
-We need to implement an A/B test to evaluate the impact and user reception of an "enhanced flag animation" feature. This involves:
-1.  Assigning users to a "test" or "control" variant for the `enhanced-flag-animation` experiment.
-2.  Displaying the assigned variant in the application header for visibility during development and testing.
-3.  Applying a CSS-based waving animation to flag images for users in the "test" variant. This animation should appear on both the main country grid and individual country detail pages.
-4.  Displaying additional information fetched from Wikipedia on the country detail page, specifically for users in the "test" variant.
+We need to implement an A/B test to evaluate the impact and user reception of several enhanced features. This involves:
 
-PostHog is chosen as the A/B testing and feature flag management tool due to its robust features and existing integration points (as per `posthog-integration` rule).
+1.  Assigning users to a "test" or "control" variant for an experiment named `enhanced-features` (internally, the flag might be `enhanced-flag-animation` or similar, but the scope has expanded).
+2.  Displaying the assigned variant in the application header.
+3.  For users in the "test" variant:
+    a. Applying a CSS-based waving animation to flag images on the main country grid and individual country detail pages.
+    b. Displaying additional country information fetched from Wikipedia on the country detail page.
+    c. Providing an AI-powered Q&A section on the country detail page, allowing users to ask questions about the country and receive answers generated via the OpenAI API.
+
+PostHog is chosen for A/B testing. The OpenAI API will be used for the Q&A feature.
 
 ## Decision
 
-1.  **PostHog Client-Side Integration**:
-    *   A client component (`src/components/PostHogExperimentDisplay.tsx`) will be used to fetch the feature flag (`enhanced-flag-animation`) from PostHog when the application loads.
-    *   This component will also display the current user's variant in the application header (`app/layout.tsx`).
-    *   If the user is assigned the "test" variant, this component will add a specific CSS class (`enhanced-flag-animation-test`) to the `<body>` element. This class will be used to conditionally apply styles.
+1.  **PostHog Client-Side Integration (`src/components/PostHogExperimentDisplay.tsx`)**:
 
-2.  **CSS Animation for "Test" Variant**:
-    *   CSS keyframes and styles for a "waving flag" animation will be added to `app/globals.css`.
-    *   These styles will be scoped to apply only when the `enhanced-flag-animation-test` class is present on the `<body>`.
-    *   The `CountryCard.tsx` component (`src/components/CountryCard.tsx`) and the flag display on the country detail page (`app/country/[code]/page.tsx`) will be updated with the necessary HTML structure (a wrapper `div` and an overlay `div`) to support the animation. The classes for these elements will be `.waving-flag-container` and `.waving-flag-overlay`.
+    - Fetches the feature flag (e.g., `enhanced-flag-animation`).
+    - Displays the user's variant in `app/layout.tsx`.
+    - Adds a CSS class (`enhanced-flag-animation-test`) to `<body>` for "test" variant users to enable conditional styling/features.
 
-3.  **Conditional Wikipedia Information Display**:
-    *   A new client component (`src/components/WikipediaInfo.tsx`) will be created.
-    *   This component will accept a `countryName` prop.
-    *   It will check for the presence of the `enhanced-flag-animation-test` class on the `document.body`.
-    *   If the class is present (i.e., user is in the "test" variant), it will fetch a summary for the given country from the Wikipedia API.
-    *   The fetched summary will be displayed on the country detail page (`app/country/[code]/page.tsx`). The summary will be truncated to 400 characters with an ellipsis if longer.
+2.  **CSS Waving Flag Animation ("Test" Variant)**:
 
-4.  **PostHog SDK Setup Note**:
-    *   Ideally, PostHog client-side SDK requests should be routed through a reverse proxy for enhanced privacy, ad-blocker resilience, and to keep API keys out of the client-side bundle if not using an environment variable specifically for client-side PostHog.
-    *   Implementing a reverse proxy (e.g., using Next.js API routes or a dedicated edge function) would require coordination with backend engineers and/or further infrastructure setup. This is noted as a desirable improvement but is out of scope for the initial implementation of this experiment.
+    - Styles and keyframes in `app/globals.css` scoped by `body.enhanced-flag-animation-test`.
+    - HTML structure updates in `src/components/CountryCard.tsx` and `app/country/[code]/page.tsx` (using `.waving-flag-container`, `.waving-flag-overlay`).
+
+3.  **Conditional Wikipedia Information Display ("Test" Variant)**:
+
+    - Client component `src/components/WikipediaInfo.tsx` fetches and displays a Wikipedia summary on `app/country/[code]/page.tsx` if `enhanced-flag-animation-test` class is present.
+    - Summary truncated to 400 characters with ellipsis.
+
+4.  **AI-Powered Country Q&A ("Test" Variant)**:
+
+    - A Next.js API route (`app/api/ask-country-ai/route.ts`) securely handles requests to the OpenAI API using an `OPEN_AI_API_KEY` from environment variables.
+    - A new client component (`src/components/CountryQA.tsx`) is added to `app/country/[code]/page.tsx`.
+    - This component renders only for the "test" variant (checking the body class).
+    - It provides an input for user questions, displays recommended questions, and calls the `/api/ask-country-ai` route to fetch and display answers.
+
+5.  **PostHog SDK Setup Note**:
+
+    - Ideally, PostHog client-side SDK requests should be routed through a reverse proxy for enhanced privacy and ad-blocker resilience.
+    - This is a desirable improvement but out of scope for this initial experiment phase.
+
+6.  **OpenAI API Key Management**:
+    - The `OPEN_AI_API_KEY` must be securely stored in environment variables (e.g., `.env.local`) and accessed only server-side via the API route.
 
 ## Consequences
 
-*   The application will now have a mechanism for running client-side A/B tests managed by PostHog.
-*   The "enhanced flag animation" feature will provide a visually distinct experience for users in the "test" group.
-*   The country detail page will be augmented with Wikipedia data for the "test" group, potentially increasing engagement or information value.
-*   The CSS animation is complex and may have performance implications, especially on lower-powered devices. This should be monitored.
-*   Direct client-side calls to PostHog (without a reverse proxy) might be blocked by some ad-blockers or privacy tools, potentially skewing experiment results.
+- Establishes a robust A/B testing framework for multi-feature experiments.
+- "Test" variant offers a significantly enriched user experience with animations, Wikipedia data, and AI Q&A.
+- Increased reliance on external APIs (Wikipedia, OpenAI) and associated costs/rate limits for the "test" variant.
+- CSS animation and multiple client-side components might impact performance; monitoring is crucial.
+- Direct client-side PostHog calls (no reverse proxy) might be blocked by some tools.
+- The API route for OpenAI introduces a new server-side dependency and potential point of failure if the OpenAI API is unavailable.
 
 ## Follow-ups
 
-1.  Monitor the performance impact of the CSS flag animation.
-2.  Evaluate user feedback and engagement metrics for the "test" variant.
-3.  Investigate and plan the implementation of a reverse proxy for PostHog API calls in coordination with backend/infrastructure resources.
-4.  Ensure the PostHog API key is correctly configured using environment variables as per the `posthog-integration` rule (`NEXT_PUBLIC_POSTHOG_KEY`). 
+1.  Monitor performance (CSS animation, API latencies) and cost implications (OpenAI API usage).
+2.  Evaluate user feedback and engagement for all new features in the "test" variant.
+3.  Prioritize implementation of a reverse proxy for PostHog.
+4.  Ensure all API keys (`POSTHOG_KEY`, `OPEN_AI_API_KEY`) are correctly configured and secured.
+5.  Consider adding more robust error handling and loading states for the AI Q&A feature.
+6.  Confirm `openai` package is added to `package.json` and installed.

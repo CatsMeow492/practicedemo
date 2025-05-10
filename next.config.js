@@ -3,12 +3,12 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     domains: [
-      'flagcdn.com', 
-      'restcountries.com', 
-      'wikimedia.org', 
+      'flagcdn.com',
+      'restcountries.com',
+      'wikimedia.org',
       'upload.wikimedia.org',
       'restcountries-gamma.vercel.app',
-      'localhost'
+      'localhost',
     ],
     remotePatterns: [
       {
@@ -22,7 +22,7 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'restcountries.com',
-      }
+      },
     ],
     formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 86400, // Cache images for 24 hours

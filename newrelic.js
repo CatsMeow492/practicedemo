@@ -31,7 +31,7 @@ exports.config = {
      *
      * @env NEW_RELIC_DISTRIBUTED_TRACING_ENABLED
      */
-    enabled: true
+    enabled: true,
   },
 
   logging: {
@@ -40,7 +40,7 @@ exports.config = {
      * issues with the agent, 'info' and higher will impose the least overhead on
      * production applications.
      */
-    level: 'info'
+    level: 'info',
   },
 
   /**
@@ -70,8 +70,8 @@ exports.config = {
       'response.headers.authorization',
       'response.headers.proxyAuthorization',
       'response.headers.setCookie*',
-      'response.headers.x*'
-    ]
+      'response.headers.x*',
+    ],
   },
 
   // Capture Next.js specific routes and add custom attributes
@@ -79,7 +79,7 @@ exports.config = {
     name: [
       { pattern: '/api/.*', name: '/api/$1' },
       { pattern: '/api/auth/.*', name: '/api/auth/$1' },
-      { pattern: '/flags', name: '/flags' }
-    ]
-  }
-} 
+      { pattern: '/flags', name: '/flags' },
+    ],
+  },
+};

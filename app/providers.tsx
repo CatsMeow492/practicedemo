@@ -60,7 +60,7 @@ export default function Providers({ children }: ProvidersProps) {
         },
       }),
   );
-  
+
   const isDevelopment = process.env.NODE_ENV !== 'production';
 
   return (

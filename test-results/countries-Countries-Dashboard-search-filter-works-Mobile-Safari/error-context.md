@@ -20,59 +20,59 @@ Call log:
 # Page snapshot
 
 ```yaml
-- paragraph: "React Query Status: success / idle"
-- paragraph: "API Status: Success"
-- paragraph: "Countries loaded: 250"
+- paragraph: 'React Query Status: success / idle'
+- paragraph: 'API Status: Success'
+- paragraph: 'Countries loaded: 250'
 - banner:
-  - heading "Countries Dashboard" [level=1]
-  - button "Sign in"
+    - heading "Countries Dashboard" [level=1]
+    - button "Sign in"
 - main:
-  - heading "Countries Dashboard" [level=1]
-  - textbox "Search for a country...": ger
-  - combobox:
-    - option "Filter by Region" [selected]
-    - option "Africa"
-    - option "Americas"
-    - option "Asia"
-    - option "Europe"
-    - option "Oceania"
-  - 'link "Flag of Nigeria Nigeria Population: 206,139,587 Region: Africa Capital: Abuja"':
-    - /url: /country/ng
-    - img "Flag of Nigeria"
-    - heading "Nigeria" [level=2]
-    - paragraph: "Population: 206,139,587"
-    - paragraph: "Region: Africa"
-    - paragraph: "Capital: Abuja"
-  - 'link "Flag of Niger Niger Population: 24,206,636 Region: Africa Capital: Niamey"':
-    - /url: /country/ne
-    - img "Flag of Niger"
-    - heading "Niger" [level=2]
-    - paragraph: "Population: 24,206,636"
-    - paragraph: "Region: Africa"
-    - paragraph: "Capital: Niamey"
-  - 'link "Flag of Algeria Algeria Population: 44,700,000 Region: Africa Capital: Algiers"':
-    - /url: /country/dz
-    - img "Flag of Algeria"
-    - heading "Algeria" [level=2]
-    - paragraph: "Population: 44,700,000"
-    - paragraph: "Region: Africa"
-    - paragraph: "Capital: Algiers"
-  - 'link "Flag of Germany Loading image: Flag of Germany Germany Population: 83,240,525 Region: Europe Capital: Berlin"':
-    - /url: /country/de
-    - img "Flag of Germany"
-    - text: "Loading image: Flag of Germany"
-    - heading "Germany" [level=2]
-    - paragraph: "Population: 83,240,525"
-    - paragraph: "Region: Europe"
-    - paragraph: "Capital: Berlin"
+    - heading "Countries Dashboard" [level=1]
+    - textbox "Search for a country...": ger
+    - combobox:
+        - option "Filter by Region" [selected]
+        - option "Africa"
+        - option "Americas"
+        - option "Asia"
+        - option "Europe"
+        - option "Oceania"
+    - 'link "Flag of Nigeria Nigeria Population: 206,139,587 Region: Africa Capital: Abuja"':
+        - /url: /country/ng
+        - img "Flag of Nigeria"
+        - heading "Nigeria" [level=2]
+        - paragraph: 'Population: 206,139,587'
+        - paragraph: 'Region: Africa'
+        - paragraph: 'Capital: Abuja'
+    - 'link "Flag of Niger Niger Population: 24,206,636 Region: Africa Capital: Niamey"':
+        - /url: /country/ne
+        - img "Flag of Niger"
+        - heading "Niger" [level=2]
+        - paragraph: 'Population: 24,206,636'
+        - paragraph: 'Region: Africa'
+        - paragraph: 'Capital: Niamey'
+    - 'link "Flag of Algeria Algeria Population: 44,700,000 Region: Africa Capital: Algiers"':
+        - /url: /country/dz
+        - img "Flag of Algeria"
+        - heading "Algeria" [level=2]
+        - paragraph: 'Population: 44,700,000'
+        - paragraph: 'Region: Africa'
+        - paragraph: 'Capital: Algiers'
+    - 'link "Flag of Germany Loading image: Flag of Germany Germany Population: 83,240,525 Region: Europe Capital: Berlin"':
+        - /url: /country/de
+        - img "Flag of Germany"
+        - text: 'Loading image: Flag of Germany'
+        - heading "Germany" [level=2]
+        - paragraph: 'Population: 83,240,525'
+        - paragraph: 'Region: Europe'
+        - paragraph: 'Capital: Berlin'
 - contentinfo:
-  - paragraph: © 2025 Countries Dashboard
-  - paragraph:
-    - text: Data provided by
-    - link "REST Countries API":
-      - /url: https://restcountries.com/
+    - paragraph: © 2025 Countries Dashboard
+    - paragraph:
+        - text: Data provided by
+        - link "REST Countries API":
+            - /url: https://restcountries.com/
 - button "Open Tanstack query devtools":
-  - img
+    - img
 - alert: Countries Dashboard
 ```
 

@@ -100,7 +100,9 @@ describe('useCountriesByContinent', () => {
     const europeanCountries = [mockCountries[0]]; // Only Germany
 
     // Mock the API response
-    (restCountriesApi.getCountriesByContinent as jest.Mock).mockResolvedValueOnce(europeanCountries);
+    (restCountriesApi.getCountriesByContinent as jest.Mock).mockResolvedValueOnce(
+      europeanCountries,
+    );
 
     const { result } = renderHook(() => useCountriesByContinent(continent), {
       wrapper: createWrapper(),

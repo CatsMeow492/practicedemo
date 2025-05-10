@@ -19,12 +19,12 @@ app.prepare().then(() => {
     try {
       // Parse the URL
       const parsedUrl = parse(req.url, true);
-      
+
       // Add custom attributes for New Relic
       if (req.newrelic) {
         req.newrelic.addCustomAttribute('nextjs.route', parsedUrl.pathname);
       }
-      
+
       // Let Next.js handle the request
       await handle(req, res, parsedUrl);
     } catch (err) {
@@ -36,4 +36,4 @@ app.prepare().then(() => {
     if (err) throw err;
     console.log(`> Ready on http://${hostname}:${port}`);
   });
-}); 
+});

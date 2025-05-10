@@ -28,7 +28,7 @@ test.describe('Countries Dashboard', () => {
     // Debug info may or may not be present depending on NODE_ENV
     const debugBox = page.locator('.bg-yellow-100');
     const isDebugVisible = await debugBox.isVisible().catch(() => false);
-    
+
     // Only check debug info if it's visible (i.e., in development mode)
     if (isDebugVisible) {
       // Check that we have the debug info showing React Query's status
@@ -56,7 +56,7 @@ test.describe('Countries Dashboard', () => {
     // First check if the debug panel with API status is visible
     const apiStatus = page.getByText('API Status: Success');
     const isApiStatusVisible = await apiStatus.isVisible().catch(() => false);
-    
+
     if (isApiStatusVisible) {
       // If debug panel is visible, wait for successful API status
       await expect(apiStatus).toBeVisible({ timeout: 30000 });
@@ -79,7 +79,7 @@ test.describe('Countries Dashboard', () => {
     // Wait for countries to load
     const apiStatus = page.getByText('API Status: Success');
     const isApiStatusVisible = await apiStatus.isVisible().catch(() => false);
-    
+
     if (isApiStatusVisible) {
       // If debug panel is visible, wait for successful API status
       await expect(apiStatus).toBeVisible({ timeout: 30000 });

@@ -9,7 +9,10 @@ import { useEffect } from 'react';
 export default function NewRelicBrowser() {
   useEffect(() => {
     // Only load New Relic Browser in production
-    if (process.env.NODE_ENV === 'production' && process.env.NEXT_PUBLIC_NEW_RELIC_BROWSER_LICENSE_KEY) {
+    if (
+      process.env.NODE_ENV === 'production' &&
+      process.env.NEXT_PUBLIC_NEW_RELIC_BROWSER_LICENSE_KEY
+    ) {
       // Create New Relic script
       const script = document.createElement('script');
       script.type = 'text/javascript';
@@ -32,7 +35,7 @@ export default function NewRelicBrowser() {
           }
         })();
       `;
-      
+
       // Add the script to the head
       document.head.appendChild(script);
     }
@@ -40,4 +43,4 @@ export default function NewRelicBrowser() {
 
   // This component doesn't render anything
   return null;
-} 
+}
