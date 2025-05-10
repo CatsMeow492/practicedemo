@@ -42,7 +42,7 @@ export default function AuthStatus() {
     <div>
       <button
         onClick={() => signIn()}
-        className="text-sm bg-primary hover:bg-accent text-white px-4 py-1.5 rounded transition"
+        className="text-sm bg-primary hover:bg-accent text-white dark:text-gray-900 px-4 py-1.5 rounded transition"
       >
         Sign in
       </button>
