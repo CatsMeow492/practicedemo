@@ -95,11 +95,7 @@ export default async function CountryDetailPage({ params }: PageProps) {
 
     // Use the optimized flag image URL from our internal API route
     const flagUrl = country.flags.svg || country.flags.png;
-    // Use direct flag URL in production for testing
-    const isProduction = process.env.NODE_ENV === 'production';
-    const optimizedFlagUrl = isProduction 
-      ? flagUrl  // Use direct URL in production 
-      : `/flags?url=${encodeURIComponent(flagUrl)}`; // Use proxy in development
+    const optimizedFlagUrl = `/flags?url=${encodeURIComponent(flagUrl)}`;
 
     return (
       <div className="container mx-auto py-8 px-4">

@@ -6,6 +6,8 @@ import { NextRequest, NextResponse } from 'next/server';
 
 // Change from edge to node runtime for better compatibility
 export const runtime = 'nodejs';
+// Set specific memory cache options to ensure flags are cached
+export const revalidate = 3600; // Cache flags for 1 hour
 
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
@@ -27,12 +29,15 @@ export async function GET(request: NextRequest) {
 
     console.log('Flags API: Fetching image from:', url);
 
-    // Fetch the remote image
+    // Fetch the remote image with specific cache settings
     const imageResponse = await fetch(url, {
       headers: {
         'User-Agent': 'Countries Dashboard/1.0',
+        'Accept': 'image/png,image/svg+xml,image/jpeg,image/*',
       },
-      cache: 'force-cache',
+      next: {
+        revalidate: 86400 // Cache for 24 hours
+      },
     });
     
     if (!imageResponse.ok) {
@@ -48,11 +53,17 @@ export async function GET(request: NextRequest) {
     
     const imageBuffer = await imageResponse.arrayBuffer();
 
+    if (imageBuffer.byteLength === 0) {
+      console.error('Flags API: Received empty image buffer');
+      return NextResponse.json({ error: 'Empty image data received' }, { status: 500 });
+    }
+
     // Return the image with caching headers
     return new Response(imageBuffer, {
       headers: {
         'Content-Type': contentType || 'image/png',
         'Cache-Control': 'public, max-age=31536000, immutable', // Cache for 1 year
+        'Access-Control-Allow-Origin': '*', // Allow CORS
       },
     });
   } catch (error) {
