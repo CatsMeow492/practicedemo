@@ -6,7 +6,7 @@ import Link from 'next/link';
 import restCountriesApi from '../../../src/lib/restCountries';
 import type { Country } from '../../../src/lib/restCountries';
 import AccessibleImage from '../../../src/components/AccessibleImage';
-import { Metadata, ResolvingMetadata } from 'next';
+import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
 // Define the props for generateMetadata
@@ -17,7 +17,6 @@ interface PageProps {
 // Generate dynamic metadata for SEO
 export async function generateMetadata(
   { params }: PageProps,
-  parent: ResolvingMetadata,
 ): Promise<Metadata> {
   try {
     const countries = await restCountriesApi.getCountries();
@@ -50,7 +49,7 @@ export async function generateMetadata(
         ],
       },
     };
-  } catch (error) {
+  } catch {
     return {
       title: 'Country Details',
       description: 'Information about a country.',

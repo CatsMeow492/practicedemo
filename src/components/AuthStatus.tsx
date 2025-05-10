@@ -1,7 +1,6 @@
 'use client';
 
 import { useSession, signIn, signOut } from 'next-auth/react';
-import Link from 'next/link';
 
 export default function AuthStatus() {
   const { data: session, status } = useSession();
@@ -19,6 +18,7 @@ export default function AuthStatus() {
     return (
       <div className="flex items-center space-x-4">
         {session.user?.image && (
+          // eslint-disable-next-line @next/next/no-img-element
           <img
             src={session.user.image}
             alt={session.user.name || 'User'}

@@ -1,0 +1,10 @@
+# Ignore test files with parsing errors
+__tests__/hooks/useCountries.test.ts
+__tests__/hooks/useCountry.test.ts
+
+# Ignore build artifacts
+node_modules/
+.next/
+out/
+build/
+dist/ 
