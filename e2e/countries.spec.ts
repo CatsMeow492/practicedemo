@@ -12,8 +12,8 @@ test.describe('Countries Dashboard', () => {
     // Take a screenshot to see what's happening
     await page.screenshot({ path: 'test-results/homepage-initial.png' });
 
-    // Check that the title is visible
-    await expect(page.getByRole('heading', { name: 'Countries Dashboard' })).toBeVisible();
+    // Check that the title is visible - using a more specific selector to handle multiple headings
+    await expect(page.locator('main h1').filter({ hasText: 'Countries Dashboard' })).toBeVisible();
 
     // Check that the search input is visible
     await expect(page.getByPlaceholder('Search for a country...')).toBeVisible();
@@ -64,8 +64,8 @@ test.describe('Countries Dashboard', () => {
     // Wait for the filtered results
     await page.waitForTimeout(500); // Small delay to allow filtering to complete
 
-    // Germany should be visible
-    await expect(page.getByText('Germany')).toBeVisible({ timeout: 10000 });
+    // Germany should be visible - using a more specific selector
+    await expect(page.locator('h2').filter({ hasText: 'Germany' })).toBeVisible({ timeout: 10000 });
   });
 
   test('continent filter works', async ({ page }) => {
