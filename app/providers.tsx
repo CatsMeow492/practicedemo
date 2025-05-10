@@ -12,6 +12,11 @@ interface ProvidersProps {
 
 // Debug component to log React Query state
 function QueryLogger() {
+  // Only show debug panel in development
+  if (process.env.NODE_ENV === 'production') {
+    return null;
+  }
+
   // Use a dummy query just to monitor overall status
   const { status, data, error, fetchStatus } = useQuery<unknown, Error>({
     queryKey: ['debug-status'],
@@ -55,14 +60,16 @@ export default function Providers({ children }: ProvidersProps) {
         },
       }),
   );
+  
+  const isDevelopment = process.env.NODE_ENV !== 'production';
 
   return (
     <SessionProvider>
       <PostHogProvider>
         <QueryClientProvider client={queryClient}>
-          <QueryLogger />
+          {isDevelopment && <QueryLogger />}
           {children}
-          <ReactQueryDevtools initialIsOpen={false} />
+          {isDevelopment && <ReactQueryDevtools initialIsOpen={false} />}
         </QueryClientProvider>
       </PostHogProvider>
     </SessionProvider>
