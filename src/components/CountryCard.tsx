@@ -24,7 +24,8 @@ export default function CountryCard({ country }: CountryCardProps) {
           src={optimizedFlagUrl}
           alt={`Flag of ${country.name}`}
           fill
-          className="object-cover"
+          imgClassName="object-cover"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           loading="lazy"
           showLoadingIndicator={true}
         />

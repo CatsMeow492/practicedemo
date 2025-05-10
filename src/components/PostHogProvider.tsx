@@ -13,6 +13,7 @@ export function PostHogProvider({ children }: { children: ReactNode }) {
       capture_pageview: false, // We capture pageviews manually
       capture_pageleave: true, // Enable pageleave capture
       debug: process.env.NODE_ENV === 'development',
+      persistence: 'memory', // Use in-memory persistence
     });
   }, []);
 
@@ -32,7 +33,7 @@ function PostHogPageView() {
   useEffect(() => {
     if (pathname && posthogClient) {
       let url = window.origin + pathname;
-      const search = searchParams.toString();
+      const search = searchParams ? searchParams.toString() : '';
       if (search) {
         url += '?' + search;
       }
