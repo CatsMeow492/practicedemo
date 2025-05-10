@@ -3,7 +3,6 @@
  * This route processes and caches country flag images from remote sources
  */
 import { NextRequest } from 'next/server';
-import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
 

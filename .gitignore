@@ -24,3 +24,4 @@ coverage
 .DS_Store 
 /.cursor
 20step.md
+.env

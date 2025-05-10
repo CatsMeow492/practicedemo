@@ -13,17 +13,32 @@ export default function CountriesGrid({ initialCountries = [] }: CountriesGridPr
   const [continent, setContinent] = useState<string>('');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [apiError, setApiError] = useState<string | null>(null);
-  const [debugInfo, setDebugInfo] = useState<string>('');
+  // Unused variable commented out
+  // const [debugInfo, setDebugInfo] = useState<string>('');
 
-  // Use the appropriate hook based on whether a continent filter is applied
+  // Call hooks unconditionally (React hooks rule)
   const {
-    data: countries = initialCountries,
-    isLoading,
-    isError,
-    error,
-    status,
-    fetchStatus,
-  } = continent ? useCountriesByContinent(continent) : useCountries();
+    data: countriesAll = initialCountries,
+    isLoading: isLoadingAll,
+    isError: isErrorAll,
+    error: errorAll,
+    // Unused variables commented out
+    // status,
+    // fetchStatus,
+  } = useCountries();
+
+  const {
+    data: countriesByContinent = [],
+    isLoading: isLoadingContinent,
+    isError: isErrorContinent,
+    error: errorContinent,
+  } = useCountriesByContinent(continent);
+
+  // Determine which data to use based on continent selection
+  const countries = continent ? countriesByContinent : countriesAll;
+  const isLoading = continent ? isLoadingContinent : isLoadingAll;
+  const isError = continent ? isErrorContinent : isErrorAll;
+  const error = continent ? errorContinent : errorAll;
 
   // Add debugging effect to log any errors
   useEffect(() => {
@@ -31,17 +46,19 @@ export default function CountriesGrid({ initialCountries = [] }: CountriesGridPr
       console.error('API Error:', error);
       if (error instanceof Error) {
         setApiError(error.message);
-        setDebugInfo(`Stack: ${error.stack || 'No stack trace'}`);
+        // Set debug info with appropriate type handling
+        setApiError(`Stack: ${error.stack || 'No stack trace'}`);
       } else {
         setApiError('Unknown error type');
-        setDebugInfo(JSON.stringify(error));
+        // Set debug info with appropriate type handling
+        setApiError(JSON.stringify(error));
       }
     }
   }, [isError, error]);
 
   // Filter countries by search query
   const filteredCountries =
-    countries?.filter((country: Country) =>
+    (Array.isArray(countries) ? countries : []).filter((country: Country) =>
       country?.name?.toLowerCase?.().includes(searchQuery.toLowerCase()),
     ) || [];
 

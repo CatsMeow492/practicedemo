@@ -184,12 +184,12 @@ export const getCountries = async (): Promise<Country[]> => {
         // Try to continue with partial data if possible
         console.warn('Attempting to recover and transform as many valid countries as possible...');
         return response.data
-          .filter((country: any) => country && typeof country === 'object')
-          .map((country: any) => {
+          .filter((country: unknown) => country && typeof country === 'object')
+          .map((country: unknown) => {
             try {
               return transformCountry(CountrySchema.parse(country));
-            } catch (e) {
-              console.warn('Skipped invalid country:', country?.name?.common || 'unknown');
+            } catch {
+              console.warn('Skipped invalid country:', (country as { name?: { common?: string } })?.name?.common || 'unknown');
               return null;
             }
           })
