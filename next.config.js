@@ -7,18 +7,24 @@ const nextConfig = {
       'restcountries.com', 
       'wikimedia.org', 
       'upload.wikimedia.org',
-      'restcountries-gamma.vercel.app'
+      'restcountries-gamma.vercel.app',
+      'localhost'
     ],
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: '**.flagcdn.com',
+        hostname: '**',
       },
       {
-        protocol: 'https',
-        hostname: '**.wikimedia.org',
+        protocol: 'http',
+        hostname: '**',
       }
     ],
+    formats: ['image/avif', 'image/webp'],
+    minimumCacheTTL: 60,
+    dangerouslyAllowSVG: true,
+    contentDispositionType: 'attachment',
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
   // Disable ESLint during build for deployment
   eslint: {

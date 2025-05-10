@@ -11,10 +11,13 @@ interface CountryCardProps {
 }
 
 export default function CountryCard({ country }: CountryCardProps) {
-  // Use the optimized flag image URL from our internal API route
-  // Make sure the flag URL is properly encoded and doesn't have query parameters
+  // Use direct flag URL in production for testing
+  // This bypasses our proxy route to see if that's the issue
+  const isProduction = process.env.NODE_ENV === 'production';
   const flagUrl = country.flags.png || country.flags.svg;
-  const optimizedFlagUrl = `/flags?url=${encodeURIComponent(flagUrl)}`;
+  const optimizedFlagUrl = isProduction 
+    ? flagUrl  // Use direct URL in production 
+    : `/flags?url=${encodeURIComponent(flagUrl)}`; // Use proxy in development
 
   return (
     <Link
