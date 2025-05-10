@@ -11,7 +11,7 @@ export default function useCountry(countryName: string) {
     queryKey: [...COUNTRIES_QUERY_KEY, countryName],
     queryFn: () => restCountriesApi.getCountryByName(countryName),
     staleTime: 5 * 60 * 1000, // 5 minutes
-    cacheTime: 30 * 60 * 1000, // 30 minutes
+    gcTime: 30 * 60 * 1000, // 30 minutes (changed from cacheTime)
     enabled: !!countryName, // Only run query if country name is provided
   });
 }

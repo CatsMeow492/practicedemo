@@ -12,7 +12,7 @@ export default function useCountries() {
     queryKey: QUERY_KEY,
     queryFn: () => restCountriesApi.getCountries(),
     staleTime: 5 * 60 * 1000, // 5 minutes
-    cacheTime: 30 * 60 * 1000, // 30 minutes
+    gcTime: 30 * 60 * 1000, // 30 minutes (changed from cacheTime)
   });
 }
 
@@ -22,7 +22,7 @@ export function useCountriesByContinent(continent: string) {
     queryKey: [...QUERY_KEY, 'continent', continent],
     queryFn: () => restCountriesApi.getCountriesByContinent(continent),
     staleTime: 5 * 60 * 1000,
-    cacheTime: 30 * 60 * 1000,
+    gcTime: 30 * 60 * 1000, // changed from cacheTime
     enabled: !!continent, // Only run query if continent is provided
   });
 }

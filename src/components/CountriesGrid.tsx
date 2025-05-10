@@ -58,7 +58,7 @@ export default function CountriesGrid({ initialCountries = [] }: CountriesGridPr
 
   // Filter countries by search query
   const filteredCountries =
-    countries?.filter((country: Country) =>
+    (Array.isArray(countries) ? countries : []).filter((country: Country) =>
       country?.name?.toLowerCase?.().includes(searchQuery.toLowerCase()),
     ) || [];
 
