@@ -12,7 +12,9 @@ interface CountryCardProps {
 
 export default function CountryCard({ country }: CountryCardProps) {
   // Use the optimized flag image URL from our internal API route
-  const optimizedFlagUrl = `/flags?url=${encodeURIComponent(country.flags.png)}`;
+  // Make sure the flag URL is properly encoded and doesn't have query parameters
+  const flagUrl = country.flags.png || country.flags.svg;
+  const optimizedFlagUrl = `/flags?url=${encodeURIComponent(flagUrl)}`;
 
   return (
     <Link

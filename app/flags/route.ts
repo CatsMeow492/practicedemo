@@ -11,12 +11,32 @@ export async function GET(request: NextRequest) {
   const url = searchParams.get('url');
 
   if (!url) {
+    console.error('Missing URL parameter in request:', request.url);
     return new Response('Missing URL parameter', { status: 400 });
   }
 
   try {
+    // Validate URL protocol for security
+    if (!url.startsWith('https://') && !url.startsWith('http://')) {
+      console.error('Invalid URL protocol:', url);
+      return new Response('Invalid URL protocol', { status: 400 });
+    }
+
     // Fetch the remote image
-    const imageResponse = await fetch(url);
+    const imageResponse = await fetch(url, {
+      headers: {
+        'User-Agent': 'Countries Dashboard/1.0',
+      },
+      cache: 'force-cache',
+    });
+    
+    if (!imageResponse.ok) {
+      console.error(`Error fetching image: ${url}, status: ${imageResponse.status}`);
+      return new Response(`Error fetching image: ${imageResponse.status}`, { 
+        status: imageResponse.status 
+      });
+    }
+    
     const imageBuffer = await imageResponse.arrayBuffer();
 
     // Return the image with caching headers
@@ -27,7 +47,7 @@ export async function GET(request: NextRequest) {
       },
     });
   } catch (error) {
-    console.error('Error fetching flag image:', error);
+    console.error('Error fetching flag image:', url, error);
     return new Response('Error fetching image', { status: 500 });
   }
 }

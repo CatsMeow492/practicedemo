@@ -2,7 +2,23 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['flagcdn.com', 'restcountries.com', 'wikimedia.org', 'upload.wikimedia.org'],
+    domains: [
+      'flagcdn.com', 
+      'restcountries.com', 
+      'wikimedia.org', 
+      'upload.wikimedia.org',
+      'restcountries-gamma.vercel.app'
+    ],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**.flagcdn.com',
+      },
+      {
+        protocol: 'https',
+        hostname: '**.wikimedia.org',
+      }
+    ],
   },
   // Disable ESLint during build for deployment
   eslint: {
