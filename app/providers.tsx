@@ -4,6 +4,7 @@ import { QueryClient, QueryClientProvider, useQuery } from '@tanstack/react-quer
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import React, { useState } from 'react';
 import { SessionProvider } from 'next-auth/react';
+import { PostHogProvider } from '../src/components/PostHogProvider';
 
 interface ProvidersProps {
   children: React.ReactNode;
@@ -57,11 +58,13 @@ export default function Providers({ children }: ProvidersProps) {
 
   return (
     <SessionProvider>
-      <QueryClientProvider client={queryClient}>
-        <QueryLogger />
-        {children}
-        <ReactQueryDevtools initialIsOpen={false} />
-      </QueryClientProvider>
+      <PostHogProvider>
+        <QueryClientProvider client={queryClient}>
+          <QueryLogger />
+          {children}
+          <ReactQueryDevtools initialIsOpen={false} />
+        </QueryClientProvider>
+      </PostHogProvider>
     </SessionProvider>
   );
 }
