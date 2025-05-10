@@ -8,6 +8,7 @@ import type { Country } from '../../../src/lib/restCountries';
 import AccessibleImage from '../../../src/components/AccessibleImage';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import WikipediaInfo from '../../../src/components/WikipediaInfo';
 
 // Define the props for generateMetadata
 interface PageProps {
@@ -117,11 +118,12 @@ export default async function CountryDetailPage({ params }: PageProps) {
               src={optimizedFlagUrl}
               alt={`Flag of ${country.name}`}
               fill
-              className="w-full h-full"
+              className="w-full h-full waving-flag-container"
               imgClassName="object-cover"
               priority={true}
               showLoadingIndicator={true}
             />
+            <div className="waving-flag-overlay"></div>
           </div>
 
           {/* Country details */}
@@ -201,6 +203,10 @@ export default async function CountryDetailPage({ params }: PageProps) {
                 </ul>
               </div>
             )}
+
+            {/* Wikipedia Info - Client Component */}
+            <WikipediaInfo countryName={country.name} />
+
           </div>
         </div>
       </div>

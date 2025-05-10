@@ -20,7 +20,7 @@ export default function CountryCard({ country }: CountryCardProps) {
       href={`/country/${country.alpha2Code.toLowerCase()}`}
       className="block bg-surface-elevated rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
     >
-      <div className="relative h-40 w-full">
+      <div className="relative h-40 w-full waving-flag-container">
         <AccessibleImage
           src={optimizedFlagUrl}
           alt={`Flag of ${country.name}`}
@@ -30,6 +30,7 @@ export default function CountryCard({ country }: CountryCardProps) {
           loading="lazy"
           showLoadingIndicator={true}
         />
+        <div className="waving-flag-overlay"></div>
       </div>
 
       <div className="p-4">

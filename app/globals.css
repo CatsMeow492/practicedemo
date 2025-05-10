@@ -31,3 +31,90 @@
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 }
+
+/* Enhanced Flag Animation Styles - Test Variant */
+@keyframes enhancedFlutter {
+  0% {
+    background-position: -200% 0px;
+  }
+  30% {
+    background-position: -60% 5px;
+  }
+  70% {
+    background-position: 70% -5px;
+  }
+  100% {
+    background-position: 200% 0px;
+  }
+}
+
+@keyframes enhancedWave {
+  0% {
+    box-shadow: 4px 5px 5px 0 rgba(0,0,0,0.1);
+    transform: translate3d(0, 0, 0) rotateZ(2deg) rotateY(15deg);
+  }
+  20% {
+    box-shadow: 4px 5px 15px 0 rgba(0,0,0,0.1);
+    transform: translate3d(0, 0, 0) rotateZ(2deg) rotateY(0deg);
+  }
+  40% {
+    box-shadow: 4px 5px 20px 0 rgba(0,0,0,0.2);
+    transform: translate3d(0, 0, 0) rotateZ(2deg) rotateY(-15deg);
+  }
+  60% {
+    box-shadow: 4px 5px 5px 0 rgba(0,0,0,0.1);
+    transform: translate3d(0, 0, 0) rotateZ(2deg) rotateY(0deg);
+  }
+  80% {
+    box-shadow: 4px 5px 5px 0 rgba(0,0,0,0.15);
+    transform: translate3d(0, 0, 0) rotateZ(2deg) rotateY(10deg);
+  }
+  100% {
+    box-shadow: 4px 5px 5px 0 rgba(0,0,0,0.1);
+    transform: translate3d(0, 0, 0) rotateZ(2deg) rotateY(15deg);
+  }
+}
+
+body.enhanced-flag-animation-test .waving-flag-container {
+  position: relative; /* Already on the div, but good to ensure */
+  /* width: 100%; /* The div is w-full */
+  /* height: 10rem; /* The div is h-40 */
+  box-shadow: 2px 5px 14px 0px rgba(0,0,0,0.2);
+  transform-style: preserve-3d;
+  /* transform-origin should ideally be the flagpole side (e.g., left edge) */
+  /* For a 10rem (160px) high flag, if pole is on left: */
+  transform-origin: left center; 
+  animation: enhancedWave 8s linear infinite;
+  /* The original Codepen had a more complex transform-origin and initial transform for a pole effect */
+  /* We simplify here, assuming flag is attached on its left edge */
+}
+
+/* The actual image, ensure it fills the container and stays underneath the wave overlay */
+body.enhanced-flag-animation-test .waving-flag-container .object-cover {
+  position: absolute; /* To stack correctly with the overlay if fill is used */
+  width: 100%;
+  height: 100%;
+  /* object-fit: cover; /* Already applied by .object-cover */
+}
+
+body.enhanced-flag-animation-test .waving-flag-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    0deg, /* Adjusted angle for more horizontal waves */
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0) 20%,
+    rgba(0,0,0,.04) 30%,
+    rgba(255,255,255,.2) 40%,
+    rgba(255,255,255,0) 60%,
+    rgba(255,255,255,.2) 65%,
+    rgba(0,0,0,.05) 80%,
+    rgba(255,255,255,0) 100%
+  );
+  background-size: 200% 100%; /* Ensure size covers width for horizontal movement */
+  animation: enhancedFlutter 8s cubic-bezier(.16,.14,.82,.73) infinite;
+  pointer-events: none; /* So it doesn't interfere with mouse events on the card */
+}

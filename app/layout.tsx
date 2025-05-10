@@ -5,6 +5,7 @@ import { Metadata } from 'next';
 import AuthStatus from '../src/components/AuthStatus';
 import NewRelicBrowser from '../src/components/NewRelicBrowser';
 import ThemeToggle from '../src/components/ThemeToggle';
+import PostHogExperimentDisplay from '../src/components/PostHogExperimentDisplay';
 
 export const metadata: Metadata = {
   title: {
@@ -35,6 +36,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             <div className="container mx-auto px-4 flex justify-between items-center">
               <h1 className="text-2xl font-bold text-primary">Where in the world?</h1>
               <div className="flex items-center space-x-4">
+                <PostHogExperimentDisplay />
                 <ThemeToggle />
                 <AuthStatus />
               </div>
