@@ -149,6 +149,46 @@ Here are some potential improvements for future iterations:
 6. **Analytics**: Integrate with a privacy-focused analytics solution.
 7. **CI/CD Pipeline**: Enhance the GitHub Actions workflow with automated deployments.
 8. **Persistent User Preferences**: Store theme and filter preferences in localStorage.
+9. **Application Monitoring**: Enhanced with New Relic for application performance monitoring.
+
+## 📊 Monitoring with New Relic
+
+The application is integrated with New Relic for comprehensive monitoring of both server and client-side performance:
+
+### Setup Requirements
+
+To enable New Relic monitoring, you need to set the following environment variables:
+
+```bash
+# New Relic Server Monitoring
+NEW_RELIC_LICENSE_KEY=your_new_relic_license_key_here
+NEW_RELIC_APP_NAME=countries-dashboard
+NEW_RELIC_DISTRIBUTED_TRACING_ENABLED=true
+
+# New Relic Browser Monitoring
+NEXT_PUBLIC_NEW_RELIC_BROWSER_LICENSE_KEY=your_browser_license_key_here
+NEXT_PUBLIC_NEW_RELIC_APPLICATION_ID=your_application_id_here
+```
+
+### Starting with New Relic
+
+The application includes custom scripts for running with New Relic monitoring:
+
+```bash
+# Development with New Relic
+npm run dev:newrelic
+
+# Production with New Relic
+npm run start:newrelic
+```
+
+### Features
+
+- Server-side transaction monitoring
+- Client-side performance tracking
+- Custom transaction naming for Next.js routes
+- Distributed tracing across the full stack
+- Error tracking and reporting
 
 ## 📝 License
 

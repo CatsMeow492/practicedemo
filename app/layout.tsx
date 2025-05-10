@@ -3,6 +3,7 @@ import { ReactNode } from 'react';
 import Providers from './providers';
 import { Metadata } from 'next';
 import AuthStatus from '../src/components/AuthStatus';
+import NewRelicBrowser from '../src/components/NewRelicBrowser';
 
 export const metadata: Metadata = {
   title: {
@@ -28,6 +29,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en" className="bg-surface text-text" suppressHydrationWarning>
       <body>
         <Providers>
+          <NewRelicBrowser />
           <header className="bg-surface-elevated py-4 shadow-sm mb-4">
             <div className="container mx-auto px-4 flex justify-between items-center">
               <h1 className="text-2xl font-bold text-primary">Countries Dashboard</h1>
