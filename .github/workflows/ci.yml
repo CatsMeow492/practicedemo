@@ -28,13 +28,19 @@ jobs:
         run: npm ci
 
       - name: Run ESLint
-        run: npm run lint
+        run: npm run lint:fix
 
       - name: Type check
         run: npm run type-check
 
       - name: Run unit tests
         run: npm test
+
+      - name: Install Playwright Browsers
+        run: npm run setup:e2e
+
+      - name: Build application for E2E testing
+        run: npm run build
 
       - name: Run E2E tests
         run: npm run e2e
