@@ -11,12 +11,11 @@ interface ProvidersProps {
 }
 
 // Debug component to log React Query state
-function QueryLogger() {
-  // Only show debug panel in development
-  if (process.env.NODE_ENV === 'production') {
-    return null;
-  }
+interface QueryLoggerProps {
+  enabled: boolean;
+}
 
+function QueryLogger({ enabled }: QueryLoggerProps) {
   // Use a dummy query just to monitor overall status
   const { status, data, error, fetchStatus } = useQuery<unknown, Error>({
     queryKey: ['debug-status'],
@@ -31,8 +30,14 @@ function QueryLogger() {
     retry: false,
     // These properties are not part of the standard QueryObserverOptions type
     // but are still used for our debugging purposes
-    gcTime: 0,
+    gcTime: 0, // Retained for consistency, though not standard
+    enabled, // Control query execution via this prop
   });
+
+  // Only show debug panel if it was enabled (which implies development)
+  if (!enabled) {
+    return null;
+  }
 
   return (
     <div className="bg-yellow-100 text-yellow-800 p-2 rounded mb-4 text-sm">
@@ -67,7 +72,7 @@ export default function Providers({ children }: ProvidersProps) {
     <SessionProvider>
       <PostHogProvider>
         <QueryClientProvider client={queryClient}>
-          {isDevelopment && <QueryLogger />}
+          <QueryLogger enabled={isDevelopment} />
           {children}
           {isDevelopment && <ReactQueryDevtools initialIsOpen={false} />}
         </QueryClientProvider>

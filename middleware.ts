@@ -22,7 +22,7 @@ export function middleware(request: NextRequest) {
       routePattern = '/api/*';
     }
     // Handle dynamic country routes
-    else if (pathname.match(/^\/country\/[^\/]+$/)) {
+    else if (pathname.match(/^\/country\/[^/]+$/)) {
       routePattern = '/country/[code]';
     }
 

@@ -1,10 +1,10 @@
 // Load New Relic before anything else
 // This must be the first line for proper instrumentation
-require('newrelic');
+import 'newrelic';
 
-const { createServer } = require('http');
-const { parse } = require('url');
-const next = require('next');
+import { createServer } from 'http';
+import { parse } from 'url';
+import next from 'next';
 
 const dev = process.env.NODE_ENV !== 'production';
 const hostname = 'localhost';
