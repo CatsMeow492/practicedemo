@@ -9,6 +9,11 @@ on:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
+    
+    env:
+      # Setting environment variables for NextAuth
+      NEXTAUTH_SECRET: ${{ secrets.NEXTAUTH_SECRET || 'test-ci-secret-for-demo-purposes-only' }}
+      NEXTAUTH_URL: http://localhost:3000
 
     strategy:
       matrix:

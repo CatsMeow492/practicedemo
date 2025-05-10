@@ -29,6 +29,9 @@ interface ExtendedJWT extends JWT {
  * GITHUB_SECRET=your_github_client_secret
  */
 export const authOptions: NextAuthOptions = {
+  // Required secret for production (CI)
+  secret: process.env.NEXTAUTH_SECRET || 'this-is-a-development-secret-not-for-production',
+  
   // Configure authentication providers
   providers: [
     GithubProvider({
