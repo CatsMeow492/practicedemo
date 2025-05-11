@@ -1,14 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server';
 import OpenAI from 'openai';
 
-// Initialize OpenAI client
-// Ensure your OPENAI_API_KEY is set in your .env.local file
-const openai = new OpenAI({
-  apiKey: process.env.OPEN_AI_API_KEY,
-});
+// Initialize OpenAI client only if API key is available
+// This prevents errors during build time when env vars aren't available
+const openaiApiKey = process.env.OPEN_AI_API_KEY;
+const openai = openaiApiKey ? new OpenAI({ apiKey: openaiApiKey }) : null;
 
 export async function POST(request: NextRequest) {
-  if (!process.env.OPEN_AI_API_KEY) {
+  if (!openaiApiKey || !openai) {
     return NextResponse.json({ error: 'OpenAI API key not configured.' }, { status: 500 });
   }
 

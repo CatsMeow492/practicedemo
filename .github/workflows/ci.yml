@@ -14,6 +14,8 @@ jobs:
       # Setting environment variables for NextAuth
       NEXTAUTH_SECRET: ${{ secrets.NEXTAUTH_SECRET || 'test-ci-secret-for-demo-purposes-only' }}
       NEXTAUTH_URL: http://localhost:3000
+      # Mock OpenAI API key for CI builds
+      OPEN_AI_API_KEY: ${{ secrets.OPEN_AI_API_KEY || 'sk-mock-key-for-ci-builds-only' }}
 
     strategy:
       matrix:
