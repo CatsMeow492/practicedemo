@@ -69,13 +69,13 @@ export default function CountriesGrid({ initialCountries = [] }: CountriesGridPr
         <input
           type="text"
           placeholder="Search for a country..."
-          className="p-4 rounded-md shadow-sm border border-gray-200 dark:border-gray-700 flex-grow"
+          className="p-4 rounded-md shadow-sm border border-gray-200 dark:border-gray-700 dark:text-white dark:bg-gray-700 flex-grow"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
         />
 
         <select
-          className="p-4 rounded-md shadow-sm border border-gray-200 dark:border-gray-700 w-full md:w-64"
+          className="p-4 rounded-md shadow-sm border border-gray-200 dark:border-gray-700 dark:text-white dark:bg-gray-700 w-full md:w-64"
           value={continent}
           onChange={(e) => setContinent(e.target.value)}
         >
