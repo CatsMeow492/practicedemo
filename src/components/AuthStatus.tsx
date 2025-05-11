@@ -8,7 +8,7 @@ export default function AuthStatus() {
 
   if (isLoading) {
     return (
-      <div className="animate-pulse flex items-center space-x-2">
+      <div className="animate-pulse flex items-center space-x-2" data-testid="auth-loading">
         <div className="h-8 w-20 bg-gray-200 dark:bg-gray-700 rounded"></div>
       </div>
     );

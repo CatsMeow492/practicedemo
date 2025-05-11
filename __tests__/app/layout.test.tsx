@@ -18,7 +18,9 @@ const LayoutElements = () => {
       </main>
       <footer>
         <p>© {new Date().getFullYear()} Where in the world?</p>
-        <p>Data provided by <a href="https://restcountries.com">REST Countries API</a></p>
+        <p>
+          Data provided by <a href="https://restcountries.com">REST Countries API</a>
+        </p>
       </footer>
     </>
   );
@@ -27,14 +29,14 @@ const LayoutElements = () => {
 describe('Layout Elements', () => {
   it('renders the header, main content, and footer', () => {
     render(<LayoutElements />);
-    
+
     // Check header elements
     expect(screen.getByText('Where in the world?')).toBeInTheDocument();
     expect(screen.getByTestId('theme-toggle')).toBeInTheDocument();
-    
+
     // Check that main content is rendered
     expect(screen.getByTestId('content')).toBeInTheDocument();
-    
+
     // Check footer elements
     expect(screen.getByText(/© \d{4} Where in the world\?/)).toBeInTheDocument();
     expect(screen.getByText('Data provided by')).toBeInTheDocument();
@@ -56,4 +58,4 @@ describe('Layout metadata', () => {
     expect(metadata.openGraph?.title).toBe('Where in the world?');
     expect(metadata.openGraph?.description).toBe('Explore global country data with ease.');
   });
-}); 
+});

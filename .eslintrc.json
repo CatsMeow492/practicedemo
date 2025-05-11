@@ -13,5 +13,25 @@
   "rules": {
     "@typescript-eslint/no-unused-vars": ["error"],
     "react/react-in-jsx-scope": "off"
-  }
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/__tests__/**/*",
+        "**/*.test.ts",
+        "**/*.test.tsx",
+        "jest.setup.ts",
+        "jest.config.js",
+        "__mocks__/**/*"
+      ],
+      "rules": {
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-unused-vars": "off",
+        "@typescript-eslint/no-require-imports": "off",
+        "react/display-name": "off",
+        "@next/next/no-img-element": "off",
+        "@typescript-eslint/ban-ts-comment": "off"
+      }
+    }
+  ]
 }

@@ -38,8 +38,16 @@ jobs:
       - name: Type check
         run: npm run type-check
 
-      - name: Run unit tests
-        run: npm test
+      - name: Run unit tests with coverage (75% threshold)
+        run: npm run test:coverage:ci
+
+      - name: Install jq
+        run: sudo apt-get install -y jq
+
+      - name: Display coverage summary
+        run: |
+          echo "Coverage Summary:"
+          cat ./coverage/coverage-summary.json | jq '.total'
 
       - name: Install Playwright Browsers
         run: npm run setup:e2e

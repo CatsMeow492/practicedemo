@@ -8,7 +8,8 @@ export function getLayoutMetadata(): Metadata {
       template: '%s | Where in the world?',
       default: 'Where in the world?',
     },
-    description: 'Explore global country data with ease. Find information about countries, their flags, population, and more.',
+    description:
+      'Explore global country data with ease. Find information about countries, their flags, population, and more.',
     keywords: ['countries', 'flags', 'population', 'geography', 'world data'],
     authors: [{ name: 'Countries Dashboard Team' }],
     openGraph: {
@@ -26,7 +27,8 @@ export function getLayoutMetadata(): Metadata {
 export function getHomePageMetadata(): Metadata {
   return {
     title: 'Countries Dashboard',
-    description: 'Explore global country data with ease. Find information about countries around the world.',
+    description:
+      'Explore global country data with ease. Find information about countries around the world.',
   };
 }
 
@@ -48,4 +50,4 @@ export function generateCountryPageMetadata(countryName: string): Metadata {
       ],
     },
   };
-} 
+}

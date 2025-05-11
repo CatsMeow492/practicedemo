@@ -106,22 +106,22 @@ describe('QueryLogger functionality', () => {
   it('displays debug info in development mode', () => {
     // Override environment for development mode
     process.env = { ...originalEnv, NODE_ENV: 'development' };
-    
+
     render(<Providers>Test</Providers>);
-    
+
     // Check that QueryLogger displays expected information
     expect(screen.getByText('React Query Status: success / idle')).toBeInTheDocument();
     expect(screen.getByText('API Status: Success')).toBeInTheDocument();
     expect(screen.getByText('Countries loaded: 250')).toBeInTheDocument();
   });
-  
+
   it('does not render in production mode', () => {
     // Override environment for production mode
     process.env = { ...originalEnv, NODE_ENV: 'production' };
-    
+
     render(<Providers>Test</Providers>);
-    
+
     // Check that QueryLogger is not rendered
     expect(screen.queryByText('React Query Status:')).not.toBeInTheDocument();
   });
-}); 
+});

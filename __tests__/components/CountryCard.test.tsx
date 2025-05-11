@@ -32,18 +32,18 @@ describe('CountryCard', () => {
 
   it('renders country information correctly', () => {
     render(<CountryCard country={mockCountry} />);
-    
+
     // Check that country name is displayed
     expect(screen.getByText('Germany')).toBeInTheDocument();
-    
+
     // Check that population is displayed with correct formatting
     expect(screen.getByText('Population:')).toBeInTheDocument();
     expect(screen.getByText('83,000,000', { exact: false })).toBeInTheDocument();
-    
+
     // Check that region is displayed
     expect(screen.getByText('Region:')).toBeInTheDocument();
     expect(screen.getByText('Europe', { exact: false })).toBeInTheDocument();
-    
+
     // Check that capital is displayed
     expect(screen.getByText('Capital:')).toBeInTheDocument();
     expect(screen.getByText('Berlin', { exact: false })).toBeInTheDocument();
@@ -56,16 +56,16 @@ describe('CountryCard', () => {
   it('renders country without capital correctly', () => {
     const countryWithoutCapital = { ...mockCountry, capital: undefined };
     render(<CountryCard country={countryWithoutCapital} />);
-    
+
     // Check that capital section is not displayed
     expect(screen.queryByText('Capital:')).not.toBeInTheDocument();
   });
 
   it('uses correct flag URL', () => {
     render(<CountryCard country={mockCountry} />);
-    
+
     // The component should use the proxy route for the flag
     const link = screen.getByRole('link');
     expect(link).toHaveAttribute('href', '/country/de');
   });
-}); 
+});

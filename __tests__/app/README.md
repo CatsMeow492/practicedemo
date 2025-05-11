@@ -33,13 +33,17 @@ npm test -- -t 'Providers'
 ## Test Structure
 
 ### Layout Tests
+
 These tests verify that:
+
 - The layout renders all expected components (header, main content area, footer)
 - All imported components are properly rendered
 - The correct CSS classes are applied for styling
 
 ### Metadata Tests
+
 These tests verify that:
+
 - The correct title template and default title are set
 - The description content is correct
 - The keywords include expected terms
@@ -47,20 +51,25 @@ These tests verify that:
 - OpenGraph metadata is complete and correct
 
 ### Providers Tests
+
 These tests verify that:
+
 - The Providers component correctly renders its children
 - The required provider components (SessionProvider, PostHogProvider, QueryClientProvider) are rendered
 - The QueryLogger component is only rendered in development mode
 - The ReactQueryDevtools component is only rendered in development mode
 
 ### QueryClient Tests
+
 These tests verify that:
+
 - The QueryClient is initialized with the correct default options
 - The QueryClient is only created once when components rerender (useState behavior)
 
 ## Mocks
 
 These tests use Jest mocks to replace imported components and modules:
+
 - Layout tests mock child components to isolate layout testing
 - Provider tests mock React Query, Next Auth, and PostHog providers
-- QueryClient tests specifically mock the QueryClient constructor to verify its configuration 
+- QueryClient tests specifically mock the QueryClient constructor to verify its configuration

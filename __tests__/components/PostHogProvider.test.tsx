@@ -13,7 +13,9 @@ jest.mock('posthog-js', () => {
 // Mock posthog-js/react
 jest.mock('posthog-js/react', () => {
   return {
-    PostHogProvider: ({ children }: { children: React.ReactNode }) => <div data-testid="posthog-provider">{children}</div>,
+    PostHogProvider: ({ children }: { children: React.ReactNode }) => (
+      <div data-testid="posthog-provider">{children}</div>
+    ),
     usePostHog: jest.fn().mockReturnValue({
       capture: jest.fn(),
     }),
@@ -37,11 +39,11 @@ describe('PostHogProvider', () => {
       NEXT_PUBLIC_POSTHOG_KEY: 'test-posthog-key',
       NODE_ENV: 'test',
     };
-    
+
     // Reset mocks
     jest.clearAllMocks();
   });
-  
+
   afterEach(() => {
     // Restore environment
     process.env = originalEnv;
@@ -51,9 +53,9 @@ describe('PostHogProvider', () => {
     const { getByText, getByTestId } = render(
       <PostHogProvider>
         <div>Test Child</div>
-      </PostHogProvider>
+      </PostHogProvider>,
     );
-    
+
     expect(getByTestId('posthog-provider')).toBeInTheDocument();
     expect(getByText('Test Child')).toBeInTheDocument();
   });
@@ -62,9 +64,9 @@ describe('PostHogProvider', () => {
     render(
       <PostHogProvider>
         <div>Test Child</div>
-      </PostHogProvider>
+      </PostHogProvider>,
     );
-    
+
     const posthog = require('posthog-js');
     expect(posthog.init).toHaveBeenCalledWith('test-posthog-key', {
       api_host: '/ingest',
@@ -75,4 +77,4 @@ describe('PostHogProvider', () => {
       persistence: 'memory',
     });
   });
-}); 
+});

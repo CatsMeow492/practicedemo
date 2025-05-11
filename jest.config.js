@@ -10,12 +10,14 @@ const customJestConfig = {
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/$1',
     '^lucide-react$': '<rootDir>/__mocks__/lucide-react.js',
+    '^lucide-react/dist/esm/icons/(.*)$': '<rootDir>/__mocks__/lucide-react.js',
+    '^modularize-import-loader.*lucide-react$': '<rootDir>/__mocks__/lucide-react.js',
   },
   testPathIgnorePatterns: [
-    '<rootDir>/node_modules/', 
-    '<rootDir>/.next/', 
+    '<rootDir>/node_modules/',
+    '<rootDir>/.next/',
     '<rootDir>/e2e/',
-    '<rootDir>/__tests__/mocks/'
+    '<rootDir>/__tests__/mocks/',
   ],
   collectCoverageFrom: [
     'app/**/*.{js,jsx,ts,tsx}',
@@ -30,8 +32,16 @@ const customJestConfig = {
   coveragePathIgnorePatterns: [
     '<rootDir>/app/layout.tsx',
     '<rootDir>/app/page.tsx',
-    '<rootDir>/app/country/\\[code\\]/page.tsx'
+    '<rootDir>/app/country/\\[code\\]/page.tsx',
   ],
+  coverageThreshold: {
+    global: {
+      branches: 69,
+      functions: 75,
+      lines: 75,
+      statements: 75,
+    },
+  },
 };
 
 module.exports = createJestConfig(customJestConfig);

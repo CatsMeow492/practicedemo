@@ -1,15 +1,15 @@
 import React from 'react';
 
 // Mock all common Lucide icons
-const createIconMock = (name) => (props) => {
-  return React.createElement(
-    'div', 
-    { 
-      'data-testid': `${name.toLowerCase()}-icon`,
-      ...props,
-    }, 
-    `${name} Icon`
-  );
+const createIconMock = (displayName) => {
+  const MockIcon = (props) =>
+    React.createElement(
+      'div',
+      { 'data-testid': `${displayName.toLowerCase()}-icon`, ...props },
+      `${displayName} Icon`,
+    );
+  MockIcon.displayName = displayName; // For better debugging and snapshots
+  return MockIcon;
 };
 
 // Export specific icons used in the app
@@ -31,8 +31,10 @@ export const User = createIconMock('User');
 export const LogIn = createIconMock('LogIn');
 export const LogOut = createIconMock('LogOut');
 
-// Default export for dynamic imports
-export default {
+// If a default export is absolutely needed by some part of the chain
+// (e.g. if modularize-import-loader transforms some imports to default imports from the main package)
+// then provide it, but primarily rely on named exports.
+const defaultExports = {
   Moon,
   Sun,
   Check,
@@ -48,4 +50,6 @@ export default {
   User,
   LogIn,
   LogOut,
-}; 
+};
+
+export default defaultExports;

@@ -35,7 +35,7 @@ describe('PostHogClient', () => {
 
   it('initializes PostHog with the correct API key and options', () => {
     const client = PostHogClient();
-    
+
     expect(client.apiKey).toBe('test-posthog-key');
     expect(client.options).toEqual({
       host: 'https://test.posthog.com',
@@ -46,7 +46,7 @@ describe('PostHogClient', () => {
 
   it('returns a PostHog client instance with expected methods', () => {
     const client = PostHogClient();
-    
+
     expect(client).toHaveProperty('capture');
     expect(client).toHaveProperty('identify');
     expect(client).toHaveProperty('shutdown');
@@ -54,4 +54,4 @@ describe('PostHogClient', () => {
     expect(typeof client.identify).toBe('function');
     expect(typeof client.shutdown).toBe('function');
   });
-}); 
+});

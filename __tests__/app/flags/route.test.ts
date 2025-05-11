@@ -1,120 +1,142 @@
-import { NextRequest } from 'next/server';
+import { GET } from '../../../app/flags/route';
+import { NextRequest, NextResponse } from 'next/server';
 
-// Create a simple mock for GET
-jest.mock('../../../app/flags/route', () => {
-  return {
-    GET: jest.fn().mockImplementation((request: any) => {
-      // Extract URL and parameters
-      const urlString = request.url || 'http://localhost';
-      const url = new URL(urlString);
-      const searchParams = url.searchParams;
-      const code = searchParams.get('code');
-      const imageUrl = searchParams.get('url');
-      
-      // Define response headers for successful responses
-      const headers = new Headers({
-        'Content-Type': 'image/png',
-        'Cache-Control': 'public, max-age=31536000, immutable',
-        'Access-Control-Allow-Origin': '*'
-      });
-      
-      // Missing parameters
-      if (!code && !imageUrl) {
-        return { status: 400, headers, json: async () => ({ error: 'Missing URL parameter' }) };
-      }
-      
-      // Invalid protocol
-      if (imageUrl && !imageUrl.startsWith('https://') && !imageUrl.startsWith('http://')) {
-        return { status: 400, headers, json: async () => ({ error: 'Invalid URL protocol' }) };
-      }
-      
-      // Error cases
-      if (code === 'error' || imageUrl?.includes('error.png')) {
-        return { status: 500, headers, json: async () => ({ error: 'Error fetching image' }) };
-      }
-      
-      // Not found cases  
-      if (code === 'xx' || imageUrl?.includes('not-found.png')) {
-        return { status: 404, headers, json: async () => ({ error: 'Error fetching image: 404' }) };
-      }
-      
-      // Empty buffer
-      if (imageUrl?.includes('empty.png')) {
-        return { status: 500, headers, json: async () => ({ error: 'Empty image data received' }) };
-      }
-      
-      // Success case
-      return {
-        status: 200,
-        headers,
-        arrayBuffer: () => Promise.resolve(Buffer.from('MOCK_FLAG_DATA').buffer)
-      };
-    })
-  };
+// Mock NextResponse.json
+const mockJsonResponse = jest.fn();
+const originalJson = NextResponse.json;
+
+beforeAll(() => {
+  // Mock the NextResponse.json method with proper type assertion
+  NextResponse.json = jest.fn((...args: Parameters<typeof NextResponse.json>) => {
+    mockJsonResponse(...args);
+    return originalJson.apply(NextResponse, args as Parameters<typeof NextResponse.json>);
+  }) as typeof NextResponse.json;
 });
 
-// Import the mocked module after mocking
-import { GET } from '../../../app/flags/route';
+afterAll(() => {
+  // Restore the original method
+  NextResponse.json = originalJson;
+});
 
-// Create a simple request for testing
-const createRequest = (path: string) => {
-  const url = `http://localhost/flags${path}`;
-  return {
-    url,
-    nextUrl: new URL(url)
-  } as unknown as NextRequest;
+// Mock global.fetch
+global.fetch = jest.fn();
+
+// Helper to create a mock NextRequest
+const createMockRequest = (urlPath: string, searchParams: Record<string, string> = {}) => {
+  // Create a full URL with the provided path and searchParams
+  const url = new URL(`http://localhost${urlPath}`);
+
+  // Add any search parameters
+  Object.entries(searchParams).forEach(([key, value]) => {
+    url.searchParams.set(key, value);
+  });
+
+  // Create the NextRequest with the constructed URL
+  return new NextRequest(url);
 };
 
 describe('Flags API Route', () => {
   beforeEach(() => {
-    jest.clearAllMocks();
+    // Reset mocks before each test
+    (global.fetch as jest.Mock).mockReset();
+    mockJsonResponse.mockReset();
+    jest.clearAllMocks(); // Clear console mocks too
   });
 
-  it('fetches flag for valid country code', async () => {
-    const response = await GET(createRequest('?code=de'));
-    expect(response.status).toBe(200);
-  });
+  it('returns 400 if URL parameter is missing', async () => {
+    const request = createMockRequest('/api/flags'); // No 'url' search param
+    const response = await GET(request);
 
-  it('returns 400 for missing country code', async () => {
-    const response = await GET(createRequest(''));
     expect(response.status).toBe(400);
+    expect(mockJsonResponse).toHaveBeenCalledWith(
+      { error: 'Missing URL parameter' },
+      { status: 400 },
+    );
   });
 
-  it('returns 500 for fetch error', async () => {
-    const response = await GET(createRequest('?code=error'));
-    expect(response.status).toBe(500);
-  });
+  it('returns 400 if URL protocol is invalid', async () => {
+    const request = createMockRequest('/api/flags', { url: 'ftp://example.com/image.png' });
+    const response = await GET(request);
 
-  it('handles 404 from flag service', async () => {
-    const response = await GET(createRequest('?code=xx'));
-    expect(response.status).toBe(404);
-  });
-
-  it('returns 400 if URL has invalid protocol', async () => {
-    const response = await GET(createRequest('?url=ftp://example.com/flag.png'));
     expect(response.status).toBe(400);
+    expect(mockJsonResponse).toHaveBeenCalledWith(
+      { error: 'Invalid URL protocol' },
+      { status: 400 },
+    );
   });
 
-  it('returns image data when fetch is successful', async () => {
-    const response = await GET(createRequest('?url=https://example.com/flag.png'));
+  it('returns the image with correct headers when fetch is successful', async () => {
+    const mockImageBuffer = Buffer.from('mockImageData');
+    (global.fetch as jest.Mock).mockResolvedValueOnce({
+      ok: true,
+      status: 200,
+      headers: new Headers({ 'Content-Type': 'image/png' }),
+      arrayBuffer: jest.fn().mockResolvedValueOnce(mockImageBuffer),
+    });
+
+    const request = createMockRequest('/api/flags', { url: 'http://example.com/image.png' });
+    const response = await GET(request);
+
     expect(response.status).toBe(200);
     expect(response.headers.get('Content-Type')).toBe('image/png');
-    expect(response.headers.get('Cache-Control')).toBe('public, max-age=31536000, immutable');
-    expect(response.headers.get('Access-Control-Allow-Origin')).toBe('*');
+
+    // Extract the image data for verification
+    const buffer = await response.arrayBuffer();
+    const responseData = Buffer.from(buffer);
+    expect(responseData.toString()).toBe('mockImageData');
+
+    expect(global.fetch).toHaveBeenCalledWith('http://example.com/image.png', expect.any(Object));
   });
 
-  it('returns error when fetch fails', async () => {
-    const response = await GET(createRequest('?url=https://example.com/not-found.png'));
+  it('returns error response when fetch fails (e.g., 404)', async () => {
+    (global.fetch as jest.Mock).mockResolvedValueOnce({
+      ok: false,
+      status: 404,
+      statusText: 'Not Found',
+    });
+
+    const request = createMockRequest('/api/flags', { url: 'http://example.com/notfound.png' });
+    const response = await GET(request);
+
     expect(response.status).toBe(404);
+    expect(mockJsonResponse).toHaveBeenCalledWith(
+      { error: 'Error fetching image: 404' },
+      { status: 404 },
+    );
   });
 
-  it('returns error when received empty image buffer', async () => {
-    const response = await GET(createRequest('?url=https://example.com/empty.png'));
+  it('returns error response when empty image buffer is received', async () => {
+    (global.fetch as jest.Mock).mockResolvedValueOnce({
+      ok: true,
+      status: 200,
+      headers: new Headers({ 'Content-Type': 'image/png' }),
+      arrayBuffer: jest.fn().mockResolvedValueOnce(Buffer.alloc(0)),
+    });
+
+    const request = createMockRequest('/api/flags', { url: 'http://example.com/empty.png' });
+    const response = await GET(request);
+
     expect(response.status).toBe(500);
+    expect(mockJsonResponse).toHaveBeenCalledWith(
+      { error: 'Empty image data received' },
+      { status: 500 },
+    );
   });
 
-  it('handles unexpected errors during fetch', async () => {
-    const response = await GET(createRequest('?url=https://example.com/error.png'));
+  it('returns error response when fetch throws an error', async () => {
+    const mockError = new Error('Network failure');
+    (global.fetch as jest.Mock).mockRejectedValueOnce(mockError);
+
+    const request = createMockRequest('/api/flags', { url: 'http://example.com/networkerror.png' });
+    const response = await GET(request);
+
     expect(response.status).toBe(500);
+    expect(mockJsonResponse).toHaveBeenCalledWith(
+      expect.objectContaining({
+        error: 'Error fetching image',
+        details: expect.stringContaining('Network failure'),
+      }),
+      { status: 500 },
+    );
   });
 });

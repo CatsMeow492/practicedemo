@@ -16,6 +16,7 @@
     "test": "jest",
     "test:coverage": "jest --coverage --passWithNoTests",
     "test:coverage:no-threshold": "jest --coverage --passWithNoTests --coverageThreshold=\"{}\"",
+    "test:coverage:ci": "jest --coverage --coverageReporters='json-summary'",
     "test:watch": "jest --watch",
     "setup:e2e": "npx playwright install --with-deps",
     "e2e": "playwright test",

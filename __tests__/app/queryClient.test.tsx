@@ -42,16 +42,16 @@ describe('QueryClient configuration', () => {
 
   it('initializes QueryClient with the correct default options', () => {
     render(<Providers>Test</Providers>);
-    
+
     // Get the mock QueryClient constructor
     const { QueryClient } = require('@tanstack/react-query');
-    
+
     // Check that QueryClient was called
     expect(QueryClient).toHaveBeenCalledTimes(1);
-    
+
     // Get the configuration object passed to QueryClient
     const configPassedToQueryClient = QueryClient.mock.calls[0][0];
-    
+
     // Check the default options
     expect(configPassedToQueryClient).toEqual({
       defaultOptions: {
@@ -65,12 +65,12 @@ describe('QueryClient configuration', () => {
 
   it('creates QueryClient only once when components rerender', () => {
     const { rerender } = render(<Providers>Test Content</Providers>);
-    
+
     // Rerender the component
     rerender(<Providers>New Content</Providers>);
-    
+
     // QueryClient should be instantiated only once due to useState hook
     const { QueryClient } = require('@tanstack/react-query');
     expect(QueryClient).toHaveBeenCalledTimes(1);
   });
-}); 
+});

@@ -4,7 +4,7 @@ import { getLayoutMetadata } from '../../lib/metadata-utils';
 describe('Layout metadata', () => {
   it('has the correct title configuration', () => {
     const metadata = getLayoutMetadata();
-    
+
     expect(metadata.title).toEqual({
       template: '%s | Where in the world?',
       default: 'Where in the world?',
@@ -13,15 +13,15 @@ describe('Layout metadata', () => {
 
   it('has the correct description', () => {
     const metadata = getLayoutMetadata();
-    
+
     expect(metadata.description).toBe(
-      'Explore global country data with ease. Find information about countries, their flags, population, and more.'
+      'Explore global country data with ease. Find information about countries, their flags, population, and more.',
     );
   });
 
   it('has the correct keywords', () => {
     const metadata = getLayoutMetadata();
-    
+
     expect(metadata.keywords).toContain('countries');
     expect(metadata.keywords).toContain('flags');
     expect(metadata.keywords).toContain('population');
@@ -29,7 +29,7 @@ describe('Layout metadata', () => {
 
   it('has the correct OpenGraph config', () => {
     const metadata = getLayoutMetadata();
-    
+
     expect(metadata.openGraph).toEqual({
       title: 'Where in the world?',
       description: 'Explore global country data with ease.',
@@ -39,4 +39,4 @@ describe('Layout metadata', () => {
       type: 'website',
     });
   });
-}); 
+});
