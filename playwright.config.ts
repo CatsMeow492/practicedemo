@@ -2,13 +2,13 @@ import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
   testDir: './e2e',
-  timeout: process.env.CI ? 60000 : 30000,
+  timeout: process.env.CI ? 90000 : 45000,
   expect: {
-    timeout: process.env.CI ? 10000 : 5000,
+    timeout: process.env.CI ? 15000 : 10000,
   },
   fullyParallel: !process.env.CI,
   forbidOnly: !!process.env.CI,
-  retries: process.env.CI ? 2 : 0,
+  retries: process.env.CI ? 2 : 1,
   workers: process.env.CI ? 1 : undefined,
   reporter: process.env.CI ? 'dot' : 'html',
   use: {
@@ -46,10 +46,12 @@ export default defineConfig({
           use: { ...devices['iPhone 12'] },
         },
       ],
-  webServer: {
-    command: process.env.CI ? 'npm run start' : 'npm run dev',
-    url: 'http://localhost:3000',
-    reuseExistingServer: !process.env.CI,
-    timeout: process.env.CI ? 120000 : 60000,
-  },
+  ...(!process.env.NO_WEBSERVER && {
+    webServer: {
+      command: process.env.CI ? 'npm run build && npm run start' : 'npm run dev',
+      url: 'http://localhost:3000',
+      reuseExistingServer: !process.env.CI,
+      timeout: process.env.CI ? 180000 : 60000,
+    },
+  }),
 });

@@ -1,0 +1,2063 @@
+# Test info
+
+- Name: Authentication Tests >> clicking signin navigates to auth page
+- Location: /Users/taylormohney/Documents/GitHub/practicedemo/e2e/auth.spec.ts:19:7
+
+# Error details
+
+```
+Error: locator.click: Test timeout of 45000ms exceeded.
+Call log:
+  - waiting for getByRole('link', { name: /sign in/i })
+
+    at /Users/taylormohney/Documents/GitHub/practicedemo/e2e/auth.spec.ts:22:22
+```
+
+# Page snapshot
+
+```yaml
+- paragraph: "React Query Status: success / idle"
+- paragraph: "API Status: Success"
+- paragraph: "Countries loaded: 250"
+- banner:
+  - heading "Where in the world?" [level=1]
+  - text: "Animation Variant: control"
+  - button "Activate dark mode": Dark Mode
+  - button "Sign in"
+- main:
+  - textbox "Search for a country..."
+  - combobox:
+    - option "Filter by Region" [selected]
+    - option "Africa"
+    - option "Americas"
+    - option "Asia"
+    - option "Europe"
+    - option "Oceania"
+  - 'link "Flag of Botswana Botswana Population: 2,351,625 Region: Africa Capital: Gaborone"':
+    - /url: /country/bw
+    - img "Flag of Botswana"
+    - heading "Botswana" [level=2]
+    - paragraph: "Population: 2,351,625"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: Gaborone"
+  - 'link "Flag of Tonga Tonga Population: 105,697 Region: Oceania Capital: Nuku''alofa"':
+    - /url: /country/to
+    - img "Flag of Tonga"
+    - heading "Tonga" [level=2]
+    - paragraph: "Population: 105,697"
+    - paragraph: "Region: Oceania"
+    - paragraph: "Capital: Nuku'alofa"
+  - 'link "Flag of Greece Greece Population: 10,715,549 Region: Europe Capital: Athens"':
+    - /url: /country/gr
+    - img "Flag of Greece"
+    - heading "Greece" [level=2]
+    - paragraph: "Population: 10,715,549"
+    - paragraph: "Region: Europe"
+    - paragraph: "Capital: Athens"
+  - 'link "Flag of Marshall Islands Marshall Islands Population: 59,194 Region: Oceania Capital: Majuro"':
+    - /url: /country/mh
+    - img "Flag of Marshall Islands"
+    - heading "Marshall Islands" [level=2]
+    - paragraph: "Population: 59,194"
+    - paragraph: "Region: Oceania"
+    - paragraph: "Capital: Majuro"
+  - 'link "Flag of Belarus Belarus Population: 9,398,861 Region: Europe Capital: Minsk"':
+    - /url: /country/by
+    - img "Flag of Belarus"
+    - heading "Belarus" [level=2]
+    - paragraph: "Population: 9,398,861"
+    - paragraph: "Region: Europe"
+    - paragraph: "Capital: Minsk"
+  - 'link "Flag of Republic of the Congo Republic of the Congo Population: 5,657,000 Region: Africa Capital: Brazzaville"':
+    - /url: /country/cg
+    - img "Flag of Republic of the Congo"
+    - heading "Republic of the Congo" [level=2]
+    - paragraph: "Population: 5,657,000"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: Brazzaville"
+  - 'link "Flag of Tanzania Tanzania Population: 59,734,213 Region: Africa Capital: Dodoma"':
+    - /url: /country/tz
+    - img "Flag of Tanzania"
+    - heading "Tanzania" [level=2]
+    - paragraph: "Population: 59,734,213"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: Dodoma"
+  - 'link "Flag of Liechtenstein Liechtenstein Population: 38,137 Region: Europe Capital: Vaduz"':
+    - /url: /country/li
+    - img "Flag of Liechtenstein"
+    - heading "Liechtenstein" [level=2]
+    - paragraph: "Population: 38,137"
+    - paragraph: "Region: Europe"
+    - paragraph: "Capital: Vaduz"
+  - 'link "Flag of Sint Maarten Sint Maarten Population: 40,812 Region: Americas Capital: Philipsburg"':
+    - /url: /country/sx
+    - img "Flag of Sint Maarten"
+    - heading "Sint Maarten" [level=2]
+    - paragraph: "Population: 40,812"
+    - paragraph: "Region: Americas"
+    - paragraph: "Capital: Philipsburg"
+  - 'link "Flag of Bosnia and Herzegovina Bosnia and Herzegovina Population: 3,280,815 Region: Europe Capital: Sarajevo"':
+    - /url: /country/ba
+    - img "Flag of Bosnia and Herzegovina"
+    - heading "Bosnia and Herzegovina" [level=2]
+    - paragraph: "Population: 3,280,815"
+    - paragraph: "Region: Europe"
+    - paragraph: "Capital: Sarajevo"
+  - 'link "Flag of Bahrain Bahrain Population: 1,701,583 Region: Asia Capital: Manama"':
+    - /url: /country/bh
+    - img "Flag of Bahrain"
+    - heading "Bahrain" [level=2]
+    - paragraph: "Population: 1,701,583"
+    - paragraph: "Region: Asia"
+    - paragraph: "Capital: Manama"
+  - 'link "Flag of Kenya Kenya Population: 53,771,300 Region: Africa Capital: Nairobi"':
+    - /url: /country/ke
+    - img "Flag of Kenya"
+    - heading "Kenya" [level=2]
+    - paragraph: "Population: 53,771,300"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: Nairobi"
+  - 'link "Flag of Estonia Estonia Population: 1,331,057 Region: Europe Capital: Tallinn"':
+    - /url: /country/ee
+    - img "Flag of Estonia"
+    - heading "Estonia" [level=2]
+    - paragraph: "Population: 1,331,057"
+    - paragraph: "Region: Europe"
+    - paragraph: "Capital: Tallinn"
+  - 'link "Flag of Qatar Qatar Population: 2,881,060 Region: Asia Capital: Doha"':
+    - /url: /country/qa
+    - img "Flag of Qatar"
+    - heading "Qatar" [level=2]
+    - paragraph: "Population: 2,881,060"
+    - paragraph: "Region: Asia"
+    - paragraph: "Capital: Doha"
+  - 'link "Flag of Poland Poland Population: 37,950,802 Region: Europe Capital: Warsaw"':
+    - /url: /country/pl
+    - img "Flag of Poland"
+    - heading "Poland" [level=2]
+    - paragraph: "Population: 37,950,802"
+    - paragraph: "Region: Europe"
+    - paragraph: "Capital: Warsaw"
+  - 'link "Flag of Moldova Moldova Population: 2,617,820 Region: Europe Capital: Chișinău"':
+    - /url: /country/md
+    - img "Flag of Moldova"
+    - heading "Moldova" [level=2]
+    - paragraph: "Population: 2,617,820"
+    - paragraph: "Region: Europe"
+    - paragraph: "Capital: Chișinău"
+  - 'link "Flag of Jordan Jordan Population: 10,203,140 Region: Asia Capital: Amman"':
+    - /url: /country/jo
+    - img "Flag of Jordan"
+    - heading "Jordan" [level=2]
+    - paragraph: "Population: 10,203,140"
+    - paragraph: "Region: Asia"
+    - paragraph: "Capital: Amman"
+  - 'link "Flag of Tunisia Tunisia Population: 11,818,618 Region: Africa Capital: Tunis"':
+    - /url: /country/tn
+    - img "Flag of Tunisia"
+    - heading "Tunisia" [level=2]
+    - paragraph: "Population: 11,818,618"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: Tunis"
+  - 'link "Flag of Paraguay Paraguay Population: 7,132,530 Region: Americas Capital: Asunción"':
+    - /url: /country/py
+    - img "Flag of Paraguay"
+    - heading "Paraguay" [level=2]
+    - paragraph: "Population: 7,132,530"
+    - paragraph: "Region: Americas"
+    - paragraph: "Capital: Asunción"
+  - 'link "Flag of Malaysia Malaysia Population: 32,365,998 Region: Asia Capital: Kuala Lumpur"':
+    - /url: /country/my
+    - img "Flag of Malaysia"
+    - heading "Malaysia" [level=2]
+    - paragraph: "Population: 32,365,998"
+    - paragraph: "Region: Asia"
+    - paragraph: "Capital: Kuala Lumpur"
+  - 'link "Flag of Cameroon Cameroon Population: 26,545,864 Region: Africa Capital: Yaoundé"':
+    - /url: /country/cm
+    - img "Flag of Cameroon"
+    - heading "Cameroon" [level=2]
+    - paragraph: "Population: 26,545,864"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: Yaoundé"
+  - 'link "Flag of Solomon Islands Solomon Islands Population: 686,878 Region: Oceania Capital: Honiara"':
+    - /url: /country/sb
+    - img "Flag of Solomon Islands"
+    - heading "Solomon Islands" [level=2]
+    - paragraph: "Population: 686,878"
+    - paragraph: "Region: Oceania"
+    - paragraph: "Capital: Honiara"
+  - 'link "Flag of Mongolia Mongolia Population: 3,278,292 Region: Asia Capital: Ulan Bator"':
+    - /url: /country/mn
+    - img "Flag of Mongolia"
+    - heading "Mongolia" [level=2]
+    - paragraph: "Population: 3,278,292"
+    - paragraph: "Region: Asia"
+    - paragraph: "Capital: Ulan Bator"
+  - 'link "Flag of Vanuatu Vanuatu Population: 307,150 Region: Oceania Capital: Port Vila"':
+    - /url: /country/vu
+    - img "Flag of Vanuatu"
+    - heading "Vanuatu" [level=2]
+    - paragraph: "Population: 307,150"
+    - paragraph: "Region: Oceania"
+    - paragraph: "Capital: Port Vila"
+  - 'link "Flag of Nepal Nepal Population: 29,136,808 Region: Asia Capital: Kathmandu"':
+    - /url: /country/np
+    - img "Flag of Nepal"
+    - heading "Nepal" [level=2]
+    - paragraph: "Population: 29,136,808"
+    - paragraph: "Region: Asia"
+    - paragraph: "Capital: Kathmandu"
+  - 'link "Flag of Guam Guam Population: 168,783 Region: Oceania Capital: Hagåtña"':
+    - /url: /country/gu
+    - img "Flag of Guam"
+    - heading "Guam" [level=2]
+    - paragraph: "Population: 168,783"
+    - paragraph: "Region: Oceania"
+    - paragraph: "Capital: Hagåtña"
+  - 'link "Flag of Lebanon Lebanon Population: 6,825,442 Region: Asia Capital: Beirut"':
+    - /url: /country/lb
+    - img "Flag of Lebanon"
+    - heading "Lebanon" [level=2]
+    - paragraph: "Population: 6,825,442"
+    - paragraph: "Region: Asia"
+    - paragraph: "Capital: Beirut"
+  - 'link "Flag of Ivory Coast Ivory Coast Population: 26,378,275 Region: Africa Capital: Yamoussoukro"':
+    - /url: /country/ci
+    - img "Flag of Ivory Coast"
+    - heading "Ivory Coast" [level=2]
+    - paragraph: "Population: 26,378,275"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: Yamoussoukro"
+  - 'link "Flag of Ecuador Ecuador Population: 17,643,060 Region: Americas Capital: Quito"':
+    - /url: /country/ec
+    - img "Flag of Ecuador"
+    - heading "Ecuador" [level=2]
+    - paragraph: "Population: 17,643,060"
+    - paragraph: "Region: Americas"
+    - paragraph: "Capital: Quito"
+  - 'link "Flag of Palau Palau Population: 18,092 Region: Oceania Capital: Ngerulmud"':
+    - /url: /country/pw
+    - img "Flag of Palau"
+    - heading "Palau" [level=2]
+    - paragraph: "Population: 18,092"
+    - paragraph: "Region: Oceania"
+    - paragraph: "Capital: Ngerulmud"
+  - 'link "Flag of Kyrgyzstan Kyrgyzstan Population: 6,591,600 Region: Asia Capital: Bishkek"':
+    - /url: /country/kg
+    - img "Flag of Kyrgyzstan"
+    - heading "Kyrgyzstan" [level=2]
+    - paragraph: "Population: 6,591,600"
+    - paragraph: "Region: Asia"
+    - paragraph: "Capital: Bishkek"
+  - 'link "Flag of Egypt Egypt Population: 102,334,403 Region: Africa Capital: Cairo"':
+    - /url: /country/eg
+    - img "Flag of Egypt"
+    - heading "Egypt" [level=2]
+    - paragraph: "Population: 102,334,403"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: Cairo"
+  - 'link "Flag of North Korea North Korea Population: 25,778,815 Region: Asia Capital: Pyongyang"':
+    - /url: /country/kp
+    - img "Flag of North Korea"
+    - heading "North Korea" [level=2]
+    - paragraph: "Population: 25,778,815"
+    - paragraph: "Region: Asia"
+    - paragraph: "Capital: Pyongyang"
+  - 'link "Flag of Senegal Senegal Population: 16,743,930 Region: Africa Capital: Dakar"':
+    - /url: /country/sn
+    - img "Flag of Senegal"
+    - heading "Senegal" [level=2]
+    - paragraph: "Population: 16,743,930"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: Dakar"
+  - 'link "Flag of British Virgin Islands British Virgin Islands Population: 30,237 Region: Americas Capital: Road Town"':
+    - /url: /country/vg
+    - img "Flag of British Virgin Islands"
+    - heading "British Virgin Islands" [level=2]
+    - paragraph: "Population: 30,237"
+    - paragraph: "Region: Americas"
+    - paragraph: "Capital: Road Town"
+  - 'link "Flag of Costa Rica Costa Rica Population: 5,094,114 Region: Americas Capital: San José"':
+    - /url: /country/cr
+    - img "Flag of Costa Rica"
+    - heading "Costa Rica" [level=2]
+    - paragraph: "Population: 5,094,114"
+    - paragraph: "Region: Americas"
+    - paragraph: "Capital: San José"
+  - 'link "Flag of Guatemala Guatemala Population: 16,858,333 Region: Americas Capital: Guatemala City"':
+    - /url: /country/gt
+    - img "Flag of Guatemala"
+    - heading "Guatemala" [level=2]
+    - paragraph: "Population: 16,858,333"
+    - paragraph: "Region: Americas"
+    - paragraph: "Capital: Guatemala City"
+  - 'link "Flag of China China Population: 1,402,112,000 Region: Asia Capital: Beijing"':
+    - /url: /country/cn
+    - img "Flag of China"
+    - heading "China" [level=2]
+    - paragraph: "Population: 1,402,112,000"
+    - paragraph: "Region: Asia"
+    - paragraph: "Capital: Beijing"
+  - 'link "Flag of Kazakhstan Kazakhstan Population: 18,754,440 Region: Asia Capital: Astana"':
+    - /url: /country/kz
+    - img "Flag of Kazakhstan"
+    - heading "Kazakhstan" [level=2]
+    - paragraph: "Population: 18,754,440"
+    - paragraph: "Region: Asia"
+    - paragraph: "Capital: Astana"
+  - 'link "Flag of Cape Verde Cape Verde Population: 555,988 Region: Africa Capital: Praia"':
+    - /url: /country/cv
+    - img "Flag of Cape Verde"
+    - heading "Cape Verde" [level=2]
+    - paragraph: "Population: 555,988"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: Praia"
+  - 'link "Flag of Vatican City Vatican City Population: 451 Region: Europe Capital: Vatican City"':
+    - /url: /country/va
+    - img "Flag of Vatican City"
+    - heading "Vatican City" [level=2]
+    - paragraph: "Population: 451"
+    - paragraph: "Region: Europe"
+    - paragraph: "Capital: Vatican City"
+  - 'link "Flag of Bhutan Bhutan Population: 771,612 Region: Asia Capital: Thimphu"':
+    - /url: /country/bt
+    - img "Flag of Bhutan"
+    - heading "Bhutan" [level=2]
+    - paragraph: "Population: 771,612"
+    - paragraph: "Region: Asia"
+    - paragraph: "Capital: Thimphu"
+  - 'link "Flag of Colombia Colombia Population: 50,882,884 Region: Americas Capital: Bogotá"':
+    - /url: /country/co
+    - img "Flag of Colombia"
+    - heading "Colombia" [level=2]
+    - paragraph: "Population: 50,882,884"
+    - paragraph: "Region: Americas"
+    - paragraph: "Capital: Bogotá"
+  - 'link "Flag of Grenada Grenada Population: 112,519 Region: Americas Capital: St. George''s"':
+    - /url: /country/gd
+    - img "Flag of Grenada"
+    - heading "Grenada" [level=2]
+    - paragraph: "Population: 112,519"
+    - paragraph: "Region: Americas"
+    - paragraph: "Capital: St. George's"
+  - 'link "Flag of Northern Mariana Islands Loading image: Flag of Northern Mariana Islands Northern Mariana Islands Population: 57,557 Region: Oceania Capital: Saipan"':
+    - /url: /country/mp
+    - img "Flag of Northern Mariana Islands"
+    - text: "Loading image: Flag of Northern Mariana Islands"
+    - heading "Northern Mariana Islands" [level=2]
+    - paragraph: "Population: 57,557"
+    - paragraph: "Region: Oceania"
+    - paragraph: "Capital: Saipan"
+  - 'link "Flag of Papua New Guinea Loading image: Flag of Papua New Guinea Papua New Guinea Population: 8,947,027 Region: Oceania Capital: Port Moresby"':
+    - /url: /country/pg
+    - img "Flag of Papua New Guinea"
+    - text: "Loading image: Flag of Papua New Guinea"
+    - heading "Papua New Guinea" [level=2]
+    - paragraph: "Population: 8,947,027"
+    - paragraph: "Region: Oceania"
+    - paragraph: "Capital: Port Moresby"
+  - 'link "Flag of Antarctica Loading image: Flag of Antarctica Antarctica Population: 1,000 Region: Antarctic"':
+    - /url: /country/aq
+    - img "Flag of Antarctica"
+    - text: "Loading image: Flag of Antarctica"
+    - heading "Antarctica" [level=2]
+    - paragraph: "Population: 1,000"
+    - paragraph: "Region: Antarctic"
+  - 'link "Flag of South Africa Loading image: Flag of South Africa South Africa Population: 59,308,690 Region: Africa Capital: Pretoria"':
+    - /url: /country/za
+    - img "Flag of South Africa"
+    - text: "Loading image: Flag of South Africa"
+    - heading "South Africa" [level=2]
+    - paragraph: "Population: 59,308,690"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: Pretoria"
+  - 'link "Flag of Guinea Loading image: Flag of Guinea Guinea Population: 13,132,792 Region: Africa Capital: Conakry"':
+    - /url: /country/gn
+    - img "Flag of Guinea"
+    - text: "Loading image: Flag of Guinea"
+    - heading "Guinea" [level=2]
+    - paragraph: "Population: 13,132,792"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: Conakry"
+  - 'link "Flag of Hong Kong Loading image: Flag of Hong Kong Hong Kong Population: 7,500,700 Region: Asia Capital: City of Victoria"':
+    - /url: /country/hk
+    - img "Flag of Hong Kong"
+    - text: "Loading image: Flag of Hong Kong"
+    - heading "Hong Kong" [level=2]
+    - paragraph: "Population: 7,500,700"
+    - paragraph: "Region: Asia"
+    - paragraph: "Capital: City of Victoria"
+  - 'link "Flag of Chad Loading image: Flag of Chad Chad Population: 16,425,859 Region: Africa Capital: N''Djamena"':
+    - /url: /country/td
+    - img "Flag of Chad"
+    - text: "Loading image: Flag of Chad"
+    - heading "Chad" [level=2]
+    - paragraph: "Population: 16,425,859"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: N'Djamena"
+  - 'link "Flag of Saint Helena, Ascension and Tristan da Cunha Loading image: Flag of Saint Helena, Ascension and Tristan da Cunha Saint Helena, Ascension and Tristan da Cunha Population: 53,192 Region: Africa Capital: Jamestown"':
+    - /url: /country/sh
+    - img "Flag of Saint Helena, Ascension and Tristan da Cunha"
+    - text: "Loading image: Flag of Saint Helena, Ascension and Tristan da Cunha"
+    - heading "Saint Helena, Ascension and Tristan da Cunha" [level=2]
+    - paragraph: "Population: 53,192"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: Jamestown"
+  - 'link "Flag of Honduras Loading image: Flag of Honduras Honduras Population: 9,904,608 Region: Americas Capital: Tegucigalpa"':
+    - /url: /country/hn
+    - img "Flag of Honduras"
+    - text: "Loading image: Flag of Honduras"
+    - heading "Honduras" [level=2]
+    - paragraph: "Population: 9,904,608"
+    - paragraph: "Region: Americas"
+    - paragraph: "Capital: Tegucigalpa"
+  - 'link "Flag of Montenegro Loading image: Flag of Montenegro Montenegro Population: 621,718 Region: Europe Capital: Podgorica"':
+    - /url: /country/me
+    - img "Flag of Montenegro"
+    - text: "Loading image: Flag of Montenegro"
+    - heading "Montenegro" [level=2]
+    - paragraph: "Population: 621,718"
+    - paragraph: "Region: Europe"
+    - paragraph: "Capital: Podgorica"
+  - 'link "Flag of Morocco Loading image: Flag of Morocco Morocco Population: 36,910,558 Region: Africa Capital: Rabat"':
+    - /url: /country/ma
+    - img "Flag of Morocco"
+    - text: "Loading image: Flag of Morocco"
+    - heading "Morocco" [level=2]
+    - paragraph: "Population: 36,910,558"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: Rabat"
+  - 'link "Flag of Nicaragua Loading image: Flag of Nicaragua Nicaragua Population: 6,624,554 Region: Americas Capital: Managua"':
+    - /url: /country/ni
+    - img "Flag of Nicaragua"
+    - text: "Loading image: Flag of Nicaragua"
+    - heading "Nicaragua" [level=2]
+    - paragraph: "Population: 6,624,554"
+    - paragraph: "Region: Americas"
+    - paragraph: "Capital: Managua"
+  - 'link "Flag of Cayman Islands Loading image: Flag of Cayman Islands Cayman Islands Population: 65,720 Region: Americas Capital: George Town"':
+    - /url: /country/ky
+    - img "Flag of Cayman Islands"
+    - text: "Loading image: Flag of Cayman Islands"
+    - heading "Cayman Islands" [level=2]
+    - paragraph: "Population: 65,720"
+    - paragraph: "Region: Americas"
+    - paragraph: "Capital: George Town"
+  - 'link "Flag of Luxembourg Loading image: Flag of Luxembourg Luxembourg Population: 632,275 Region: Europe Capital: Luxembourg"':
+    - /url: /country/lu
+    - img "Flag of Luxembourg"
+    - text: "Loading image: Flag of Luxembourg"
+    - heading "Luxembourg" [level=2]
+    - paragraph: "Population: 632,275"
+    - paragraph: "Region: Europe"
+    - paragraph: "Capital: Luxembourg"
+  - 'link "Flag of Guyana Loading image: Flag of Guyana Guyana Population: 786,559 Region: Americas Capital: Georgetown"':
+    - /url: /country/gy
+    - img "Flag of Guyana"
+    - text: "Loading image: Flag of Guyana"
+    - heading "Guyana" [level=2]
+    - paragraph: "Population: 786,559"
+    - paragraph: "Region: Americas"
+    - paragraph: "Capital: Georgetown"
+  - 'link "Flag of Bulgaria Loading image: Flag of Bulgaria Bulgaria Population: 6,927,288 Region: Europe Capital: Sofia"':
+    - /url: /country/bg
+    - img "Flag of Bulgaria"
+    - text: "Loading image: Flag of Bulgaria"
+    - heading "Bulgaria" [level=2]
+    - paragraph: "Population: 6,927,288"
+    - paragraph: "Region: Europe"
+    - paragraph: "Capital: Sofia"
+  - 'link "Flag of Ghana Loading image: Flag of Ghana Ghana Population: 31,072,945 Region: Africa Capital: Accra"':
+    - /url: /country/gh
+    - img "Flag of Ghana"
+    - text: "Loading image: Flag of Ghana"
+    - heading "Ghana" [level=2]
+    - paragraph: "Population: 31,072,945"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: Accra"
+  - 'link "Flag of Finland Loading image: Flag of Finland Finland Population: 5,530,719 Region: Europe Capital: Helsinki"':
+    - /url: /country/fi
+    - img "Flag of Finland"
+    - text: "Loading image: Flag of Finland"
+    - heading "Finland" [level=2]
+    - paragraph: "Population: 5,530,719"
+    - paragraph: "Region: Europe"
+    - paragraph: "Capital: Helsinki"
+  - 'link "Flag of Seychelles Loading image: Flag of Seychelles Seychelles Population: 98,462 Region: Africa Capital: Victoria"':
+    - /url: /country/sc
+    - img "Flag of Seychelles"
+    - text: "Loading image: Flag of Seychelles"
+    - heading "Seychelles" [level=2]
+    - paragraph: "Population: 98,462"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: Victoria"
+  - 'link "Flag of United States Virgin Islands Loading image: Flag of United States Virgin Islands United States Virgin Islands Population: 106,290 Region: Americas Capital: Charlotte Amalie"':
+    - /url: /country/vi
+    - img "Flag of United States Virgin Islands"
+    - text: "Loading image: Flag of United States Virgin Islands"
+    - heading "United States Virgin Islands" [level=2]
+    - paragraph: "Population: 106,290"
+    - paragraph: "Region: Americas"
+    - paragraph: "Capital: Charlotte Amalie"
+  - 'link "Flag of Ethiopia Loading image: Flag of Ethiopia Ethiopia Population: 114,963,583 Region: Africa Capital: Addis Ababa"':
+    - /url: /country/et
+    - img "Flag of Ethiopia"
+    - text: "Loading image: Flag of Ethiopia"
+    - heading "Ethiopia" [level=2]
+    - paragraph: "Population: 114,963,583"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: Addis Ababa"
+  - 'link "Flag of Mauritania Loading image: Flag of Mauritania Mauritania Population: 4,649,660 Region: Africa Capital: Nouakchott"':
+    - /url: /country/mr
+    - img "Flag of Mauritania"
+    - text: "Loading image: Flag of Mauritania"
+    - heading "Mauritania" [level=2]
+    - paragraph: "Population: 4,649,660"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: Nouakchott"
+  - 'link "Flag of Iceland Loading image: Flag of Iceland Iceland Population: 366,425 Region: Europe Capital: Reykjavik"':
+    - /url: /country/is
+    - img "Flag of Iceland"
+    - text: "Loading image: Flag of Iceland"
+    - heading "Iceland" [level=2]
+    - paragraph: "Population: 366,425"
+    - paragraph: "Region: Europe"
+    - paragraph: "Capital: Reykjavik"
+  - 'link "Flag of Réunion Loading image: Flag of Réunion Réunion Population: 840,974 Region: Africa Capital: Saint-Denis"':
+    - /url: /country/re
+    - img "Flag of Réunion"
+    - text: "Loading image: Flag of Réunion"
+    - heading "Réunion" [level=2]
+    - paragraph: "Population: 840,974"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: Saint-Denis"
+  - 'link "Flag of Tajikistan Loading image: Flag of Tajikistan Tajikistan Population: 9,537,642 Region: Asia Capital: Dushanbe"':
+    - /url: /country/tj
+    - img "Flag of Tajikistan"
+    - text: "Loading image: Flag of Tajikistan"
+    - heading "Tajikistan" [level=2]
+    - paragraph: "Population: 9,537,642"
+    - paragraph: "Region: Asia"
+    - paragraph: "Capital: Dushanbe"
+  - 'link "Flag of Cuba Loading image: Flag of Cuba Cuba Population: 11,326,616 Region: Americas Capital: Havana"':
+    - /url: /country/cu
+    - img "Flag of Cuba"
+    - text: "Loading image: Flag of Cuba"
+    - heading "Cuba" [level=2]
+    - paragraph: "Population: 11,326,616"
+    - paragraph: "Region: Americas"
+    - paragraph: "Capital: Havana"
+  - 'link "Flag of Somalia Loading image: Flag of Somalia Somalia Population: 15,893,219 Region: Africa Capital: Mogadishu"':
+    - /url: /country/so
+    - img "Flag of Somalia"
+    - text: "Loading image: Flag of Somalia"
+    - heading "Somalia" [level=2]
+    - paragraph: "Population: 15,893,219"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: Mogadishu"
+  - 'link "Flag of Switzerland Loading image: Flag of Switzerland Switzerland Population: 8,654,622 Region: Europe Capital: Bern"':
+    - /url: /country/ch
+    - img "Flag of Switzerland"
+    - text: "Loading image: Flag of Switzerland"
+    - heading "Switzerland" [level=2]
+    - paragraph: "Population: 8,654,622"
+    - paragraph: "Region: Europe"
+    - paragraph: "Capital: Bern"
+  - 'link "Flag of Christmas Island Loading image: Flag of Christmas Island Christmas Island Population: 2,072 Region: Oceania Capital: Flying Fish Cove"':
+    - /url: /country/cx
+    - img "Flag of Christmas Island"
+    - text: "Loading image: Flag of Christmas Island"
+    - heading "Christmas Island" [level=2]
+    - paragraph: "Population: 2,072"
+    - paragraph: "Region: Oceania"
+    - paragraph: "Capital: Flying Fish Cove"
+  - 'link "Flag of Martinique Loading image: Flag of Martinique Martinique Population: 378,243 Region: Americas Capital: Fort-de-France"':
+    - /url: /country/mq
+    - img "Flag of Martinique"
+    - text: "Loading image: Flag of Martinique"
+    - heading "Martinique" [level=2]
+    - paragraph: "Population: 378,243"
+    - paragraph: "Region: Americas"
+    - paragraph: "Capital: Fort-de-France"
+  - 'link "Flag of Australia Loading image: Flag of Australia Australia Population: 25,687,041 Region: Oceania Capital: Canberra"':
+    - /url: /country/au
+    - img "Flag of Australia"
+    - text: "Loading image: Flag of Australia"
+    - heading "Australia" [level=2]
+    - paragraph: "Population: 25,687,041"
+    - paragraph: "Region: Oceania"
+    - paragraph: "Capital: Canberra"
+  - 'link "Flag of Benin Loading image: Flag of Benin Benin Population: 12,123,198 Region: Africa Capital: Porto-Novo"':
+    - /url: /country/bj
+    - img "Flag of Benin"
+    - text: "Loading image: Flag of Benin"
+    - heading "Benin" [level=2]
+    - paragraph: "Population: 12,123,198"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: Porto-Novo"
+  - 'link "Flag of Laos Loading image: Flag of Laos Laos Population: 7,275,556 Region: Asia Capital: Vientiane"':
+    - /url: /country/la
+    - img "Flag of Laos"
+    - text: "Loading image: Flag of Laos"
+    - heading "Laos" [level=2]
+    - paragraph: "Population: 7,275,556"
+    - paragraph: "Region: Asia"
+    - paragraph: "Capital: Vientiane"
+  - 'link "Flag of Sudan Loading image: Flag of Sudan Sudan Population: 43,849,269 Region: Africa Capital: Khartoum"':
+    - /url: /country/sd
+    - img "Flag of Sudan"
+    - text: "Loading image: Flag of Sudan"
+    - heading "Sudan" [level=2]
+    - paragraph: "Population: 43,849,269"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: Khartoum"
+  - 'link "Flag of Libya Loading image: Flag of Libya Libya Population: 6,871,287 Region: Africa Capital: Tripoli"':
+    - /url: /country/ly
+    - img "Flag of Libya"
+    - text: "Loading image: Flag of Libya"
+    - heading "Libya" [level=2]
+    - paragraph: "Population: 6,871,287"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: Tripoli"
+  - 'link "Flag of Mali Loading image: Flag of Mali Mali Population: 20,250,834 Region: Africa Capital: Bamako"':
+    - /url: /country/ml
+    - img "Flag of Mali"
+    - text: "Loading image: Flag of Mali"
+    - heading "Mali" [level=2]
+    - paragraph: "Population: 20,250,834"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: Bamako"
+  - 'link "Flag of Peru Loading image: Flag of Peru Peru Population: 32,971,846 Region: Americas Capital: Lima"':
+    - /url: /country/pe
+    - img "Flag of Peru"
+    - text: "Loading image: Flag of Peru"
+    - heading "Peru" [level=2]
+    - paragraph: "Population: 32,971,846"
+    - paragraph: "Region: Americas"
+    - paragraph: "Capital: Lima"
+  - 'link "Flag of Hungary Loading image: Flag of Hungary Hungary Population: 9,749,763 Region: Europe Capital: Budapest"':
+    - /url: /country/hu
+    - img "Flag of Hungary"
+    - text: "Loading image: Flag of Hungary"
+    - heading "Hungary" [level=2]
+    - paragraph: "Population: 9,749,763"
+    - paragraph: "Region: Europe"
+    - paragraph: "Capital: Budapest"
+  - 'link "Flag of Bermuda Loading image: Flag of Bermuda Bermuda Population: 63,903 Region: Americas Capital: Hamilton"':
+    - /url: /country/bm
+    - img "Flag of Bermuda"
+    - text: "Loading image: Flag of Bermuda"
+    - heading "Bermuda" [level=2]
+    - paragraph: "Population: 63,903"
+    - paragraph: "Region: Americas"
+    - paragraph: "Capital: Hamilton"
+  - 'link "Flag of Fiji Loading image: Flag of Fiji Fiji Population: 896,444 Region: Oceania Capital: Suva"':
+    - /url: /country/fj
+    - img "Flag of Fiji"
+    - text: "Loading image: Flag of Fiji"
+    - heading "Fiji" [level=2]
+    - paragraph: "Population: 896,444"
+    - paragraph: "Region: Oceania"
+    - paragraph: "Capital: Suva"
+  - 'link "Flag of Netherlands Loading image: Flag of Netherlands Netherlands Population: 16,655,799 Region: Europe Capital: Amsterdam"':
+    - /url: /country/nl
+    - img "Flag of Netherlands"
+    - text: "Loading image: Flag of Netherlands"
+    - heading "Netherlands" [level=2]
+    - paragraph: "Population: 16,655,799"
+    - paragraph: "Region: Europe"
+    - paragraph: "Capital: Amsterdam"
+  - 'link "Flag of Nigeria Nigeria Population: 206,139,587 Region: Africa Capital: Abuja"':
+    - /url: /country/ng
+    - img "Flag of Nigeria"
+    - heading "Nigeria" [level=2]
+    - paragraph: "Population: 206,139,587"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: Abuja"
+  - 'link "Flag of Portugal Loading image: Flag of Portugal Portugal Population: 10,305,564 Region: Europe Capital: Lisbon"':
+    - /url: /country/pt
+    - img "Flag of Portugal"
+    - text: "Loading image: Flag of Portugal"
+    - heading "Portugal" [level=2]
+    - paragraph: "Population: 10,305,564"
+    - paragraph: "Region: Europe"
+    - paragraph: "Capital: Lisbon"
+  - 'link "Flag of India India Population: 1,380,004,385 Region: Asia Capital: New Delhi"':
+    - /url: /country/in
+    - img "Flag of India"
+    - heading "India" [level=2]
+    - paragraph: "Population: 1,380,004,385"
+    - paragraph: "Region: Asia"
+    - paragraph: "Capital: New Delhi"
+  - 'link "Flag of South Georgia Loading image: Flag of South Georgia South Georgia Population: 30 Region: Antarctic Capital: King Edward Point"':
+    - /url: /country/gs
+    - img "Flag of South Georgia"
+    - text: "Loading image: Flag of South Georgia"
+    - heading "South Georgia" [level=2]
+    - paragraph: "Population: 30"
+    - paragraph: "Region: Antarctic"
+    - paragraph: "Capital: King Edward Point"
+  - 'link "Flag of Lesotho Loading image: Flag of Lesotho Lesotho Population: 2,142,252 Region: Africa Capital: Maseru"':
+    - /url: /country/ls
+    - img "Flag of Lesotho"
+    - text: "Loading image: Flag of Lesotho"
+    - heading "Lesotho" [level=2]
+    - paragraph: "Population: 2,142,252"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: Maseru"
+  - 'link "Flag of Zambia Loading image: Flag of Zambia Zambia Population: 18,383,956 Region: Africa Capital: Lusaka"':
+    - /url: /country/zm
+    - img "Flag of Zambia"
+    - text: "Loading image: Flag of Zambia"
+    - heading "Zambia" [level=2]
+    - paragraph: "Population: 18,383,956"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: Lusaka"
+  - 'link "Flag of Tokelau Loading image: Flag of Tokelau Tokelau Population: 1,411 Region: Oceania Capital: Fakaofo"':
+    - /url: /country/tk
+    - img "Flag of Tokelau"
+    - text: "Loading image: Flag of Tokelau"
+    - heading "Tokelau" [level=2]
+    - paragraph: "Population: 1,411"
+    - paragraph: "Region: Oceania"
+    - paragraph: "Capital: Fakaofo"
+  - 'link "Flag of Gambia Loading image: Flag of Gambia Gambia Population: 2,416,664 Region: Africa Capital: Banjul"':
+    - /url: /country/gm
+    - img "Flag of Gambia"
+    - text: "Loading image: Flag of Gambia"
+    - heading "Gambia" [level=2]
+    - paragraph: "Population: 2,416,664"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: Banjul"
+  - 'link "Flag of Sierra Leone Loading image: Flag of Sierra Leone Sierra Leone Population: 7,976,985 Region: Africa Capital: Freetown"':
+    - /url: /country/sl
+    - img "Flag of Sierra Leone"
+    - text: "Loading image: Flag of Sierra Leone"
+    - heading "Sierra Leone" [level=2]
+    - paragraph: "Population: 7,976,985"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: Freetown"
+  - 'link "Flag of Kiribati Loading image: Flag of Kiribati Kiribati Population: 119,446 Region: Oceania Capital: South Tarawa"':
+    - /url: /country/ki
+    - img "Flag of Kiribati"
+    - text: "Loading image: Flag of Kiribati"
+    - heading "Kiribati" [level=2]
+    - paragraph: "Population: 119,446"
+    - paragraph: "Region: Oceania"
+    - paragraph: "Capital: South Tarawa"
+  - 'link "Flag of Norway Loading image: Flag of Norway Norway Population: 5,379,475 Region: Europe Capital: Oslo"':
+    - /url: /country/no
+    - img "Flag of Norway"
+    - text: "Loading image: Flag of Norway"
+    - heading "Norway" [level=2]
+    - paragraph: "Population: 5,379,475"
+    - paragraph: "Region: Europe"
+    - paragraph: "Capital: Oslo"
+  - 'link "Flag of Ireland Loading image: Flag of Ireland Ireland Population: 4,994,724 Region: Europe Capital: Dublin"':
+    - /url: /country/ie
+    - img "Flag of Ireland"
+    - text: "Loading image: Flag of Ireland"
+    - heading "Ireland" [level=2]
+    - paragraph: "Population: 4,994,724"
+    - paragraph: "Region: Europe"
+    - paragraph: "Capital: Dublin"
+  - 'link "Flag of Greenland Loading image: Flag of Greenland Greenland Population: 56,367 Region: Americas Capital: Nuuk"':
+    - /url: /country/gl
+    - img "Flag of Greenland"
+    - text: "Loading image: Flag of Greenland"
+    - heading "Greenland" [level=2]
+    - paragraph: "Population: 56,367"
+    - paragraph: "Region: Americas"
+    - paragraph: "Capital: Nuuk"
+  - 'link "Flag of British Indian Ocean Territory Loading image: Flag of British Indian Ocean Territory British Indian Ocean Territory Population: 3,000 Region: Africa Capital: Diego Garcia"':
+    - /url: /country/io
+    - img "Flag of British Indian Ocean Territory"
+    - text: "Loading image: Flag of British Indian Ocean Territory"
+    - heading "British Indian Ocean Territory" [level=2]
+    - paragraph: "Population: 3,000"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: Diego Garcia"
+  - 'link "Flag of Mozambique Loading image: Flag of Mozambique Mozambique Population: 31,255,435 Region: Africa Capital: Maputo"':
+    - /url: /country/mz
+    - img "Flag of Mozambique"
+    - text: "Loading image: Flag of Mozambique"
+    - heading "Mozambique" [level=2]
+    - paragraph: "Population: 31,255,435"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: Maputo"
+  - 'link "Flag of Panama Loading image: Flag of Panama Panama Population: 4,314,768 Region: Americas Capital: Panama City"':
+    - /url: /country/pa
+    - img "Flag of Panama"
+    - text: "Loading image: Flag of Panama"
+    - heading "Panama" [level=2]
+    - paragraph: "Population: 4,314,768"
+    - paragraph: "Region: Americas"
+    - paragraph: "Capital: Panama City"
+  - 'link "Flag of Ukraine Loading image: Flag of Ukraine Ukraine Population: 44,134,693 Region: Europe Capital: Kyiv"':
+    - /url: /country/ua
+    - img "Flag of Ukraine"
+    - text: "Loading image: Flag of Ukraine"
+    - heading "Ukraine" [level=2]
+    - paragraph: "Population: 44,134,693"
+    - paragraph: "Region: Europe"
+    - paragraph: "Capital: Kyiv"
+  - 'link "Flag of Uruguay Loading image: Flag of Uruguay Uruguay Population: 3,473,727 Region: Americas Capital: Montevideo"':
+    - /url: /country/uy
+    - img "Flag of Uruguay"
+    - text: "Loading image: Flag of Uruguay"
+    - heading "Uruguay" [level=2]
+    - paragraph: "Population: 3,473,727"
+    - paragraph: "Region: Americas"
+    - paragraph: "Capital: Montevideo"
+  - 'link "Flag of Aruba Loading image: Flag of Aruba Aruba Population: 106,766 Region: Americas Capital: Oranjestad"':
+    - /url: /country/aw
+    - img "Flag of Aruba"
+    - text: "Loading image: Flag of Aruba"
+    - heading "Aruba" [level=2]
+    - paragraph: "Population: 106,766"
+    - paragraph: "Region: Americas"
+    - paragraph: "Capital: Oranjestad"
+  - 'link "Flag of Iran Loading image: Flag of Iran Iran Population: 83,992,953 Region: Asia Capital: Tehran"':
+    - /url: /country/ir
+    - img "Flag of Iran"
+    - text: "Loading image: Flag of Iran"
+    - heading "Iran" [level=2]
+    - paragraph: "Population: 83,992,953"
+    - paragraph: "Region: Asia"
+    - paragraph: "Capital: Tehran"
+  - 'link "Flag of Isle of Man Loading image: Flag of Isle of Man Isle of Man Population: 85,032 Region: Europe Capital: Douglas"':
+    - /url: /country/im
+    - img "Flag of Isle of Man"
+    - text: "Loading image: Flag of Isle of Man"
+    - heading "Isle of Man" [level=2]
+    - paragraph: "Population: 85,032"
+    - paragraph: "Region: Europe"
+    - paragraph: "Capital: Douglas"
+  - 'link "Flag of Åland Islands Loading image: Flag of Åland Islands Åland Islands Population: 29,458 Region: Europe Capital: Mariehamn"':
+    - /url: /country/ax
+    - img "Flag of Åland Islands"
+    - text: "Loading image: Flag of Åland Islands"
+    - heading "Åland Islands" [level=2]
+    - paragraph: "Population: 29,458"
+    - paragraph: "Region: Europe"
+    - paragraph: "Capital: Mariehamn"
+  - 'link "Flag of Saudi Arabia Loading image: Flag of Saudi Arabia Saudi Arabia Population: 34,813,867 Region: Asia Capital: Riyadh"':
+    - /url: /country/sa
+    - img "Flag of Saudi Arabia"
+    - text: "Loading image: Flag of Saudi Arabia"
+    - heading "Saudi Arabia" [level=2]
+    - paragraph: "Population: 34,813,867"
+    - paragraph: "Region: Asia"
+    - paragraph: "Capital: Riyadh"
+  - 'link "Flag of Djibouti Loading image: Flag of Djibouti Djibouti Population: 988,002 Region: Africa Capital: Djibouti"':
+    - /url: /country/dj
+    - img "Flag of Djibouti"
+    - text: "Loading image: Flag of Djibouti"
+    - heading "Djibouti" [level=2]
+    - paragraph: "Population: 988,002"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: Djibouti"
+  - 'link "Flag of Italy Loading image: Flag of Italy Italy Population: 59,554,023 Region: Europe Capital: Rome"':
+    - /url: /country/it
+    - img "Flag of Italy"
+    - text: "Loading image: Flag of Italy"
+    - heading "Italy" [level=2]
+    - paragraph: "Population: 59,554,023"
+    - paragraph: "Region: Europe"
+    - paragraph: "Capital: Rome"
+  - 'link "Flag of Canada Loading image: Flag of Canada Canada Population: 38,005,238 Region: Americas Capital: Ottawa"':
+    - /url: /country/ca
+    - img "Flag of Canada"
+    - text: "Loading image: Flag of Canada"
+    - heading "Canada" [level=2]
+    - paragraph: "Population: 38,005,238"
+    - paragraph: "Region: Americas"
+    - paragraph: "Capital: Ottawa"
+  - 'link "Flag of Jamaica Loading image: Flag of Jamaica Jamaica Population: 2,961,161 Region: Americas Capital: Kingston"':
+    - /url: /country/jm
+    - img "Flag of Jamaica"
+    - text: "Loading image: Flag of Jamaica"
+    - heading "Jamaica" [level=2]
+    - paragraph: "Population: 2,961,161"
+    - paragraph: "Region: Americas"
+    - paragraph: "Capital: Kingston"
+  - 'link "Flag of Niger Loading image: Flag of Niger Niger Population: 24,206,636 Region: Africa Capital: Niamey"':
+    - /url: /country/ne
+    - img "Flag of Niger"
+    - text: "Loading image: Flag of Niger"
+    - heading "Niger" [level=2]
+    - paragraph: "Population: 24,206,636"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: Niamey"
+  - 'link "Flag of Afghanistan Loading image: Flag of Afghanistan Afghanistan Population: 40,218,234 Region: Asia Capital: Kabul"':
+    - /url: /country/af
+    - img "Flag of Afghanistan"
+    - text: "Loading image: Flag of Afghanistan"
+    - heading "Afghanistan" [level=2]
+    - paragraph: "Population: 40,218,234"
+    - paragraph: "Region: Asia"
+    - paragraph: "Capital: Kabul"
+  - 'link "Flag of Croatia Loading image: Flag of Croatia Croatia Population: 4,047,200 Region: Europe Capital: Zagreb"':
+    - /url: /country/hr
+    - img "Flag of Croatia"
+    - text: "Loading image: Flag of Croatia"
+    - heading "Croatia" [level=2]
+    - paragraph: "Population: 4,047,200"
+    - paragraph: "Region: Europe"
+    - paragraph: "Capital: Zagreb"
+  - 'link "Flag of Latvia Loading image: Flag of Latvia Latvia Population: 1,901,548 Region: Europe Capital: Riga"':
+    - /url: /country/lv
+    - img "Flag of Latvia"
+    - text: "Loading image: Flag of Latvia"
+    - heading "Latvia" [level=2]
+    - paragraph: "Population: 1,901,548"
+    - paragraph: "Region: Europe"
+    - paragraph: "Capital: Riga"
+  - 'link "Flag of Samoa Loading image: Flag of Samoa Samoa Population: 198,410 Region: Oceania Capital: Apia"':
+    - /url: /country/ws
+    - img "Flag of Samoa"
+    - text: "Loading image: Flag of Samoa"
+    - heading "Samoa" [level=2]
+    - paragraph: "Population: 198,410"
+    - paragraph: "Region: Oceania"
+    - paragraph: "Capital: Apia"
+  - 'link "Flag of Curaçao Loading image: Flag of Curaçao Curaçao Population: 155,014 Region: Americas Capital: Willemstad"':
+    - /url: /country/cw
+    - img "Flag of Curaçao"
+    - text: "Loading image: Flag of Curaçao"
+    - heading "Curaçao" [level=2]
+    - paragraph: "Population: 155,014"
+    - paragraph: "Region: Americas"
+    - paragraph: "Capital: Willemstad"
+  - 'link "Flag of Cyprus Loading image: Flag of Cyprus Cyprus Population: 1,207,361 Region: Europe Capital: Nicosia"':
+    - /url: /country/cy
+    - img "Flag of Cyprus"
+    - text: "Loading image: Flag of Cyprus"
+    - heading "Cyprus" [level=2]
+    - paragraph: "Population: 1,207,361"
+    - paragraph: "Region: Europe"
+    - paragraph: "Capital: Nicosia"
+  - 'link "Flag of Madagascar Loading image: Flag of Madagascar Madagascar Population: 27,691,019 Region: Africa Capital: Antananarivo"':
+    - /url: /country/mg
+    - img "Flag of Madagascar"
+    - text: "Loading image: Flag of Madagascar"
+    - heading "Madagascar" [level=2]
+    - paragraph: "Population: 27,691,019"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: Antananarivo"
+  - 'link "Flag of Uzbekistan Loading image: Flag of Uzbekistan Uzbekistan Population: 34,232,050 Region: Asia Capital: Tashkent"':
+    - /url: /country/uz
+    - img "Flag of Uzbekistan"
+    - text: "Loading image: Flag of Uzbekistan"
+    - heading "Uzbekistan" [level=2]
+    - paragraph: "Population: 34,232,050"
+    - paragraph: "Region: Asia"
+    - paragraph: "Capital: Tashkent"
+  - 'link "Flag of Macau Loading image: Flag of Macau Macau Population: 649,342 Region: Asia"':
+    - /url: /country/mo
+    - img "Flag of Macau"
+    - text: "Loading image: Flag of Macau"
+    - heading "Macau" [level=2]
+    - paragraph: "Population: 649,342"
+    - paragraph: "Region: Asia"
+  - 'link "Flag of Micronesia Loading image: Flag of Micronesia Micronesia Population: 115,021 Region: Oceania Capital: Palikir"':
+    - /url: /country/fm
+    - img "Flag of Micronesia"
+    - text: "Loading image: Flag of Micronesia"
+    - heading "Micronesia" [level=2]
+    - paragraph: "Population: 115,021"
+    - paragraph: "Region: Oceania"
+    - paragraph: "Capital: Palikir"
+  - 'link "Flag of Maldives Loading image: Flag of Maldives Maldives Population: 540,542 Region: Asia Capital: Malé"':
+    - /url: /country/mv
+    - img "Flag of Maldives"
+    - text: "Loading image: Flag of Maldives"
+    - heading "Maldives" [level=2]
+    - paragraph: "Population: 540,542"
+    - paragraph: "Region: Asia"
+    - paragraph: "Capital: Malé"
+  - 'link "Flag of Slovenia Loading image: Flag of Slovenia Slovenia Population: 2,100,126 Region: Europe Capital: Ljubljana"':
+    - /url: /country/si
+    - img "Flag of Slovenia"
+    - text: "Loading image: Flag of Slovenia"
+    - heading "Slovenia" [level=2]
+    - paragraph: "Population: 2,100,126"
+    - paragraph: "Region: Europe"
+    - paragraph: "Capital: Ljubljana"
+  - 'link "Flag of Andorra Loading image: Flag of Andorra Andorra Population: 77,265 Region: Europe Capital: Andorra la Vella"':
+    - /url: /country/ad
+    - img "Flag of Andorra"
+    - text: "Loading image: Flag of Andorra"
+    - heading "Andorra" [level=2]
+    - paragraph: "Population: 77,265"
+    - paragraph: "Region: Europe"
+    - paragraph: "Capital: Andorra la Vella"
+  - 'link "Flag of Eritrea Loading image: Flag of Eritrea Eritrea Population: 5,352,000 Region: Africa Capital: Asmara"':
+    - /url: /country/er
+    - img "Flag of Eritrea"
+    - text: "Loading image: Flag of Eritrea"
+    - heading "Eritrea" [level=2]
+    - paragraph: "Population: 5,352,000"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: Asmara"
+  - 'link "Flag of Guinea-Bissau Loading image: Flag of Guinea-Bissau Guinea-Bissau Population: 1,967,998 Region: Africa Capital: Bissau"':
+    - /url: /country/gw
+    - img "Flag of Guinea-Bissau"
+    - text: "Loading image: Flag of Guinea-Bissau"
+    - heading "Guinea-Bissau" [level=2]
+    - paragraph: "Population: 1,967,998"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: Bissau"
+  - 'link "Flag of Kuwait Loading image: Flag of Kuwait Kuwait Population: 4,270,563 Region: Asia Capital: Kuwait City"':
+    - /url: /country/kw
+    - img "Flag of Kuwait"
+    - text: "Loading image: Flag of Kuwait"
+    - heading "Kuwait" [level=2]
+    - paragraph: "Population: 4,270,563"
+    - paragraph: "Region: Asia"
+    - paragraph: "Capital: Kuwait City"
+  - 'link "Flag of Gabon Loading image: Flag of Gabon Gabon Population: 2,225,728 Region: Africa Capital: Libreville"':
+    - /url: /country/ga
+    - img "Flag of Gabon"
+    - text: "Loading image: Flag of Gabon"
+    - heading "Gabon" [level=2]
+    - paragraph: "Population: 2,225,728"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: Libreville"
+  - 'link "Flag of Yemen Loading image: Flag of Yemen Yemen Population: 29,825,968 Region: Asia Capital: Sana''a"':
+    - /url: /country/ye
+    - img "Flag of Yemen"
+    - text: "Loading image: Flag of Yemen"
+    - heading "Yemen" [level=2]
+    - paragraph: "Population: 29,825,968"
+    - paragraph: "Region: Asia"
+    - paragraph: "Capital: Sana'a"
+  - 'link "Flag of Cocos (Keeling) Islands Loading image: Flag of Cocos (Keeling) Islands Cocos (Keeling) Islands Population: 544 Region: Oceania Capital: West Island"':
+    - /url: /country/cc
+    - img "Flag of Cocos (Keeling) Islands"
+    - text: "Loading image: Flag of Cocos (Keeling) Islands"
+    - heading "Cocos (Keeling) Islands" [level=2]
+    - paragraph: "Population: 544"
+    - paragraph: "Region: Oceania"
+    - paragraph: "Capital: West Island"
+  - 'link "Flag of Timor-Leste Loading image: Flag of Timor-Leste Timor-Leste Population: 1,318,442 Region: Asia Capital: Dili"':
+    - /url: /country/tl
+    - img "Flag of Timor-Leste"
+    - text: "Loading image: Flag of Timor-Leste"
+    - heading "Timor-Leste" [level=2]
+    - paragraph: "Population: 1,318,442"
+    - paragraph: "Region: Asia"
+    - paragraph: "Capital: Dili"
+  - 'link "Flag of Slovakia Loading image: Flag of Slovakia Slovakia Population: 5,458,827 Region: Europe Capital: Bratislava"':
+    - /url: /country/sk
+    - img "Flag of Slovakia"
+    - text: "Loading image: Flag of Slovakia"
+    - heading "Slovakia" [level=2]
+    - paragraph: "Population: 5,458,827"
+    - paragraph: "Region: Europe"
+    - paragraph: "Capital: Bratislava"
+  - 'link "Flag of Rwanda Loading image: Flag of Rwanda Rwanda Population: 12,952,209 Region: Africa Capital: Kigali"':
+    - /url: /country/rw
+    - img "Flag of Rwanda"
+    - text: "Loading image: Flag of Rwanda"
+    - heading "Rwanda" [level=2]
+    - paragraph: "Population: 12,952,209"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: Kigali"
+  - 'link "Flag of Antigua and Barbuda Loading image: Flag of Antigua and Barbuda Antigua and Barbuda Population: 97,928 Region: Americas Capital: Saint John''s"':
+    - /url: /country/ag
+    - img "Flag of Antigua and Barbuda"
+    - text: "Loading image: Flag of Antigua and Barbuda"
+    - heading "Antigua and Barbuda" [level=2]
+    - paragraph: "Population: 97,928"
+    - paragraph: "Region: Americas"
+    - paragraph: "Capital: Saint John's"
+  - 'link "Flag of Togo Loading image: Flag of Togo Togo Population: 8,278,737 Region: Africa Capital: Lomé"':
+    - /url: /country/tg
+    - img "Flag of Togo"
+    - text: "Loading image: Flag of Togo"
+    - heading "Togo" [level=2]
+    - paragraph: "Population: 8,278,737"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: Lomé"
+  - 'link "Flag of Syria Loading image: Flag of Syria Syria Population: 17,500,657 Region: Asia Capital: Damascus"':
+    - /url: /country/sy
+    - img "Flag of Syria"
+    - text: "Loading image: Flag of Syria"
+    - heading "Syria" [level=2]
+    - paragraph: "Population: 17,500,657"
+    - paragraph: "Region: Asia"
+    - paragraph: "Capital: Damascus"
+  - 'link "Flag of Guadeloupe Loading image: Flag of Guadeloupe Guadeloupe Population: 400,132 Region: Americas Capital: Basse-Terre"':
+    - /url: /country/gp
+    - img "Flag of Guadeloupe"
+    - text: "Loading image: Flag of Guadeloupe"
+    - heading "Guadeloupe" [level=2]
+    - paragraph: "Population: 400,132"
+    - paragraph: "Region: Americas"
+    - paragraph: "Capital: Basse-Terre"
+  - 'link "Flag of Turkmenistan Loading image: Flag of Turkmenistan Turkmenistan Population: 6,031,187 Region: Asia Capital: Ashgabat"':
+    - /url: /country/tm
+    - img "Flag of Turkmenistan"
+    - text: "Loading image: Flag of Turkmenistan"
+    - heading "Turkmenistan" [level=2]
+    - paragraph: "Population: 6,031,187"
+    - paragraph: "Region: Asia"
+    - paragraph: "Capital: Ashgabat"
+  - 'link "Flag of Sri Lanka Loading image: Flag of Sri Lanka Sri Lanka Population: 21,919,000 Region: Asia Capital: Sri Jayawardenepura Kotte"':
+    - /url: /country/lk
+    - img "Flag of Sri Lanka"
+    - text: "Loading image: Flag of Sri Lanka"
+    - heading "Sri Lanka" [level=2]
+    - paragraph: "Population: 21,919,000"
+    - paragraph: "Region: Asia"
+    - paragraph: "Capital: Sri Jayawardenepura Kotte"
+  - 'link "Flag of United States United States Population: 329,484,123 Region: Americas Capital: Washington, D.C."':
+    - /url: /country/us
+    - img "Flag of United States"
+    - heading "United States" [level=2]
+    - paragraph: "Population: 329,484,123"
+    - paragraph: "Region: Americas"
+    - paragraph: "Capital: Washington, D.C."
+  - 'link "Flag of Argentina Loading image: Flag of Argentina Argentina Population: 45,376,763 Region: Americas Capital: Buenos Aires"':
+    - /url: /country/ar
+    - img "Flag of Argentina"
+    - text: "Loading image: Flag of Argentina"
+    - heading "Argentina" [level=2]
+    - paragraph: "Population: 45,376,763"
+    - paragraph: "Region: Americas"
+    - paragraph: "Capital: Buenos Aires"
+  - 'link "Flag of South Sudan Loading image: Flag of South Sudan South Sudan Population: 11,193,729 Region: Africa Capital: Juba"':
+    - /url: /country/ss
+    - img "Flag of South Sudan"
+    - text: "Loading image: Flag of South Sudan"
+    - heading "South Sudan" [level=2]
+    - paragraph: "Population: 11,193,729"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: Juba"
+  - 'link "Flag of Palestine Loading image: Flag of Palestine Palestine Population: 4,803,269 Region: Asia Capital: Ramallah"':
+    - /url: /country/ps
+    - img "Flag of Palestine"
+    - text: "Loading image: Flag of Palestine"
+    - heading "Palestine" [level=2]
+    - paragraph: "Population: 4,803,269"
+    - paragraph: "Region: Asia"
+    - paragraph: "Capital: Ramallah"
+  - 'link "Flag of Georgia Loading image: Flag of Georgia Georgia Population: 3,714,000 Region: Asia Capital: Tbilisi"':
+    - /url: /country/ge
+    - img "Flag of Georgia"
+    - text: "Loading image: Flag of Georgia"
+    - heading "Georgia" [level=2]
+    - paragraph: "Population: 3,714,000"
+    - paragraph: "Region: Asia"
+    - paragraph: "Capital: Tbilisi"
+  - 'link "Flag of Japan Loading image: Flag of Japan Japan Population: 125,836,021 Region: Asia Capital: Tokyo"':
+    - /url: /country/jp
+    - img "Flag of Japan"
+    - text: "Loading image: Flag of Japan"
+    - heading "Japan" [level=2]
+    - paragraph: "Population: 125,836,021"
+    - paragraph: "Region: Asia"
+    - paragraph: "Capital: Tokyo"
+  - 'link "Flag of Sweden Loading image: Flag of Sweden Sweden Population: 10,353,442 Region: Europe Capital: Stockholm"':
+    - /url: /country/se
+    - img "Flag of Sweden"
+    - text: "Loading image: Flag of Sweden"
+    - heading "Sweden" [level=2]
+    - paragraph: "Population: 10,353,442"
+    - paragraph: "Region: Europe"
+    - paragraph: "Capital: Stockholm"
+  - 'link "Flag of Chile Loading image: Flag of Chile Chile Population: 19,116,209 Region: Americas Capital: Santiago"':
+    - /url: /country/cl
+    - img "Flag of Chile"
+    - text: "Loading image: Flag of Chile"
+    - heading "Chile" [level=2]
+    - paragraph: "Population: 19,116,209"
+    - paragraph: "Region: Americas"
+    - paragraph: "Capital: Santiago"
+  - 'link "Flag of Saint Kitts and Nevis Loading image: Flag of Saint Kitts and Nevis Saint Kitts and Nevis Population: 53,192 Region: Americas Capital: Basseterre"':
+    - /url: /country/kn
+    - img "Flag of Saint Kitts and Nevis"
+    - text: "Loading image: Flag of Saint Kitts and Nevis"
+    - heading "Saint Kitts and Nevis" [level=2]
+    - paragraph: "Population: 53,192"
+    - paragraph: "Region: Americas"
+    - paragraph: "Capital: Basseterre"
+  - 'link "Flag of Denmark Loading image: Flag of Denmark Denmark Population: 5,831,404 Region: Europe Capital: Copenhagen"':
+    - /url: /country/dk
+    - img "Flag of Denmark"
+    - text: "Loading image: Flag of Denmark"
+    - heading "Denmark" [level=2]
+    - paragraph: "Population: 5,831,404"
+    - paragraph: "Region: Europe"
+    - paragraph: "Capital: Copenhagen"
+  - 'link "Flag of United States Minor Outlying Islands Loading image: Flag of United States Minor Outlying Islands United States Minor Outlying Islands Population: 300 Region: Americas Capital: Washington DC"':
+    - /url: /country/um
+    - img "Flag of United States Minor Outlying Islands"
+    - text: "Loading image: Flag of United States Minor Outlying Islands"
+    - heading "United States Minor Outlying Islands" [level=2]
+    - paragraph: "Population: 300"
+    - paragraph: "Region: Americas"
+    - paragraph: "Capital: Washington DC"
+  - 'link "Flag of American Samoa Loading image: Flag of American Samoa American Samoa Population: 55,197 Region: Oceania Capital: Pago Pago"':
+    - /url: /country/as
+    - img "Flag of American Samoa"
+    - text: "Loading image: Flag of American Samoa"
+    - heading "American Samoa" [level=2]
+    - paragraph: "Population: 55,197"
+    - paragraph: "Region: Oceania"
+    - paragraph: "Capital: Pago Pago"
+  - 'link "Flag of Anguilla Loading image: Flag of Anguilla Anguilla Population: 13,452 Region: Americas Capital: The Valley"':
+    - /url: /country/ai
+    - img "Flag of Anguilla"
+    - text: "Loading image: Flag of Anguilla"
+    - heading "Anguilla" [level=2]
+    - paragraph: "Population: 13,452"
+    - paragraph: "Region: Americas"
+    - paragraph: "Capital: The Valley"
+  - 'link "Flag of Philippines Loading image: Flag of Philippines Philippines Population: 109,581,085 Region: Asia Capital: Manila"':
+    - /url: /country/ph
+    - img "Flag of Philippines"
+    - text: "Loading image: Flag of Philippines"
+    - heading "Philippines" [level=2]
+    - paragraph: "Population: 109,581,085"
+    - paragraph: "Region: Asia"
+    - paragraph: "Capital: Manila"
+  - 'link "Flag of Bolivia Loading image: Flag of Bolivia Bolivia Population: 11,673,029 Region: Americas Capital: Sucre"':
+    - /url: /country/bo
+    - img "Flag of Bolivia"
+    - text: "Loading image: Flag of Bolivia"
+    - heading "Bolivia" [level=2]
+    - paragraph: "Population: 11,673,029"
+    - paragraph: "Region: Americas"
+    - paragraph: "Capital: Sucre"
+  - 'link "Flag of São Tomé and Príncipe Loading image: Flag of São Tomé and Príncipe São Tomé and Príncipe Population: 219,161 Region: Africa Capital: São Tomé"':
+    - /url: /country/st
+    - img "Flag of São Tomé and Príncipe"
+    - text: "Loading image: Flag of São Tomé and Príncipe"
+    - heading "São Tomé and Príncipe" [level=2]
+    - paragraph: "Population: 219,161"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: São Tomé"
+  - 'link "Flag of Montserrat Loading image: Flag of Montserrat Montserrat Population: 4,922 Region: Americas Capital: Plymouth"':
+    - /url: /country/ms
+    - img "Flag of Montserrat"
+    - text: "Loading image: Flag of Montserrat"
+    - heading "Montserrat" [level=2]
+    - paragraph: "Population: 4,922"
+    - paragraph: "Region: Americas"
+    - paragraph: "Capital: Plymouth"
+  - 'link "Flag of Myanmar Loading image: Flag of Myanmar Myanmar Population: 54,409,794 Region: Asia Capital: Naypyidaw"':
+    - /url: /country/mm
+    - img "Flag of Myanmar"
+    - text: "Loading image: Flag of Myanmar"
+    - heading "Myanmar" [level=2]
+    - paragraph: "Population: 54,409,794"
+    - paragraph: "Region: Asia"
+    - paragraph: "Capital: Naypyidaw"
+  - 'link "Flag of Niue Loading image: Flag of Niue Niue Population: 1,470 Region: Oceania Capital: Alofi"':
+    - /url: /country/nu
+    - img "Flag of Niue"
+    - text: "Loading image: Flag of Niue"
+    - heading "Niue" [level=2]
+    - paragraph: "Population: 1,470"
+    - paragraph: "Region: Oceania"
+    - paragraph: "Capital: Alofi"
+  - 'link "Flag of Israel Loading image: Flag of Israel Israel Population: 9,216,900 Region: Asia Capital: Jerusalem"':
+    - /url: /country/il
+    - img "Flag of Israel"
+    - text: "Loading image: Flag of Israel"
+    - heading "Israel" [level=2]
+    - paragraph: "Population: 9,216,900"
+    - paragraph: "Region: Asia"
+    - paragraph: "Capital: Jerusalem"
+  - 'link "Flag of Heard Island and McDonald Islands Loading image: Flag of Heard Island and McDonald Islands Heard Island and McDonald Islands Population: 0 Region: Antarctic"':
+    - /url: /country/hm
+    - img "Flag of Heard Island and McDonald Islands"
+    - text: "Loading image: Flag of Heard Island and McDonald Islands"
+    - heading "Heard Island and McDonald Islands" [level=2]
+    - paragraph: "Population: 0"
+    - paragraph: "Region: Antarctic"
+  - 'link "Flag of Comoros Loading image: Flag of Comoros Comoros Population: 869,595 Region: Africa Capital: Moroni"':
+    - /url: /country/km
+    - img "Flag of Comoros"
+    - text: "Loading image: Flag of Comoros"
+    - heading "Comoros" [level=2]
+    - paragraph: "Population: 869,595"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: Moroni"
+  - 'link "Flag of Saint Vincent and the Grenadines Loading image: Flag of Saint Vincent and the Grenadines Saint Vincent and the Grenadines Population: 110,947 Region: Americas Capital: Kingstown"':
+    - /url: /country/vc
+    - img "Flag of Saint Vincent and the Grenadines"
+    - text: "Loading image: Flag of Saint Vincent and the Grenadines"
+    - heading "Saint Vincent and the Grenadines" [level=2]
+    - paragraph: "Population: 110,947"
+    - paragraph: "Region: Americas"
+    - paragraph: "Capital: Kingstown"
+  - 'link "Flag of Vietnam Loading image: Flag of Vietnam Vietnam Population: 97,338,583 Region: Asia Capital: Hanoi"':
+    - /url: /country/vn
+    - img "Flag of Vietnam"
+    - text: "Loading image: Flag of Vietnam"
+    - heading "Vietnam" [level=2]
+    - paragraph: "Population: 97,338,583"
+    - paragraph: "Region: Asia"
+    - paragraph: "Capital: Hanoi"
+  - 'link "Flag of Caribbean Netherlands Loading image: Flag of Caribbean Netherlands Caribbean Netherlands Population: 25,987 Region: Americas Capital: Kralendijk"':
+    - /url: /country/bq
+    - img "Flag of Caribbean Netherlands"
+    - text: "Loading image: Flag of Caribbean Netherlands"
+    - heading "Caribbean Netherlands" [level=2]
+    - paragraph: "Population: 25,987"
+    - paragraph: "Region: Americas"
+    - paragraph: "Capital: Kralendijk"
+  - 'link "Flag of Jersey Loading image: Flag of Jersey Jersey Population: 100,800 Region: Europe Capital: Saint Helier"':
+    - /url: /country/je
+    - img "Flag of Jersey"
+    - text: "Loading image: Flag of Jersey"
+    - heading "Jersey" [level=2]
+    - paragraph: "Population: 100,800"
+    - paragraph: "Region: Europe"
+    - paragraph: "Capital: Saint Helier"
+  - 'link "Flag of Falkland Islands Loading image: Flag of Falkland Islands Falkland Islands Population: 2,563 Region: Americas Capital: Stanley"':
+    - /url: /country/fk
+    - img "Flag of Falkland Islands"
+    - text: "Loading image: Flag of Falkland Islands"
+    - heading "Falkland Islands" [level=2]
+    - paragraph: "Population: 2,563"
+    - paragraph: "Region: Americas"
+    - paragraph: "Capital: Stanley"
+  - 'link "Flag of Armenia Loading image: Flag of Armenia Armenia Population: 2,963,234 Region: Asia Capital: Yerevan"':
+    - /url: /country/am
+    - img "Flag of Armenia"
+    - text: "Loading image: Flag of Armenia"
+    - heading "Armenia" [level=2]
+    - paragraph: "Population: 2,963,234"
+    - paragraph: "Region: Asia"
+    - paragraph: "Capital: Yerevan"
+  - 'link "Flag of Kosovo Loading image: Flag of Kosovo Kosovo Population: 1,775,378 Region: Europe Capital: Pristina"':
+    - /url: /country/xk
+    - img "Flag of Kosovo"
+    - text: "Loading image: Flag of Kosovo"
+    - heading "Kosovo" [level=2]
+    - paragraph: "Population: 1,775,378"
+    - paragraph: "Region: Europe"
+    - paragraph: "Capital: Pristina"
+  - 'link "Flag of Bouvet Island Loading image: Flag of Bouvet Island Bouvet Island Population: 0 Region: Antarctic"':
+    - /url: /country/bv
+    - img "Flag of Bouvet Island"
+    - text: "Loading image: Flag of Bouvet Island"
+    - heading "Bouvet Island" [level=2]
+    - paragraph: "Population: 0"
+    - paragraph: "Region: Antarctic"
+  - 'link "Flag of Venezuela Loading image: Flag of Venezuela Venezuela Population: 28,435,943 Region: Americas Capital: Caracas"':
+    - /url: /country/ve
+    - img "Flag of Venezuela"
+    - text: "Loading image: Flag of Venezuela"
+    - heading "Venezuela" [level=2]
+    - paragraph: "Population: 28,435,943"
+    - paragraph: "Region: Americas"
+    - paragraph: "Capital: Caracas"
+  - 'link "Flag of Belgium Loading image: Flag of Belgium Belgium Population: 11,555,997 Region: Europe Capital: Brussels"':
+    - /url: /country/be
+    - img "Flag of Belgium"
+    - text: "Loading image: Flag of Belgium"
+    - heading "Belgium" [level=2]
+    - paragraph: "Population: 11,555,997"
+    - paragraph: "Region: Europe"
+    - paragraph: "Capital: Brussels"
+  - 'link "Flag of Burkina Faso Loading image: Flag of Burkina Faso Burkina Faso Population: 20,903,278 Region: Africa Capital: Ouagadougou"':
+    - /url: /country/bf
+    - img "Flag of Burkina Faso"
+    - text: "Loading image: Flag of Burkina Faso"
+    - heading "Burkina Faso" [level=2]
+    - paragraph: "Population: 20,903,278"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: Ouagadougou"
+  - 'link "Flag of Algeria Loading image: Flag of Algeria Algeria Population: 44,700,000 Region: Africa Capital: Algiers"':
+    - /url: /country/dz
+    - img "Flag of Algeria"
+    - text: "Loading image: Flag of Algeria"
+    - heading "Algeria" [level=2]
+    - paragraph: "Population: 44,700,000"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: Algiers"
+  - 'link "Flag of France Loading image: Flag of France France Population: 67,391,582 Region: Europe Capital: Paris"':
+    - /url: /country/fr
+    - img "Flag of France"
+    - text: "Loading image: Flag of France"
+    - heading "France" [level=2]
+    - paragraph: "Population: 67,391,582"
+    - paragraph: "Region: Europe"
+    - paragraph: "Capital: Paris"
+  - 'link "Flag of Saint Pierre and Miquelon Loading image: Flag of Saint Pierre and Miquelon Saint Pierre and Miquelon Population: 6,069 Region: Americas Capital: Saint-Pierre"':
+    - /url: /country/pm
+    - img "Flag of Saint Pierre and Miquelon"
+    - text: "Loading image: Flag of Saint Pierre and Miquelon"
+    - heading "Saint Pierre and Miquelon" [level=2]
+    - paragraph: "Population: 6,069"
+    - paragraph: "Region: Americas"
+    - paragraph: "Capital: Saint-Pierre"
+  - 'link "Flag of Pakistan Pakistan Population: 220,892,331 Region: Asia Capital: Islamabad"':
+    - /url: /country/pk
+    - img "Flag of Pakistan"
+    - heading "Pakistan" [level=2]
+    - paragraph: "Population: 220,892,331"
+    - paragraph: "Region: Asia"
+    - paragraph: "Capital: Islamabad"
+  - 'link "Flag of El Salvador Loading image: Flag of El Salvador El Salvador Population: 6,486,201 Region: Americas Capital: San Salvador"':
+    - /url: /country/sv
+    - img "Flag of El Salvador"
+    - text: "Loading image: Flag of El Salvador"
+    - heading "El Salvador" [level=2]
+    - paragraph: "Population: 6,486,201"
+    - paragraph: "Region: Americas"
+    - paragraph: "Capital: San Salvador"
+  - 'link "Flag of North Macedonia Loading image: Flag of North Macedonia North Macedonia Population: 2,077,132 Region: Europe Capital: Skopje"':
+    - /url: /country/mk
+    - img "Flag of North Macedonia"
+    - text: "Loading image: Flag of North Macedonia"
+    - heading "North Macedonia" [level=2]
+    - paragraph: "Population: 2,077,132"
+    - paragraph: "Region: Europe"
+    - paragraph: "Capital: Skopje"
+  - 'link "Flag of Brunei Loading image: Flag of Brunei Brunei Population: 437,483 Region: Asia Capital: Bandar Seri Begawan"':
+    - /url: /country/bn
+    - img "Flag of Brunei"
+    - text: "Loading image: Flag of Brunei"
+    - heading "Brunei" [level=2]
+    - paragraph: "Population: 437,483"
+    - paragraph: "Region: Asia"
+    - paragraph: "Capital: Bandar Seri Begawan"
+  - 'link "Flag of Central African Republic Loading image: Flag of Central African Republic Central African Republic Population: 4,829,764 Region: Africa Capital: Bangui"':
+    - /url: /country/cf
+    - img "Flag of Central African Republic"
+    - text: "Loading image: Flag of Central African Republic"
+    - heading "Central African Republic" [level=2]
+    - paragraph: "Population: 4,829,764"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: Bangui"
+  - 'link "Flag of Uganda Loading image: Flag of Uganda Uganda Population: 45,741,000 Region: Africa Capital: Kampala"':
+    - /url: /country/ug
+    - img "Flag of Uganda"
+    - text: "Loading image: Flag of Uganda"
+    - heading "Uganda" [level=2]
+    - paragraph: "Population: 45,741,000"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: Kampala"
+  - 'link "Flag of Wallis and Futuna Loading image: Flag of Wallis and Futuna Wallis and Futuna Population: 11,750 Region: Oceania Capital: Mata-Utu"':
+    - /url: /country/wf
+    - img "Flag of Wallis and Futuna"
+    - text: "Loading image: Flag of Wallis and Futuna"
+    - heading "Wallis and Futuna" [level=2]
+    - paragraph: "Population: 11,750"
+    - paragraph: "Region: Oceania"
+    - paragraph: "Capital: Mata-Utu"
+  - 'link "Flag of Germany Loading image: Flag of Germany Germany Population: 83,240,525 Region: Europe Capital: Berlin"':
+    - /url: /country/de
+    - img "Flag of Germany"
+    - text: "Loading image: Flag of Germany"
+    - heading "Germany" [level=2]
+    - paragraph: "Population: 83,240,525"
+    - paragraph: "Region: Europe"
+    - paragraph: "Capital: Berlin"
+  - 'link "Flag of Taiwan Loading image: Flag of Taiwan Taiwan Population: 23,503,349 Region: Asia Capital: Taipei"':
+    - /url: /country/tw
+    - img "Flag of Taiwan"
+    - text: "Loading image: Flag of Taiwan"
+    - heading "Taiwan" [level=2]
+    - paragraph: "Population: 23,503,349"
+    - paragraph: "Region: Asia"
+    - paragraph: "Capital: Taipei"
+  - 'link "Flag of United Arab Emirates Loading image: Flag of United Arab Emirates United Arab Emirates Population: 9,890,400 Region: Asia Capital: Abu Dhabi"':
+    - /url: /country/ae
+    - img "Flag of United Arab Emirates"
+    - text: "Loading image: Flag of United Arab Emirates"
+    - heading "United Arab Emirates" [level=2]
+    - paragraph: "Population: 9,890,400"
+    - paragraph: "Region: Asia"
+    - paragraph: "Capital: Abu Dhabi"
+  - 'link "Flag of Namibia Loading image: Flag of Namibia Namibia Population: 2,540,916 Region: Africa Capital: Windhoek"':
+    - /url: /country/na
+    - img "Flag of Namibia"
+    - text: "Loading image: Flag of Namibia"
+    - heading "Namibia" [level=2]
+    - paragraph: "Population: 2,540,916"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: Windhoek"
+  - 'link "Flag of Monaco Loading image: Flag of Monaco Monaco Population: 39,244 Region: Europe Capital: Monaco"':
+    - /url: /country/mc
+    - img "Flag of Monaco"
+    - text: "Loading image: Flag of Monaco"
+    - heading "Monaco" [level=2]
+    - paragraph: "Population: 39,244"
+    - paragraph: "Region: Europe"
+    - paragraph: "Capital: Monaco"
+  - 'link "Flag of Malawi Loading image: Flag of Malawi Malawi Population: 19,129,955 Region: Africa Capital: Lilongwe"':
+    - /url: /country/mw
+    - img "Flag of Malawi"
+    - text: "Loading image: Flag of Malawi"
+    - heading "Malawi" [level=2]
+    - paragraph: "Population: 19,129,955"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: Lilongwe"
+  - 'link "Flag of Azerbaijan Loading image: Flag of Azerbaijan Azerbaijan Population: 10,110,116 Region: Asia Capital: Baku"':
+    - /url: /country/az
+    - img "Flag of Azerbaijan"
+    - text: "Loading image: Flag of Azerbaijan"
+    - heading "Azerbaijan" [level=2]
+    - paragraph: "Population: 10,110,116"
+    - paragraph: "Region: Asia"
+    - paragraph: "Capital: Baku"
+  - 'link "Flag of Mexico Loading image: Flag of Mexico Mexico Population: 128,932,753 Region: Americas Capital: Mexico City"':
+    - /url: /country/mx
+    - img "Flag of Mexico"
+    - text: "Loading image: Flag of Mexico"
+    - heading "Mexico" [level=2]
+    - paragraph: "Population: 128,932,753"
+    - paragraph: "Region: Americas"
+    - paragraph: "Capital: Mexico City"
+  - 'link "Flag of Iraq Loading image: Flag of Iraq Iraq Population: 40,222,503 Region: Asia Capital: Baghdad"':
+    - /url: /country/iq
+    - img "Flag of Iraq"
+    - text: "Loading image: Flag of Iraq"
+    - heading "Iraq" [level=2]
+    - paragraph: "Population: 40,222,503"
+    - paragraph: "Region: Asia"
+    - paragraph: "Capital: Baghdad"
+  - 'link "Flag of Cambodia Loading image: Flag of Cambodia Cambodia Population: 16,718,971 Region: Asia Capital: Phnom Penh"':
+    - /url: /country/kh
+    - img "Flag of Cambodia"
+    - text: "Loading image: Flag of Cambodia"
+    - heading "Cambodia" [level=2]
+    - paragraph: "Population: 16,718,971"
+    - paragraph: "Region: Asia"
+    - paragraph: "Capital: Phnom Penh"
+  - 'link "Flag of Tuvalu Loading image: Flag of Tuvalu Tuvalu Population: 11,792 Region: Oceania Capital: Funafuti"':
+    - /url: /country/tv
+    - img "Flag of Tuvalu"
+    - text: "Loading image: Flag of Tuvalu"
+    - heading "Tuvalu" [level=2]
+    - paragraph: "Population: 11,792"
+    - paragraph: "Region: Oceania"
+    - paragraph: "Capital: Funafuti"
+  - 'link "Flag of Cook Islands Loading image: Flag of Cook Islands Cook Islands Population: 18,100 Region: Oceania Capital: Avarua"':
+    - /url: /country/ck
+    - img "Flag of Cook Islands"
+    - text: "Loading image: Flag of Cook Islands"
+    - heading "Cook Islands" [level=2]
+    - paragraph: "Population: 18,100"
+    - paragraph: "Region: Oceania"
+    - paragraph: "Capital: Avarua"
+  - 'link "Flag of Haiti Loading image: Flag of Haiti Haiti Population: 11,402,533 Region: Americas Capital: Port-au-Prince"':
+    - /url: /country/ht
+    - img "Flag of Haiti"
+    - text: "Loading image: Flag of Haiti"
+    - heading "Haiti" [level=2]
+    - paragraph: "Population: 11,402,533"
+    - paragraph: "Region: Americas"
+    - paragraph: "Capital: Port-au-Prince"
+  - 'link "Flag of Belize Loading image: Flag of Belize Belize Population: 397,621 Region: Americas Capital: Belmopan"':
+    - /url: /country/bz
+    - img "Flag of Belize"
+    - text: "Loading image: Flag of Belize"
+    - heading "Belize" [level=2]
+    - paragraph: "Population: 397,621"
+    - paragraph: "Region: Americas"
+    - paragraph: "Capital: Belmopan"
+  - 'link "Flag of French Guiana Loading image: Flag of French Guiana French Guiana Population: 254,541 Region: Americas Capital: Cayenne"':
+    - /url: /country/gf
+    - img "Flag of French Guiana"
+    - text: "Loading image: Flag of French Guiana"
+    - heading "French Guiana" [level=2]
+    - paragraph: "Population: 254,541"
+    - paragraph: "Region: Americas"
+    - paragraph: "Capital: Cayenne"
+  - 'link "Flag of DR Congo Loading image: Flag of DR Congo DR Congo Population: 108,407,721 Region: Africa Capital: Kinshasa"':
+    - /url: /country/cd
+    - img "Flag of DR Congo"
+    - text: "Loading image: Flag of DR Congo"
+    - heading "DR Congo" [level=2]
+    - paragraph: "Population: 108,407,721"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: Kinshasa"
+  - 'link "Flag of Equatorial Guinea Loading image: Flag of Equatorial Guinea Equatorial Guinea Population: 1,402,985 Region: Africa Capital: Malabo"':
+    - /url: /country/gq
+    - img "Flag of Equatorial Guinea"
+    - text: "Loading image: Flag of Equatorial Guinea"
+    - heading "Equatorial Guinea" [level=2]
+    - paragraph: "Population: 1,402,985"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: Malabo"
+  - 'link "Flag of Mauritius Loading image: Flag of Mauritius Mauritius Population: 1,265,740 Region: Africa Capital: Port Louis"':
+    - /url: /country/mu
+    - img "Flag of Mauritius"
+    - text: "Loading image: Flag of Mauritius"
+    - heading "Mauritius" [level=2]
+    - paragraph: "Population: 1,265,740"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: Port Louis"
+  - 'link "Flag of Austria Loading image: Flag of Austria Austria Population: 8,917,205 Region: Europe Capital: Vienna"':
+    - /url: /country/at
+    - img "Flag of Austria"
+    - text: "Loading image: Flag of Austria"
+    - heading "Austria" [level=2]
+    - paragraph: "Population: 8,917,205"
+    - paragraph: "Region: Europe"
+    - paragraph: "Capital: Vienna"
+  - 'link "Flag of Spain Loading image: Flag of Spain Spain Population: 47,351,567 Region: Europe Capital: Madrid"':
+    - /url: /country/es
+    - img "Flag of Spain"
+    - text: "Loading image: Flag of Spain"
+    - heading "Spain" [level=2]
+    - paragraph: "Population: 47,351,567"
+    - paragraph: "Region: Europe"
+    - paragraph: "Capital: Madrid"
+  - 'link "Flag of Russia Loading image: Flag of Russia Russia Population: 144,104,080 Region: Europe Capital: Moscow"':
+    - /url: /country/ru
+    - img "Flag of Russia"
+    - text: "Loading image: Flag of Russia"
+    - heading "Russia" [level=2]
+    - paragraph: "Population: 144,104,080"
+    - paragraph: "Region: Europe"
+    - paragraph: "Capital: Moscow"
+  - 'link "Flag of Zimbabwe Loading image: Flag of Zimbabwe Zimbabwe Population: 14,862,927 Region: Africa Capital: Harare"':
+    - /url: /country/zw
+    - img "Flag of Zimbabwe"
+    - text: "Loading image: Flag of Zimbabwe"
+    - heading "Zimbabwe" [level=2]
+    - paragraph: "Population: 14,862,927"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: Harare"
+  - 'link "Flag of Singapore Loading image: Flag of Singapore Singapore Population: 5,685,807 Region: Asia Capital: Singapore"':
+    - /url: /country/sg
+    - img "Flag of Singapore"
+    - text: "Loading image: Flag of Singapore"
+    - heading "Singapore" [level=2]
+    - paragraph: "Population: 5,685,807"
+    - paragraph: "Region: Asia"
+    - paragraph: "Capital: Singapore"
+  - 'link "Flag of Czechia Loading image: Flag of Czechia Czechia Population: 10,698,896 Region: Europe Capital: Prague"':
+    - /url: /country/cz
+    - img "Flag of Czechia"
+    - text: "Loading image: Flag of Czechia"
+    - heading "Czechia" [level=2]
+    - paragraph: "Population: 10,698,896"
+    - paragraph: "Region: Europe"
+    - paragraph: "Capital: Prague"
+  - 'link "Flag of Faroe Islands Loading image: Flag of Faroe Islands Faroe Islands Population: 48,865 Region: Europe Capital: Tórshavn"':
+    - /url: /country/fo
+    - img "Flag of Faroe Islands"
+    - text: "Loading image: Flag of Faroe Islands"
+    - heading "Faroe Islands" [level=2]
+    - paragraph: "Population: 48,865"
+    - paragraph: "Region: Europe"
+    - paragraph: "Capital: Tórshavn"
+  - 'link "Flag of Oman Loading image: Flag of Oman Oman Population: 5,106,622 Region: Asia Capital: Muscat"':
+    - /url: /country/om
+    - img "Flag of Oman"
+    - text: "Loading image: Flag of Oman"
+    - heading "Oman" [level=2]
+    - paragraph: "Population: 5,106,622"
+    - paragraph: "Region: Asia"
+    - paragraph: "Capital: Muscat"
+  - 'link "Flag of French Southern and Antarctic Lands Loading image: Flag of French Southern and Antarctic Lands French Southern and Antarctic Lands Population: 400 Region: Antarctic Capital: Port-aux-Français"':
+    - /url: /country/tf
+    - img "Flag of French Southern and Antarctic Lands"
+    - text: "Loading image: Flag of French Southern and Antarctic Lands"
+    - heading "French Southern and Antarctic Lands" [level=2]
+    - paragraph: "Population: 400"
+    - paragraph: "Region: Antarctic"
+    - paragraph: "Capital: Port-aux-Français"
+  - 'link "Flag of Burundi Loading image: Flag of Burundi Burundi Population: 11,890,781 Region: Africa Capital: Gitega"':
+    - /url: /country/bi
+    - img "Flag of Burundi"
+    - text: "Loading image: Flag of Burundi"
+    - heading "Burundi" [level=2]
+    - paragraph: "Population: 11,890,781"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: Gitega"
+  - 'link "Flag of Western Sahara Loading image: Flag of Western Sahara Western Sahara Population: 510,713 Region: Africa Capital: El Aaiún"':
+    - /url: /country/eh
+    - img "Flag of Western Sahara"
+    - text: "Loading image: Flag of Western Sahara"
+    - heading "Western Sahara" [level=2]
+    - paragraph: "Population: 510,713"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: El Aaiún"
+  - 'link "Flag of Mayotte Loading image: Flag of Mayotte Mayotte Population: 226,915 Region: Africa Capital: Mamoudzou"':
+    - /url: /country/yt
+    - img "Flag of Mayotte"
+    - text: "Loading image: Flag of Mayotte"
+    - heading "Mayotte" [level=2]
+    - paragraph: "Population: 226,915"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: Mamoudzou"
+  - 'link "Flag of Puerto Rico Loading image: Flag of Puerto Rico Puerto Rico Population: 3,194,034 Region: Americas Capital: San Juan"':
+    - /url: /country/pr
+    - img "Flag of Puerto Rico"
+    - text: "Loading image: Flag of Puerto Rico"
+    - heading "Puerto Rico" [level=2]
+    - paragraph: "Population: 3,194,034"
+    - paragraph: "Region: Americas"
+    - paragraph: "Capital: San Juan"
+  - 'link "Flag of San Marino Loading image: Flag of San Marino San Marino Population: 33,938 Region: Europe Capital: City of San Marino"':
+    - /url: /country/sm
+    - img "Flag of San Marino"
+    - text: "Loading image: Flag of San Marino"
+    - heading "San Marino" [level=2]
+    - paragraph: "Population: 33,938"
+    - paragraph: "Region: Europe"
+    - paragraph: "Capital: City of San Marino"
+  - 'link "Flag of Turks and Caicos Islands Loading image: Flag of Turks and Caicos Islands Turks and Caicos Islands Population: 38,718 Region: Americas Capital: Cockburn Town"':
+    - /url: /country/tc
+    - img "Flag of Turks and Caicos Islands"
+    - text: "Loading image: Flag of Turks and Caicos Islands"
+    - heading "Turks and Caicos Islands" [level=2]
+    - paragraph: "Population: 38,718"
+    - paragraph: "Region: Americas"
+    - paragraph: "Capital: Cockburn Town"
+  - 'link "Flag of Malta Loading image: Flag of Malta Malta Population: 525,285 Region: Europe Capital: Valletta"':
+    - /url: /country/mt
+    - img "Flag of Malta"
+    - text: "Loading image: Flag of Malta"
+    - heading "Malta" [level=2]
+    - paragraph: "Population: 525,285"
+    - paragraph: "Region: Europe"
+    - paragraph: "Capital: Valletta"
+  - 'link "Flag of Nauru Loading image: Flag of Nauru Nauru Population: 10,834 Region: Oceania Capital: Yaren"':
+    - /url: /country/nr
+    - img "Flag of Nauru"
+    - text: "Loading image: Flag of Nauru"
+    - heading "Nauru" [level=2]
+    - paragraph: "Population: 10,834"
+    - paragraph: "Region: Oceania"
+    - paragraph: "Capital: Yaren"
+  - 'link "Flag of Saint Martin Loading image: Flag of Saint Martin Saint Martin Population: 38,659 Region: Americas Capital: Marigot"':
+    - /url: /country/mf
+    - img "Flag of Saint Martin"
+    - text: "Loading image: Flag of Saint Martin"
+    - heading "Saint Martin" [level=2]
+    - paragraph: "Population: 38,659"
+    - paragraph: "Region: Americas"
+    - paragraph: "Capital: Marigot"
+  - 'link "Flag of French Polynesia Loading image: Flag of French Polynesia French Polynesia Population: 280,904 Region: Oceania Capital: Papeetē"':
+    - /url: /country/pf
+    - img "Flag of French Polynesia"
+    - text: "Loading image: Flag of French Polynesia"
+    - heading "French Polynesia" [level=2]
+    - paragraph: "Population: 280,904"
+    - paragraph: "Region: Oceania"
+    - paragraph: "Capital: Papeetē"
+  - 'link "Flag of New Zealand Loading image: Flag of New Zealand New Zealand Population: 5,084,300 Region: Oceania Capital: Wellington"':
+    - /url: /country/nz
+    - img "Flag of New Zealand"
+    - text: "Loading image: Flag of New Zealand"
+    - heading "New Zealand" [level=2]
+    - paragraph: "Population: 5,084,300"
+    - paragraph: "Region: Oceania"
+    - paragraph: "Capital: Wellington"
+  - 'link "Flag of Serbia Loading image: Flag of Serbia Serbia Population: 6,908,224 Region: Europe Capital: Belgrade"':
+    - /url: /country/rs
+    - img "Flag of Serbia"
+    - text: "Loading image: Flag of Serbia"
+    - heading "Serbia" [level=2]
+    - paragraph: "Population: 6,908,224"
+    - paragraph: "Region: Europe"
+    - paragraph: "Capital: Belgrade"
+  - 'link "Flag of Trinidad and Tobago Loading image: Flag of Trinidad and Tobago Trinidad and Tobago Population: 1,399,491 Region: Americas Capital: Port of Spain"':
+    - /url: /country/tt
+    - img "Flag of Trinidad and Tobago"
+    - text: "Loading image: Flag of Trinidad and Tobago"
+    - heading "Trinidad and Tobago" [level=2]
+    - paragraph: "Population: 1,399,491"
+    - paragraph: "Region: Americas"
+    - paragraph: "Capital: Port of Spain"
+  - 'link "Flag of Saint Barthélemy Loading image: Flag of Saint Barthélemy Saint Barthélemy Population: 4,255 Region: Americas Capital: Gustavia"':
+    - /url: /country/bl
+    - img "Flag of Saint Barthélemy"
+    - text: "Loading image: Flag of Saint Barthélemy"
+    - heading "Saint Barthélemy" [level=2]
+    - paragraph: "Population: 4,255"
+    - paragraph: "Region: Americas"
+    - paragraph: "Capital: Gustavia"
+  - 'link "Flag of Pitcairn Islands Loading image: Flag of Pitcairn Islands Pitcairn Islands Population: 56 Region: Oceania Capital: Adamstown"':
+    - /url: /country/pn
+    - img "Flag of Pitcairn Islands"
+    - text: "Loading image: Flag of Pitcairn Islands"
+    - heading "Pitcairn Islands" [level=2]
+    - paragraph: "Population: 56"
+    - paragraph: "Region: Oceania"
+    - paragraph: "Capital: Adamstown"
+  - 'link "Flag of Norfolk Island Loading image: Flag of Norfolk Island Norfolk Island Population: 2,302 Region: Oceania Capital: Kingston"':
+    - /url: /country/nf
+    - img "Flag of Norfolk Island"
+    - text: "Loading image: Flag of Norfolk Island"
+    - heading "Norfolk Island" [level=2]
+    - paragraph: "Population: 2,302"
+    - paragraph: "Region: Oceania"
+    - paragraph: "Capital: Kingston"
+  - 'link "Flag of Barbados Loading image: Flag of Barbados Barbados Population: 287,371 Region: Americas Capital: Bridgetown"':
+    - /url: /country/bb
+    - img "Flag of Barbados"
+    - text: "Loading image: Flag of Barbados"
+    - heading "Barbados" [level=2]
+    - paragraph: "Population: 287,371"
+    - paragraph: "Region: Americas"
+    - paragraph: "Capital: Bridgetown"
+  - 'link "Flag of South Korea Loading image: Flag of South Korea South Korea Population: 51,780,579 Region: Asia Capital: Seoul"':
+    - /url: /country/kr
+    - img "Flag of South Korea"
+    - text: "Loading image: Flag of South Korea"
+    - heading "South Korea" [level=2]
+    - paragraph: "Population: 51,780,579"
+    - paragraph: "Region: Asia"
+    - paragraph: "Capital: Seoul"
+  - 'link "Flag of Bangladesh Bangladesh Population: 164,689,383 Region: Asia Capital: Dhaka"':
+    - /url: /country/bd
+    - img "Flag of Bangladesh"
+    - heading "Bangladesh" [level=2]
+    - paragraph: "Population: 164,689,383"
+    - paragraph: "Region: Asia"
+    - paragraph: "Capital: Dhaka"
+  - 'link "Flag of Dominican Republic Loading image: Flag of Dominican Republic Dominican Republic Population: 10,847,904 Region: Americas Capital: Santo Domingo"':
+    - /url: /country/do
+    - img "Flag of Dominican Republic"
+    - text: "Loading image: Flag of Dominican Republic"
+    - heading "Dominican Republic" [level=2]
+    - paragraph: "Population: 10,847,904"
+    - paragraph: "Region: Americas"
+    - paragraph: "Capital: Santo Domingo"
+  - 'link "Flag of Turkey Loading image: Flag of Turkey Turkey Population: 84,339,067 Region: Asia Capital: Ankara"':
+    - /url: /country/tr
+    - img "Flag of Turkey"
+    - text: "Loading image: Flag of Turkey"
+    - heading "Turkey" [level=2]
+    - paragraph: "Population: 84,339,067"
+    - paragraph: "Region: Asia"
+    - paragraph: "Capital: Ankara"
+  - 'link "Flag of Indonesia Indonesia Population: 273,523,621 Region: Asia Capital: Nusantara"':
+    - /url: /country/id
+    - img "Flag of Indonesia"
+    - heading "Indonesia" [level=2]
+    - paragraph: "Population: 273,523,621"
+    - paragraph: "Region: Asia"
+    - paragraph: "Capital: Nusantara"
+  - 'link "Flag of Liberia Loading image: Flag of Liberia Liberia Population: 5,057,677 Region: Africa Capital: Monrovia"':
+    - /url: /country/lr
+    - img "Flag of Liberia"
+    - text: "Loading image: Flag of Liberia"
+    - heading "Liberia" [level=2]
+    - paragraph: "Population: 5,057,677"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: Monrovia"
+  - 'link "Flag of Guernsey Loading image: Flag of Guernsey Guernsey Population: 62,999 Region: Europe Capital: St. Peter Port"':
+    - /url: /country/gg
+    - img "Flag of Guernsey"
+    - text: "Loading image: Flag of Guernsey"
+    - heading "Guernsey" [level=2]
+    - paragraph: "Population: 62,999"
+    - paragraph: "Region: Europe"
+    - paragraph: "Capital: St. Peter Port"
+  - 'link "Flag of Suriname Loading image: Flag of Suriname Suriname Population: 586,634 Region: Americas Capital: Paramaribo"':
+    - /url: /country/sr
+    - img "Flag of Suriname"
+    - text: "Loading image: Flag of Suriname"
+    - heading "Suriname" [level=2]
+    - paragraph: "Population: 586,634"
+    - paragraph: "Region: Americas"
+    - paragraph: "Capital: Paramaribo"
+  - 'link "Flag of Albania Loading image: Flag of Albania Albania Population: 2,837,743 Region: Europe Capital: Tirana"':
+    - /url: /country/al
+    - img "Flag of Albania"
+    - text: "Loading image: Flag of Albania"
+    - heading "Albania" [level=2]
+    - paragraph: "Population: 2,837,743"
+    - paragraph: "Region: Europe"
+    - paragraph: "Capital: Tirana"
+  - 'link "Flag of Dominica Loading image: Flag of Dominica Dominica Population: 71,991 Region: Americas Capital: Roseau"':
+    - /url: /country/dm
+    - img "Flag of Dominica"
+    - text: "Loading image: Flag of Dominica"
+    - heading "Dominica" [level=2]
+    - paragraph: "Population: 71,991"
+    - paragraph: "Region: Americas"
+    - paragraph: "Capital: Roseau"
+  - 'link "Flag of Thailand Loading image: Flag of Thailand Thailand Population: 69,799,978 Region: Asia Capital: Bangkok"':
+    - /url: /country/th
+    - img "Flag of Thailand"
+    - text: "Loading image: Flag of Thailand"
+    - heading "Thailand" [level=2]
+    - paragraph: "Population: 69,799,978"
+    - paragraph: "Region: Asia"
+    - paragraph: "Capital: Bangkok"
+  - 'link "Flag of United Kingdom Loading image: Flag of United Kingdom United Kingdom Population: 67,215,293 Region: Europe Capital: London"':
+    - /url: /country/gb
+    - img "Flag of United Kingdom"
+    - text: "Loading image: Flag of United Kingdom"
+    - heading "United Kingdom" [level=2]
+    - paragraph: "Population: 67,215,293"
+    - paragraph: "Region: Europe"
+    - paragraph: "Capital: London"
+  - 'link "Flag of New Caledonia Loading image: Flag of New Caledonia New Caledonia Population: 271,960 Region: Oceania Capital: Nouméa"':
+    - /url: /country/nc
+    - img "Flag of New Caledonia"
+    - text: "Loading image: Flag of New Caledonia"
+    - heading "New Caledonia" [level=2]
+    - paragraph: "Population: 271,960"
+    - paragraph: "Region: Oceania"
+    - paragraph: "Capital: Nouméa"
+  - 'link "Flag of Romania Loading image: Flag of Romania Romania Population: 19,286,123 Region: Europe Capital: Bucharest"':
+    - /url: /country/ro
+    - img "Flag of Romania"
+    - text: "Loading image: Flag of Romania"
+    - heading "Romania" [level=2]
+    - paragraph: "Population: 19,286,123"
+    - paragraph: "Region: Europe"
+    - paragraph: "Capital: Bucharest"
+  - 'link "Flag of Gibraltar Loading image: Flag of Gibraltar Gibraltar Population: 33,691 Region: Europe Capital: Gibraltar"':
+    - /url: /country/gi
+    - img "Flag of Gibraltar"
+    - text: "Loading image: Flag of Gibraltar"
+    - heading "Gibraltar" [level=2]
+    - paragraph: "Population: 33,691"
+    - paragraph: "Region: Europe"
+    - paragraph: "Capital: Gibraltar"
+  - 'link "Flag of Svalbard and Jan Mayen Loading image: Flag of Svalbard and Jan Mayen Svalbard and Jan Mayen Population: 2,562 Region: Europe Capital: Longyearbyen"':
+    - /url: /country/sj
+    - img "Flag of Svalbard and Jan Mayen"
+    - text: "Loading image: Flag of Svalbard and Jan Mayen"
+    - heading "Svalbard and Jan Mayen" [level=2]
+    - paragraph: "Population: 2,562"
+    - paragraph: "Region: Europe"
+    - paragraph: "Capital: Longyearbyen"
+  - 'link "Flag of Angola Loading image: Flag of Angola Angola Population: 32,866,268 Region: Africa Capital: Luanda"':
+    - /url: /country/ao
+    - img "Flag of Angola"
+    - text: "Loading image: Flag of Angola"
+    - heading "Angola" [level=2]
+    - paragraph: "Population: 32,866,268"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: Luanda"
+  - 'link "Flag of Bahamas Loading image: Flag of Bahamas Bahamas Population: 393,248 Region: Americas Capital: Nassau"':
+    - /url: /country/bs
+    - img "Flag of Bahamas"
+    - text: "Loading image: Flag of Bahamas"
+    - heading "Bahamas" [level=2]
+    - paragraph: "Population: 393,248"
+    - paragraph: "Region: Americas"
+    - paragraph: "Capital: Nassau"
+  - 'link "Flag of Eswatini Loading image: Flag of Eswatini Eswatini Population: 1,160,164 Region: Africa Capital: Mbabane"':
+    - /url: /country/sz
+    - img "Flag of Eswatini"
+    - text: "Loading image: Flag of Eswatini"
+    - heading "Eswatini" [level=2]
+    - paragraph: "Population: 1,160,164"
+    - paragraph: "Region: Africa"
+    - paragraph: "Capital: Mbabane"
+  - 'link "Flag of Brazil Brazil Population: 212,559,409 Region: Americas Capital: Brasília"':
+    - /url: /country/br
+    - img "Flag of Brazil"
+    - heading "Brazil" [level=2]
+    - paragraph: "Population: 212,559,409"
+    - paragraph: "Region: Americas"
+    - paragraph: "Capital: Brasília"
+  - 'link "Flag of Lithuania Loading image: Flag of Lithuania Lithuania Population: 2,794,700 Region: Europe Capital: Vilnius"':
+    - /url: /country/lt
+    - img "Flag of Lithuania"
+    - text: "Loading image: Flag of Lithuania"
+    - heading "Lithuania" [level=2]
+    - paragraph: "Population: 2,794,700"
+    - paragraph: "Region: Europe"
+    - paragraph: "Capital: Vilnius"
+  - 'link "Flag of Saint Lucia Loading image: Flag of Saint Lucia Saint Lucia Population: 183,629 Region: Americas Capital: Castries"':
+    - /url: /country/lc
+    - img "Flag of Saint Lucia"
+    - text: "Loading image: Flag of Saint Lucia"
+    - heading "Saint Lucia" [level=2]
+    - paragraph: "Population: 183,629"
+    - paragraph: "Region: Americas"
+    - paragraph: "Capital: Castries"
+- contentinfo:
+  - paragraph: © 2025 Where in the world?
+  - paragraph:
+    - text: Data provided by
+    - link "REST Countries API":
+      - /url: https://restcountries.com/
+- button "Open Tanstack query devtools":
+  - img
+- alert: Countries Dashboard
+```
+
+# Test source
+
+```ts
+   1 | import { test, expect } from '@playwright/test';
+   2 |
+   3 | test.describe('Authentication Tests', () => {
+   4 |   test.beforeEach(async ({ page }) => {
+   5 |     // Go to the homepage before each test
+   6 |     await page.goto('http://localhost:3000/');
+   7 |     // Wait for the page to load
+   8 |     await page.waitForTimeout(2000);
+   9 |   });
+  10 |
+  11 |   test('signin link is visible when not authenticated', async ({ page }) => {
+  12 |     // Look for a sign-in link (it might have different text depending on your UI)
+  13 |     const signInLink = page.getByRole('link', { name: /sign in/i });
+  14 |
+  15 |     // Verify it's visible
+  16 |     await expect(signInLink).toBeVisible();
+  17 |   });
+  18 |
+  19 |   test('clicking signin navigates to auth page', async ({ page }) => {
+  20 |     // Find and click the sign-in link
+  21 |     const signInLink = page.getByRole('link', { name: /sign in/i });
+> 22 |     await signInLink.click();
+     |                      ^ Error: locator.click: Test timeout of 45000ms exceeded.
+  23 |
+  24 |     // Should navigate to the auth page
+  25 |     await expect(page).toHaveURL(/\/auth\/signin/);
+  26 |
+  27 |     // Auth providers should be visible on the page
+  28 |     const authProviders = page.locator('.auth-provider');
+  29 |     await expect(authProviders).toBeVisible();
+  30 |   });
+  31 |
+  32 |   test('auth page has expected layout', async ({ page }) => {
+  33 |     // Navigate directly to the auth page
+  34 |     await page.goto('http://localhost:3000/auth/signin');
+  35 |
+  36 |     // Take a screenshot for visual verification
+  37 |     await page.screenshot({ path: 'test-results/auth-page.png' });
+  38 |
+  39 |     // Page should have appropriate title
+  40 |     await expect(page.locator('h1, h2').filter({ hasText: /sign in|log in/i })).toBeVisible();
+  41 |
+  42 |     // Authentication providers should be listed
+  43 |     await expect(page.locator('.auth-provider')).toBeVisible();
+  44 |   });
+  45 |
+  46 |   test('auth page has responsive design', async ({ page }) => {
+  47 |     // Test on desktop
+  48 |     await page.setViewportSize({ width: 1280, height: 800 });
+  49 |     await page.goto('http://localhost:3000/auth/signin');
+  50 |     await page.waitForTimeout(1000);
+  51 |
+  52 |     // Take screenshot
+  53 |     await page.screenshot({ path: 'test-results/auth-page-desktop.png' });
+  54 |
+  55 |     // Test on mobile
+  56 |     await page.setViewportSize({ width: 375, height: 667 });
+  57 |     await page.goto('http://localhost:3000/auth/signin');
+  58 |     await page.waitForTimeout(1000);
+  59 |
+  60 |     // Take screenshot
+  61 |     await page.screenshot({ path: 'test-results/auth-page-mobile.png' });
+  62 |
+  63 |     // Auth providers should still be visible on mobile
+  64 |     await expect(page.locator('.auth-provider')).toBeVisible();
+  65 |   });
+  66 | });
+  67 |
+```

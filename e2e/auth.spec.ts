@@ -25,7 +25,7 @@ test.describe('Authentication Tests', () => {
     await expect(page).toHaveURL(/\/auth\/signin/);
 
     // Auth providers should be visible on the page
-    const authProviders = page.locator('.auth-provider');
+    const authProviders = page.getByRole('button', { name: /Continue with GitHub/i });
     await expect(authProviders).toBeVisible();
   });
 
@@ -40,7 +40,7 @@ test.describe('Authentication Tests', () => {
     await expect(page.locator('h1, h2').filter({ hasText: /sign in|log in/i })).toBeVisible();
 
     // Authentication providers should be listed
-    await expect(page.locator('.auth-provider')).toBeVisible();
+    await expect(page.getByRole('button', { name: /Continue with GitHub/i })).toBeVisible();
   });
 
   test('auth page has responsive design', async ({ page }) => {
@@ -61,6 +61,6 @@ test.describe('Authentication Tests', () => {
     await page.screenshot({ path: 'test-results/auth-page-mobile.png' });
 
     // Auth providers should still be visible on mobile
-    await expect(page.locator('.auth-provider')).toBeVisible();
+    await expect(page.getByRole('button', { name: /Continue with GitHub/i })).toBeVisible();
   });
 });
