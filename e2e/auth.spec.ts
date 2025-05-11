@@ -9,17 +9,17 @@ test.describe('Authentication Tests', () => {
   });
 
   test('signin link is visible when not authenticated', async ({ page }) => {
-    // Look for a sign-in link (it might have different text depending on your UI)
-    const signInLink = page.getByRole('link', { name: /sign in/i });
+    // Look for a sign-in button (changing from link to button)
+    const signInButton = page.getByRole('button', { name: /sign in/i });
 
     // Verify it's visible
-    await expect(signInLink).toBeVisible();
+    await expect(signInButton).toBeVisible();
   });
 
   test('clicking signin navigates to auth page', async ({ page }) => {
-    // Find and click the sign-in link
-    const signInLink = page.getByRole('link', { name: /sign in/i });
-    await signInLink.click();
+    // Find and click the sign-in button (changing from link to button)
+    const signInButton = page.getByRole('button', { name: /sign in/i });
+    await signInButton.click();
 
     // Should navigate to the auth page
     await expect(page).toHaveURL(/\/auth\/signin/);

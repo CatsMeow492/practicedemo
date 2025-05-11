@@ -89,7 +89,7 @@ export async function GET(request: NextRequest) {
         { status: 504 }, // Gateway Timeout
       );
     }
-    
+
     console.error('Flags API: Error fetching flag image:', url, error);
     return NextResponse.json(
       { error: 'Error fetching image', details: String(error) },

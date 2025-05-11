@@ -6,7 +6,7 @@ jest.mock('../../../../app/api/ask-country-ai/route.ts', () => {
       // Mock the request handling logic
       try {
         const body = await req.json();
-        
+
         // Check API key
         if (!process.env.OPEN_AI_API_KEY) {
           return {
@@ -14,7 +14,7 @@ jest.mock('../../../../app/api/ask-country-ai/route.ts', () => {
             json: async () => ({ error: 'OpenAI API key not configured.' }),
           };
         }
-        
+
         // Check required fields
         if (!body.countryName || !body.question) {
           return {
@@ -22,7 +22,7 @@ jest.mock('../../../../app/api/ask-country-ai/route.ts', () => {
             json: async () => ({ error: 'Missing countryName or question in request body.' }),
           };
         }
-        
+
         // Success case
         return {
           status: 200,
@@ -59,14 +59,14 @@ describe('Ask Country AI API Route', () => {
   it('returns error when API key is not configured', async () => {
     // Remove API key for this test
     delete process.env.OPEN_AI_API_KEY;
-    
+
     const req = {
       json: async () => ({ countryName: 'Canada', question: 'What is the capital?' }),
     };
-    
+
     const response = await POST(req as any);
     expect(response.status).toBe(500);
-    
+
     const data = await response.json();
     expect(data.error).toBe('OpenAI API key not configured.');
   });
@@ -75,10 +75,10 @@ describe('Ask Country AI API Route', () => {
     const req = {
       json: async () => ({ countryName: 'Canada' }), // Missing question
     };
-    
+
     const response = await POST(req as any);
     expect(response.status).toBe(400);
-    
+
     const data = await response.json();
     expect(data.error).toBe('Missing countryName or question in request body.');
   });
@@ -87,10 +87,10 @@ describe('Ask Country AI API Route', () => {
     const req = {
       json: async () => ({ countryName: 'Canada', question: 'What is the capital?' }),
     };
-    
+
     const response = await POST(req as any);
     expect(response.status).toBe(200);
-    
+
     const data = await response.json();
     expect(data.answer).toBe('This is a mocked response about the country');
   });

@@ -33,7 +33,7 @@ test.describe('Countries Dashboard', () => {
   test('search filter works', async ({ page }) => {
     // Wait for the search box to be visible first
     await expect(page.getByPlaceholder('Search for a country...')).toBeVisible({ timeout: 30000 });
-    
+
     // Then wait for country cards to appear (this ensures data is loaded)
     await expect(page.locator('.grid > a').first()).toBeVisible({ timeout: 40000 });
 
@@ -43,14 +43,16 @@ test.describe('Countries Dashboard', () => {
     // Wait for the filtered results
     await page.waitForTimeout(2000); // Increased delay to allow filtering to complete
 
-    // Look for a card containing "Germany" - any part of the card
-    await expect(page.locator('.grid').getByText('Germany')).toBeVisible({ timeout: 10000 });
+    // Look for Germany in the heading (more specific than just any text to avoid strict mode violations)
+    await expect(page.locator('.grid h2').filter({ hasText: 'Germany' })).toBeVisible({
+      timeout: 10000,
+    });
   });
 
   test('continent filter works', async ({ page }) => {
     // Wait for the search box to be visible first
     await expect(page.getByPlaceholder('Search for a country...')).toBeVisible({ timeout: 30000 });
-    
+
     // Then wait for country cards to appear (this ensures data is loaded)
     await expect(page.locator('.grid > a').first()).toBeVisible({ timeout: 40000 });
 
@@ -68,7 +70,7 @@ test.describe('Countries Dashboard', () => {
   test('country detail page loads', async ({ page }) => {
     // Wait for the search box to be visible first
     await expect(page.getByPlaceholder('Search for a country...')).toBeVisible({ timeout: 30000 });
-    
+
     // Then wait for country cards to appear (this ensures data is loaded)
     await expect(page.locator('.grid > a').first()).toBeVisible({ timeout: 40000 });
 
